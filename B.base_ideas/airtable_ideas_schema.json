@@ -1,0 +1,146 @@
+{
+  "base": {
+    "name": "Ideas de Negocio",
+    "description": "Registro central de ideas de negocio. Captura por voz/texto, enriquecimiento e investigacion automatica por agente, scoring y triaje semanal."
+  },
+  "tables": [
+    {
+      "name": "Ideas",
+      "description": "Una fila por idea. El agente llena clasificacion, scoring e investigacion. El campo Energia lo llena SOLO Juan.",
+      "fields": [
+        { "name": "Idea", "type": "singleLineText", "description": "Titulo corto y concreto. Campo primario." },
+        { "name": "One-liner", "type": "longText", "description": "Que problema resuelve, en una linea. Lo redacta el agente a partir de la captura raw." },
+        { "name": "Notas", "type": "longText", "description": "Desarrollo libre. Aca crece la idea." },
+        { "name": "Captura raw", "type": "longText", "description": "Transcripcion o texto original sin procesar. Auditoria: permite ver que entendio mal el bot." },
+
+        { "name": "Vertical", "type": "singleSelect", "options": { "choices": [
+          { "name": "Gastronomia", "color": "orangeLight2" },
+          { "name": "Real Estate", "color": "blueLight2" },
+          { "name": "IA & Automatizacion", "color": "purpleLight2" },
+          { "name": "Otro", "color": "grayLight2" }
+        ]}},
+        { "name": "Tipo", "type": "singleSelect", "options": { "choices": [
+          { "name": "Producto", "color": "cyanLight2" },
+          { "name": "Servicio", "color": "tealLight2" },
+          { "name": "Contenido", "color": "yellowLight2" },
+          { "name": "Mejora interna", "color": "greenLight2" },
+          { "name": "Inversion", "color": "pinkLight2" }
+        ]}},
+        { "name": "Estado", "type": "singleSelect", "options": { "choices": [
+          { "name": "Inbox", "color": "grayLight2" },
+          { "name": "Enriquecida", "color": "blueLight2" },
+          { "name": "Triaje", "color": "yellowLight2" },
+          { "name": "Explorando", "color": "orangeLight2" },
+          { "name": "Validando", "color": "purpleLight2" },
+          { "name": "En marcha", "color": "greenLight2" },
+          { "name": "Descartada", "color": "redLight2" },
+          { "name": "Duplicada", "color": "grayLight1" }
+        ]}},
+        { "name": "Energia", "type": "singleSelect", "description": "SOLO JUAN. El agente nunca escribe este campo. Es el filtro humano que evita 200 filas puntuadas que no le importan a nadie.", "options": { "choices": [
+          { "name": "Me prende", "color": "redBright" },
+          { "name": "Tibia", "color": "yellowBright" },
+          { "name": "Fria", "color": "blueBright" }
+        ]}},
+        { "name": "Fuente", "type": "singleSelect", "options": { "choices": [
+          { "name": "Voz / Telegram", "color": "cyanLight2" },
+          { "name": "Manual", "color": "grayLight2" },
+          { "name": "Web / Lectura", "color": "blueLight2" },
+          { "name": "Conversacion", "color": "greenLight2" },
+          { "name": "Agente", "color": "purpleLight2" }
+        ]}},
+        { "name": "Link", "type": "url" },
+        { "name": "Adjuntos", "type": "multipleAttachments" },
+
+        { "name": "Fit estrategico", "type": "number", "options": { "precision": 0 }, "description": "1-5. Encaje con los activos y verticales que Juan YA tiene." },
+        { "name": "Tamano de oportunidad", "type": "number", "options": { "precision": 0 }, "description": "1-5. Techo del mercado." },
+        { "name": "Esfuerzo de arranque", "type": "number", "options": { "precision": 0 }, "description": "1-5, invertido: 5 = muy facil arrancar." },
+        { "name": "Capital requerido", "type": "singleSelect", "options": { "choices": [
+          { "name": "< USD 1k", "color": "greenLight2" },
+          { "name": "USD 1k - 10k", "color": "yellowLight2" },
+          { "name": "USD 10k - 50k", "color": "orangeLight2" },
+          { "name": "> USD 50k", "color": "redLight2" }
+        ]}},
+        { "name": "Time to revenue", "type": "singleSelect", "options": { "choices": [
+          { "name": "< 1 mes", "color": "greenLight2" },
+          { "name": "1-3 meses", "color": "yellowLight2" },
+          { "name": "3-12 meses", "color": "orangeLight2" },
+          { "name": "> 12 meses", "color": "redLight2" }
+        ]}},
+        { "name": "Ventaja injusta", "type": "longText", "description": "Por que Juan y no cualquier otro. Si esta vacio, la idea es generica." },
+        { "name": "Score total", "type": "number", "options": { "precision": 1 }, "description": "0-10. Lo escribe el agente. NO es formula: la API de Airtable no permite crear campos formula, y ademas conviene que razone el modelo y no una formula fija." },
+        { "name": "Confianza del score", "type": "singleSelect", "description": "Que tan solida es la investigacion detras del score. Evita tratar un numero inventado como si fuera dato.", "options": { "choices": [
+          { "name": "Alta", "color": "greenLight2" },
+          { "name": "Media", "color": "yellowLight2" },
+          { "name": "Baja", "color": "redLight2" }
+        ]}},
+
+        { "name": "Investigado el", "type": "date", "options": { "dateFormat": { "name": "iso" } } },
+        { "name": "Resumen de mercado", "type": "longText" },
+        { "name": "Veredicto del agente", "type": "longText" },
+        { "name": "Proximo paso sugerido", "type": "singleLineText" },
+        { "name": "Fuentes", "type": "longText", "description": "URLs consultadas por el agente. Sin esto el veredicto no es verificable." },
+        { "name": "Motivo de descarte", "type": "longText", "description": "Por que murio. Es lo que evita re-analizar la misma idea dentro de un ano." },
+
+        { "name": "Fecha captura", "type": "createdTime", "options": { "result": { "type": "dateTime" } } },
+        { "name": "Ultima actualizacion", "type": "lastModifiedTime", "options": { "result": { "type": "dateTime" } } }
+      ]
+    },
+    {
+      "name": "Competidores",
+      "description": "Lo que el agente encuentra al investigar cada idea.",
+      "fields": [
+        { "name": "Nombre", "type": "singleLineText" },
+        { "name": "URL", "type": "url" },
+        { "name": "Que hace", "type": "longText" },
+        { "name": "Mercado", "type": "singleLineText", "description": "Pais / region donde opera." },
+        { "name": "Financiamiento", "type": "singleLineText" },
+        { "name": "Notas", "type": "longText" },
+        { "name": "Detectado el", "type": "createdTime", "options": { "result": { "type": "dateTime" } } }
+      ]
+    },
+    {
+      "name": "Corridas",
+      "description": "Log de cada ejecucion del agente. En un sistema autonomo esto no es opcional: un agente que falla en silencio es peor que no tenerlo.",
+      "fields": [
+        { "name": "Corrida", "type": "singleLineText", "description": "Identificador legible, ej: 2026-08-24 semanal" },
+        { "name": "Fecha", "type": "date", "options": { "dateFormat": { "name": "iso" } } },
+        { "name": "Ideas procesadas", "type": "number", "options": { "precision": 0 } },
+        { "name": "Ideas nuevas", "type": "number", "options": { "precision": 0 } },
+        { "name": "Duplicadas detectadas", "type": "number", "options": { "precision": 0 } },
+        { "name": "Costo USD", "type": "number", "options": { "precision": 2 } },
+        { "name": "Errores", "type": "longText" },
+        { "name": "Digest enviado", "type": "checkbox", "options": { "icon": "check", "color": "greenBright" } },
+        { "name": "Notas", "type": "longText" }
+      ]
+    },
+    {
+      "name": "Criterios",
+      "description": "Pesos del scoring, editables sin tocar el flujo de n8n. El agente los lee en cada corrida.",
+      "fields": [
+        { "name": "Criterio", "type": "singleLineText" },
+        { "name": "Peso", "type": "number", "options": { "precision": 2 }, "description": "Los pesos deben sumar 1.00" },
+        { "name": "Definicion", "type": "longText", "description": "Que significa un 1 y que significa un 5. Sin esto el agente puntua distinto cada semana." },
+        { "name": "Activo", "type": "checkbox", "options": { "icon": "check", "color": "greenBright" } }
+      ]
+    }
+  ],
+  "link_fields_post_creation": [
+    { "table": "Ideas", "name": "Duplicada de", "linked_table": "Ideas", "description": "Auto-link. El dedupe semantico lo hace el agente (n8n + Supabase pgvector); Airtable solo guarda el resultado." },
+    { "table": "Ideas", "name": "Competidores", "linked_table": "Competidores" },
+    { "table": "Ideas", "name": "Corridas", "linked_table": "Corridas" }
+  ],
+  "seed_criterios": [
+    { "Criterio": "Fit estrategico", "Peso": 0.35, "Definicion": "1 = no toca ningun activo actual de Juan. 5 = apalanca directo Saladbowl, Lockhart o el stack de automatizacion que ya opera.", "Activo": true },
+    { "Criterio": "Tamano de oportunidad", "Peso": 0.20, "Definicion": "1 = nicho de menos de 50 clientes posibles. 5 = mercado regional con demanda probada y clientes que ya pagan por algo parecido.", "Activo": true },
+    { "Criterio": "Esfuerzo de arranque", "Peso": 0.20, "Definicion": "1 = mas de 6 meses hasta el primer peso facturado. 5 = se puede probar con un cliente real en menos de 2 semanas.", "Activo": true },
+    { "Criterio": "Energia", "Peso": 0.25, "Definicion": "Lo pone Juan, no el agente. Fria = 1, Tibia = 3, Me prende = 5. Es el unico criterio no negociable: una idea con score 9 y energia fria no se ejecuta nunca.", "Activo": true }
+  ],
+  "views": [
+    { "table": "Ideas", "name": "Inbox", "type": "grid", "filter": "Estado = Inbox", "note": "Lo que el bot acaba de tirar y todavia nadie miro." },
+    { "table": "Ideas", "name": "Para triar", "type": "grid", "filter": "Estado = Enriquecida AND Energia esta vacio", "note": "El agente ya hizo su parte. Falta el juicio de Juan. Esta es LA vista del ritual semanal." },
+    { "table": "Ideas", "name": "Top 10", "type": "grid", "filter": "Estado en (Triaje, Explorando, Validando)", "sort": "Score total desc", "note": "Las que estan vivas, ordenadas por score." },
+    { "table": "Ideas", "name": "Por vertical", "type": "kanban", "group_by": "Vertical" },
+    { "table": "Ideas", "name": "Radar", "type": "grid", "filter": "Estado = Explorando AND Ultima actualizacion hace mas de 30 dias", "note": "Ideas que se estan pudriendo. Revisar o matar." },
+    { "table": "Ideas", "name": "Cementerio", "type": "grid", "filter": "Estado = Descartada", "note": "Con Motivo de descarte visible. Vale oro para no repetir analisis." }
+  ]
+}
