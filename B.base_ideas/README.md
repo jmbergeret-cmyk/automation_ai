@@ -10,6 +10,7 @@ Nada de esto es material del curso: es tooling propio que vive en esta rama.
 | Base de Airtable | **Creada y poblada.** `appieVX1O0rtYjQnp`, workspace "Desarrollo personal" |
 | Sub-workflow de captura | **Armado, sin probar.** `SW_Guardar_Idea.json`, falta importar y enchufar al asistente |
 | Agente semanal | **No empezado.** Dedupe, investigación web, scoring y digest por mail |
+| Tabla `Videos y cursos` | **Diseñada, sin crear.** El conector de Airtable se cayó a mitad de sesión |
 
 ## Por qué existe
 
@@ -137,12 +138,37 @@ bloqueado el dominio de n8n por política de egreso.
   *"Cuando Juan te dicte una idea, pasá a guardar_idea la transcripción completa y
   literal, sin resumir ni reformular."*
 
+## Tabla `Videos y cursos` (pendiente de crear)
+
+Cola de contenido para ver después, en la misma base. Schema en
+`tabla_videos_schema.json`, se crea con `crear_tabla_videos.py`.
+
+Tres decisiones de diseño:
+
+- **`Por qué me interesa` se escribe al guardar, no después.** Mismo rol que el
+  `One-liner` de `Ideas`: una lista de 60 links sin contexto no se revisa, se abandona.
+- **`Duración (min)` habilita la vista "Tengo 20 minutos".** El momento de tener ganas
+  de ver algo rara vez coincide con tener una hora libre; filtrar por tiempo disponible
+  es lo que hace que la cola se consuma.
+- **`Idea que generó` linkea a `Ideas`.** Cierra el circuito: contenido → idea →
+  investigación del agente semanal.
+
+`Tema` es multi-select a propósito: un video de IA aplicada a inmobiliarias es las dos
+cosas, y forzar una sola categoría lo pierde cuando buscás por la otra.
+
+Vistas pendientes (van a mano): Por ver · Tengo 20 minutos · Viendo · Cosecha
+(`Estado = Visto` y `Accionable` no vacío) · Cementerio.
+
 ## Scripts
 
 - `build_subflow.py` — genera `SW_Guardar_Idea.json`
 - `build_flow.py` — genera `Captura_Ideas_Telegram.json`
 - `crear_base_airtable.py` — recrea la base de Airtable desde `airtable_ideas_schema.json`
   vía API REST. Ya se ejecutó; queda por si hay que rehacerla desde cero
+- `crear_tabla_videos.py` — agrega la tabla `Videos y cursos` a la base existente.
+  Todavía no se ejecutó. Es idempotente: si la tabla ya existe, no la duplica
+- `PROMPT_sesion_nueva.md` — handoff con todo el contexto, para arrancar una sesión
+  nueva que sí pueda llegar a la API de n8n
 
 Los JSON se editan regenerándolos con estos scripts, no a mano.
 

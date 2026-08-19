@@ -1,0 +1,74 @@
+{
+  "table": {
+    "name": "Videos y cursos",
+    "description": "Cola de contenido para ver despues. Se captura con una linea de por que interesa; despues de verlo se cosecha el aprendizaje y lo accionable. Si un video dispara una idea de negocio, se linkea a la tabla Ideas.",
+    "base": "appieVX1O0rtYjQnp"
+  },
+  "fields": [
+    { "name": "Título", "type": "singleLineText", "description": "Nombre del video o curso. Campo primario." },
+    { "name": "URL", "type": "url" },
+    { "name": "Estado", "type": "singleSelect", "options": { "choices": [
+      { "name": "Por ver", "color": "grayLight2" },
+      { "name": "Viendo", "color": "yellowLight2" },
+      { "name": "Visto", "color": "greenLight2" },
+      { "name": "Descartado", "color": "redLight2" }
+    ]}},
+    { "name": "Prioridad", "type": "singleSelect", "options": { "choices": [
+      { "name": "Alta", "color": "redLight2" },
+      { "name": "Media", "color": "yellowLight2" },
+      { "name": "Baja", "color": "blueLight2" }
+    ]}},
+    { "name": "Tipo", "type": "singleSelect", "options": { "choices": [
+      { "name": "Video", "color": "cyanLight2" },
+      { "name": "Curso", "color": "purpleLight2" },
+      { "name": "Podcast", "color": "greenLight2" },
+      { "name": "Charla / Conferencia", "color": "orangeLight2" },
+      { "name": "Playlist / Serie", "color": "tealLight2" },
+      { "name": "Newsletter / Articulo", "color": "yellowLight2" }
+    ]}},
+    { "name": "Plataforma", "type": "singleSelect", "options": { "choices": [
+      { "name": "YouTube", "color": "redLight2" },
+      { "name": "Udemy", "color": "purpleLight2" },
+      { "name": "Coursera", "color": "blueLight2" },
+      { "name": "Platzi", "color": "greenLight2" },
+      { "name": "X / Twitter", "color": "grayLight2" },
+      { "name": "LinkedIn", "color": "cyanLight2" },
+      { "name": "Spotify", "color": "greenLight1" },
+      { "name": "Otro", "color": "grayLight1" }
+    ]}},
+    { "name": "Tema", "type": "multipleSelects", "description": "Multi a proposito: un video de IA aplicada a inmobiliarias es las dos cosas.", "options": { "choices": [
+      { "name": "Gastronomía", "color": "orangeLight2" },
+      { "name": "Real Estate", "color": "blueLight2" },
+      { "name": "IA & Automatización", "color": "purpleLight2" },
+      { "name": "Negocios y gestión", "color": "tealLight2" },
+      { "name": "Finanzas", "color": "greenLight2" },
+      { "name": "Desarrollo personal", "color": "pinkLight2" },
+      { "name": "Otro", "color": "grayLight2" }
+    ]}},
+    { "name": "Duración (min)", "type": "number", "options": { "precision": 0 }, "description": "Habilita la vista 'Tengo 20 minutos'. Es el campo que hace que la cola se use en vez de mirarse." },
+    { "name": "Por qué me interesa", "type": "multilineText", "description": "Se escribe AL GUARDAR, no despues. Es lo unico que separa una cola util de un cementerio de links sin contexto." },
+    { "name": "Recomendado por", "type": "singleLineText" },
+    { "name": "Fuente", "type": "singleSelect", "options": { "choices": [
+      { "name": "Voz / Telegram", "color": "cyanLight2" },
+      { "name": "Manual", "color": "grayLight2" },
+      { "name": "Web / Lectura", "color": "blueLight2" },
+      { "name": "Conversación", "color": "greenLight2" },
+      { "name": "Agente", "color": "purpleLight2" }
+    ]}},
+    { "name": "Aprendizajes", "type": "multilineText", "description": "Se llena DESPUES de verlo. Si queda vacio en algo marcado como Visto, probablemente no valia la pena." },
+    { "name": "Accionable", "type": "multilineText", "description": "Que vas a hacer concretamente con esto. Sin esto, ver es entretenimiento." },
+    { "name": "Notas", "type": "multilineText" },
+    { "name": "Visto el", "type": "date", "options": { "dateFormat": { "name": "iso" } } }
+  ],
+  "campos_post_creacion": [
+    { "name": "Agregado el", "type": "formula", "formula": "CREATED_TIME()", "description": "El conector no expone createdTime nativo; como formula el valor es el mismo." },
+    { "name": "Idea que generó", "type": "multipleRecordLinks", "linked_table": "Ideas", "description": "Cierra el circuito: un curso que disparo una idea de negocio queda conectado con esa idea." }
+  ],
+  "vistas": [
+    { "name": "Por ver", "filtro": "Estado = Por ver", "orden": "Prioridad, luego Agregado el desc" },
+    { "name": "Tengo 20 minutos", "filtro": "Estado = Por ver y Duración (min) <= 20", "nota": "La vista que hace que la cola se consuma." },
+    { "name": "Viendo", "filtro": "Estado = Viendo" },
+    { "name": "Cosecha", "filtro": "Estado = Visto y Accionable no vacío", "nota": "Lo que efectivamente rindio algo." },
+    { "name": "Cementerio", "filtro": "Estado = Descartado" }
+  ]
+}
