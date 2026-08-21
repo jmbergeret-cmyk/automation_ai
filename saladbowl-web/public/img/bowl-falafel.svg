@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000" role="img" aria-label="Falafel">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#E7EDE7"/>
+      <stop offset="100%" stop-color="#2A5641" stop-opacity="0.14"/>
+    </radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="bowl"><circle cx="533.0" cy="472.5" r="327.0"/></clipPath>
+  </defs>
+  <rect width="1000" height="1000" fill="#E7EDE7"/>
+  <rect width="1000" height="1000" fill="url(#g)"/>
+  <circle cx="533.0" cy="472.5" r="366.3" fill="#2A5641" opacity="0.07"/>
+  <circle cx="533.0" cy="472.5" r="327.0" fill="#FFFFFF" opacity="0.55"/>
+  <g clip-path="url(#bowl)"><circle cx="532.7" cy="314.9" r="39.7" fill="#4CAF6D" opacity="0.62"/><circle cx="671.4" cy="353.2" r="45.5" fill="#F5C542" opacity="0.77"/><circle cx="521.3" cy="706.7" r="24.0" fill="#4CAF6D" opacity="0.71"/><circle cx="610.6" cy="313.5" r="49.0" fill="#4CAF6D" opacity="0.54"/><circle cx="729.4" cy="617.1" r="26.3" fill="#4CAF6D" opacity="0.71"/><circle cx="411.3" cy="649.1" r="49.6" fill="#F5C542" opacity="0.69"/><circle cx="663.0" cy="360.2" r="48.3" fill="#F5C542" opacity="0.36"/><circle cx="436.6" cy="404.5" r="44.2" fill="#4CAF6D" opacity="0.77"/><circle cx="611.6" cy="705.2" r="35.0" fill="#F5C542" opacity="0.40"/><circle cx="480.6" cy="260.2" r="25.1" fill="#4CAF6D" opacity="0.55"/><circle cx="692.1" cy="335.5" r="48.3" fill="#4CAF6D" opacity="0.74"/><circle cx="706.1" cy="545.5" r="44.2" fill="#F5C542" opacity="0.73"/><circle cx="459.6" cy="713.4" r="33.2" fill="#4CAF6D" opacity="0.72"/><circle cx="634.1" cy="296.7" r="34.4" fill="#4CAF6D" opacity="0.45"/></g>
+  <circle cx="533.0" cy="472.5" r="327.0" fill="none" stroke="#2A5641" stroke-opacity="0.16" stroke-width="6.0"/>
+  <rect width="1000" height="1000" filter="url(#grain)" opacity="0.05"/>
+  <text x="50" y="955" font-family="Helvetica, Arial, sans-serif" font-size="32" letter-spacing="4.0" fill="#2A5641" opacity="0.4">FALAFEL · 1000×1000</text>
+</svg>

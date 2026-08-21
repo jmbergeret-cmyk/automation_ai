@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Ciudad Vieja">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#E9EEE4"/>
+      <stop offset="100%" stop-color="#24503C" stop-opacity="0.14"/>
+    </radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="bowl"><circle cx="606.0" cy="373.8" r="257.6"/></clipPath>
+  </defs>
+  <rect width="1200" height="800" fill="#E9EEE4"/>
+  <rect width="1200" height="800" fill="url(#g)"/>
+  <circle cx="606.0" cy="373.8" r="288.5" fill="#24503C" opacity="0.07"/>
+  <circle cx="606.0" cy="373.8" r="257.6" fill="#FFFFFF" opacity="0.55"/>
+  <g clip-path="url(#bowl)"><circle cx="496.5" cy="279.7" r="34.4" fill="#5FBB7E" opacity="0.50"/><circle cx="570.0" cy="450.5" r="22.0" fill="#5FBB7E" opacity="0.52"/><circle cx="507.0" cy="471.0" r="38.8" fill="#F0C24A" opacity="0.79"/><circle cx="534.2" cy="332.4" r="31.6" fill="#5FBB7E" opacity="0.42"/><circle cx="789.6" cy="344.9" r="21.8" fill="#5FBB7E" opacity="0.40"/><circle cx="697.5" cy="263.6" r="33.3" fill="#5FBB7E" opacity="0.46"/><circle cx="580.0" cy="180.8" r="30.4" fill="#F0C24A" opacity="0.45"/><circle cx="625.5" cy="257.0" r="27.6" fill="#5FBB7E" opacity="0.72"/><circle cx="549.0" cy="223.1" r="20.9" fill="#5FBB7E" opacity="0.72"/><circle cx="747.8" cy="426.9" r="43.1" fill="#5FBB7E" opacity="0.59"/><circle cx="546.7" cy="363.3" r="32.3" fill="#5FBB7E" opacity="0.51"/><circle cx="494.9" cy="283.6" r="39.7" fill="#5FBB7E" opacity="0.55"/><circle cx="623.2" cy="336.8" r="29.2" fill="#5FBB7E" opacity="0.61"/><circle cx="657.5" cy="541.6" r="18.7" fill="#5FBB7E" opacity="0.68"/><circle cx="571.0" cy="339.5" r="25.2" fill="#5FBB7E" opacity="0.77"/></g>
+  <circle cx="606.0" cy="373.8" r="257.6" fill="none" stroke="#24503C" stroke-opacity="0.16" stroke-width="4.8"/>
+  <rect width="1200" height="800" filter="url(#grain)" opacity="0.05"/>
+  <text x="60" y="764" font-family="Helvetica, Arial, sans-serif" font-size="26" letter-spacing="3.2" fill="#24503C" opacity="0.4">CIUDAD VIEJA · 1200×800</text>
+</svg>

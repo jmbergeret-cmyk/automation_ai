@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Pocitos">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#E9EEE4"/>
+      <stop offset="100%" stop-color="#24503C" stop-opacity="0.14"/>
+    </radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="bowl"><circle cx="618.2" cy="385.0" r="269.8"/></clipPath>
+  </defs>
+  <rect width="1200" height="800" fill="#E9EEE4"/>
+  <rect width="1200" height="800" fill="url(#g)"/>
+  <circle cx="618.2" cy="385.0" r="302.2" fill="#24503C" opacity="0.07"/>
+  <circle cx="618.2" cy="385.0" r="269.8" fill="#FFFFFF" opacity="0.55"/>
+  <g clip-path="url(#bowl)"><circle cx="500.4" cy="336.2" r="21.7" fill="#5FBB7E" opacity="0.36"/><circle cx="412.2" cy="361.0" r="22.3" fill="#5FBB7E" opacity="0.57"/><circle cx="679.1" cy="467.1" r="33.9" fill="#5FBB7E" opacity="0.67"/><circle cx="615.8" cy="421.8" r="38.7" fill="#5FBB7E" opacity="0.78"/><circle cx="735.5" cy="394.5" r="41.6" fill="#5FBB7E" opacity="0.43"/><circle cx="755.3" cy="478.6" r="45.3" fill="#5FBB7E" opacity="0.56"/><circle cx="574.2" cy="277.0" r="32.9" fill="#5FBB7E" opacity="0.79"/><circle cx="810.4" cy="313.7" r="28.0" fill="#5FBB7E" opacity="0.71"/><circle cx="601.4" cy="304.3" r="20.6" fill="#5FBB7E" opacity="0.37"/><circle cx="589.6" cy="286.9" r="39.3" fill="#5FBB7E" opacity="0.58"/><circle cx="773.1" cy="363.7" r="28.1" fill="#5FBB7E" opacity="0.52"/><circle cx="778.6" cy="311.2" r="44.4" fill="#F0C24A" opacity="0.76"/><circle cx="726.4" cy="297.5" r="34.8" fill="#5FBB7E" opacity="0.72"/><circle cx="796.1" cy="374.8" r="19.6" fill="#F0C24A" opacity="0.67"/><circle cx="537.6" cy="408.4" r="36.0" fill="#5FBB7E" opacity="0.56"/><circle cx="638.2" cy="476.6" r="38.8" fill="#5FBB7E" opacity="0.37"/></g>
+  <circle cx="618.2" cy="385.0" r="269.8" fill="none" stroke="#24503C" stroke-opacity="0.16" stroke-width="4.8"/>
+  <rect width="1200" height="800" filter="url(#grain)" opacity="0.05"/>
+  <text x="60" y="764" font-family="Helvetica, Arial, sans-serif" font-size="26" letter-spacing="3.2" fill="#24503C" opacity="0.4">POCITOS · 1200×800</text>
+</svg>

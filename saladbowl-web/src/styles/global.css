@@ -1,0 +1,159 @@
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------
+   Design tokens
+   --------------------------------------------------------------- */
+@theme {
+  /* Paleta */
+  --color-cream: #faf9f6;
+  --color-cream-deep: #f2f0e9;
+  --color-forest: #1e3d2f;
+  --color-forest-soft: #3d5c4d;
+  --color-leaf: #4caf6d;
+  --color-leaf-dark: #3d9459;
+  --color-citrus: #f5c542;
+
+  /* Tipografía */
+  --font-display: 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-sans: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  /* Ritmo vertical de las secciones */
+  --spacing-section: 6rem;
+  --spacing-section-lg: 10rem;
+}
+
+/* ---------------------------------------------------------------
+   Base
+   --------------------------------------------------------------- */
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-forest);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-citrus);
+    color: var(--color-forest);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-leaf);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 0.98;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Utilidades propias
+   --------------------------------------------------------------- */
+@utility container-x {
+  width: 100%;
+  max-width: 90rem; /* 1440px */
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+
+  @media (width >= 48rem) {
+    padding-inline: 2.5rem;
+  }
+
+  @media (width >= 80rem) {
+    padding-inline: 4rem;
+  }
+}
+
+/* Línea fina de la marca, usada como separador de secciones */
+@utility rule {
+  border-top: 1px solid color-mix(in srgb, var(--color-forest) 12%, transparent);
+}
+
+/* ---------------------------------------------------------------
+   Estados iniciales del sistema de movimiento.
+   Sólo se aplican si hay JS: sin JS el sitio se ve completo.
+   --------------------------------------------------------------- */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(34px);
+}
+
+.js [data-media]:not(.is-in) > img {
+  transform: scale(1.05);
+}
+
+.js [data-hero-item] {
+  opacity: 0;
+  transform: translateY(34px);
+}
+
+.js [data-hero-media] {
+  opacity: 0;
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal],
+  .js [data-hero-item],
+  .js [data-hero-media],
+  .js [data-media]:not(.is-in) > img {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Link con flecha, usado en toda la home */
+.link-arrow {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.link-arrow::after {
+  content: '→';
+  display: inline-block;
+  margin-left: 0.45rem;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.link-arrow:hover::after {
+  transform: translateX(0.28rem);
+}

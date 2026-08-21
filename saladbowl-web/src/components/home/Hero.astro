@@ -1,0 +1,57 @@
+---
+import { site } from '../../data/site.js';
+---
+
+<section data-hero class="relative flex min-h-svh items-center pt-28 pb-16 lg:pt-32 lg:pb-24">
+  <div class="container-x grid w-full items-center gap-12 lg:grid-cols-12 lg:gap-12 xl:gap-16">
+    <div class="lg:col-span-6">
+      <p
+        data-hero-item
+        class="mb-6 text-[0.78rem] font-medium tracking-[0.18em] text-forest-soft uppercase"
+      >
+        Montevideo · desde 2019
+      </p>
+
+      <h1 data-hero-item class="text-[3.4rem] sm:text-[4.5rem] md:text-[5rem] lg:text-[4.2rem] xl:text-[5.4rem]">
+        Comida real,<br />sin vueltas.
+      </h1>
+
+      <p
+        data-hero-item
+        class="mt-7 max-w-[46ch] text-[1.05rem] leading-relaxed text-forest-soft lg:text-[1.15rem]"
+      >
+        Bowls que armamos a la vista, con verdura que compramos cada mañana. Pedís, esperás cinco
+        minutos y seguís con tu día.
+      </p>
+
+      <div data-hero-item class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+        <a
+          href={site.orderUrl}
+          target="_blank"
+          rel="noopener"
+          class="rounded-full bg-leaf px-8 py-4 font-semibold text-white transition-colors duration-200 hover:bg-leaf-dark"
+        >
+          Hacé tu pedido
+        </a>
+        <a href="/menu" class="link-arrow font-medium">Ver el menú</a>
+      </div>
+    </div>
+
+    <div class="lg:col-span-6 lg:col-start-7">
+      <div
+        data-hero-media
+        data-parallax-frame
+        class="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-cream-deep sm:aspect-[3/4] lg:aspect-auto lg:h-[76vh]"
+      >
+        <img
+          data-parallax
+          src="/img/hero.svg"
+          alt="Bowl de hojas verdes, palta y semillas recién armado sobre la barra"
+          width="1200"
+          height="1500"
+          class="absolute top-[-9%] left-0 h-[118%] w-full object-cover"
+        />
+      </div>
+    </div>
+  </div>
+</section>

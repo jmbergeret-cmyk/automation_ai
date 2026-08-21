@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000" role="img" aria-label="Cesar">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#F1EDE2"/>
+      <stop offset="100%" stop-color="#1E3D2F" stop-opacity="0.14"/>
+    </radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="bowl"><circle cx="531.9" cy="451.5" r="304.0"/></clipPath>
+  </defs>
+  <rect width="1000" height="1000" fill="#F1EDE2"/>
+  <rect width="1000" height="1000" fill="url(#g)"/>
+  <circle cx="531.9" cy="451.5" r="340.5" fill="#1E3D2F" opacity="0.07"/>
+  <circle cx="531.9" cy="451.5" r="304.0" fill="#FFFFFF" opacity="0.55"/>
+  <g clip-path="url(#bowl)"><circle cx="710.0" cy="607.4" r="48.0" fill="#E8B93C" opacity="0.53"/><circle cx="520.6" cy="599.7" r="26.0" fill="#7DC48F" opacity="0.49"/><circle cx="577.4" cy="617.8" r="51.4" fill="#E8B93C" opacity="0.36"/><circle cx="578.9" cy="497.9" r="43.2" fill="#7DC48F" opacity="0.59"/><circle cx="501.1" cy="481.2" r="34.0" fill="#7DC48F" opacity="0.72"/><circle cx="466.9" cy="509.6" r="21.9" fill="#7DC48F" opacity="0.49"/><circle cx="403.2" cy="400.4" r="37.9" fill="#7DC48F" opacity="0.48"/><circle cx="511.0" cy="379.6" r="41.8" fill="#E8B93C" opacity="0.45"/><circle cx="619.8" cy="340.7" r="21.8" fill="#7DC48F" opacity="0.79"/><circle cx="368.8" cy="605.0" r="37.1" fill="#7DC48F" opacity="0.69"/><circle cx="666.2" cy="269.3" r="41.3" fill="#7DC48F" opacity="0.69"/><circle cx="654.2" cy="613.1" r="45.5" fill="#7DC48F" opacity="0.78"/><circle cx="307.6" cy="513.6" r="35.9" fill="#7DC48F" opacity="0.58"/><circle cx="714.6" cy="410.1" r="43.2" fill="#7DC48F" opacity="0.68"/><circle cx="635.8" cy="634.4" r="28.8" fill="#7DC48F" opacity="0.37"/></g>
+  <circle cx="531.9" cy="451.5" r="304.0" fill="none" stroke="#1E3D2F" stroke-opacity="0.16" stroke-width="6.0"/>
+  <rect width="1000" height="1000" filter="url(#grain)" opacity="0.05"/>
+  <text x="50" y="955" font-family="Helvetica, Arial, sans-serif" font-size="32" letter-spacing="4.0" fill="#1E3D2F" opacity="0.4">CESAR · 1000×1000</text>
+</svg>

@@ -1,0 +1,67 @@
+---
+import '../styles/fonts.css';
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../data/site.js';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = `${site.name} — ${site.tagline}`,
+  description = 'Bowls frescos hechos al momento en Montevideo. Verdura de estación, proteína en serio y aderezos de casa. Pedí online y retirá en minutos.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es-UY">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#1E3D2F" />
+
+    <link
+      rel="preload"
+      href="/fonts/archivo-500-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" href="/fonts/inter-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+    <script is:inline>
+      // Los estados iniciales del movimiento sólo aplican si hay JS.
+      document.documentElement.classList.add('js');
+    </script>
+  </head>
+
+  <body class="bg-cream text-forest">
+    <a
+      href="#contenido"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-full focus:bg-forest focus:px-5 focus:py-3 focus:text-sm focus:text-cream"
+    >
+      Saltar al contenido
+    </a>
+
+    <Nav />
+
+    <main id="contenido">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <script>
+      import '../scripts/motion.js';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+---
+const items = [
+  {
+    title: 'Fresco',
+    text: 'Compramos verdura todas las mañanas. Lo que no está bueno ese día, no entra a la barra.',
+    icon: 'leaf',
+  },
+  {
+    title: 'Rápido',
+    text: 'De la barra a tu mano en menos de cinco minutos, sin que se note el apuro.',
+    icon: 'bolt',
+  },
+  {
+    title: 'Real',
+    text: 'Ingredientes que podés nombrar. Los aderezos los hacemos nosotros, uno por uno.',
+    icon: 'bowl',
+  },
+];
+---
+
+<section class="bg-cream-deep py-20 lg:py-28">
+  <div class="container-x">
+    <div data-stagger class="grid gap-12 sm:grid-cols-3 sm:gap-8 lg:gap-16">
+      {
+        items.map((item) => (
+          <div data-reveal class="max-w-[38ch]">
+            <span class="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-cream text-forest">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="h-5 w-5"
+                aria-hidden="true"
+              >
+                {item.icon === 'leaf' && (
+                  <>
+                    <path d="M20 4c0 8-4.8 12.4-11 12.4A5.4 5.4 0 0 1 3.6 11C3.6 6 8.4 4 20 4Z" />
+                    <path d="M4.6 20c1.6-4.2 4.6-7 9.4-8.6" />
+                  </>
+                )}
+                {item.icon === 'bolt' && <path d="M13.4 2 4 13.6h6.2L10.6 22 20 10.4h-6.2L13.4 2Z" />}
+                {item.icon === 'bowl' && (
+                  <>
+                    <path d="M3 11h18a9 9 0 0 1-18 0Z" />
+                    <path d="M9 7.5c0-1.4 1.3-2.5 3-2.5s3 1.1 3 2.5" />
+                    <path d="M6 21h12" />
+                  </>
+                )}
+              </svg>
+            </span>
+
+            <h3 class="text-[1.5rem] lg:text-[1.7rem]">{item.title}</h3>
+            <p class="mt-3 text-[0.98rem] leading-relaxed text-forest-soft">{item.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

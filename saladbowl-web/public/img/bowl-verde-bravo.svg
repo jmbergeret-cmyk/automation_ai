@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000" role="img" aria-label="Verde bravo">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#E9EEE4"/>
+      <stop offset="100%" stop-color="#24503C" stop-opacity="0.14"/>
+    </radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="bowl"><circle cx="426.0" cy="526.9" r="300.2"/></clipPath>
+  </defs>
+  <rect width="1000" height="1000" fill="#E9EEE4"/>
+  <rect width="1000" height="1000" fill="url(#g)"/>
+  <circle cx="426.0" cy="526.9" r="336.2" fill="#24503C" opacity="0.07"/>
+  <circle cx="426.0" cy="526.9" r="300.2" fill="#FFFFFF" opacity="0.55"/>
+  <g clip-path="url(#bowl)"><circle cx="625.1" cy="507.1" r="31.9" fill="#5FBB7E" opacity="0.77"/><circle cx="281.6" cy="352.0" r="37.5" fill="#F0C24A" opacity="0.70"/><circle cx="450.3" cy="686.0" r="34.6" fill="#5FBB7E" opacity="0.61"/><circle cx="377.7" cy="658.9" r="50.0" fill="#F0C24A" opacity="0.62"/><circle cx="643.2" cy="503.5" r="47.5" fill="#5FBB7E" opacity="0.46"/><circle cx="244.4" cy="501.9" r="21.1" fill="#5FBB7E" opacity="0.48"/><circle cx="459.1" cy="709.3" r="24.2" fill="#5FBB7E" opacity="0.63"/><circle cx="378.4" cy="343.1" r="22.5" fill="#5FBB7E" opacity="0.70"/><circle cx="632.6" cy="520.9" r="46.8" fill="#5FBB7E" opacity="0.73"/><circle cx="363.1" cy="434.5" r="31.2" fill="#5FBB7E" opacity="0.69"/><circle cx="614.5" cy="483.0" r="24.7" fill="#5FBB7E" opacity="0.59"/><circle cx="402.0" cy="433.8" r="21.7" fill="#F0C24A" opacity="0.80"/><circle cx="488.5" cy="612.5" r="49.8" fill="#F0C24A" opacity="0.41"/><circle cx="397.9" cy="413.3" r="41.8" fill="#5FBB7E" opacity="0.38"/></g>
+  <circle cx="426.0" cy="526.9" r="300.2" fill="none" stroke="#24503C" stroke-opacity="0.16" stroke-width="6.0"/>
+  <rect width="1000" height="1000" filter="url(#grain)" opacity="0.05"/>
+  <text x="50" y="955" font-family="Helvetica, Arial, sans-serif" font-size="32" letter-spacing="4.0" fill="#24503C" opacity="0.4">VERDE BRAVO · 1000×1000</text>
+</svg>

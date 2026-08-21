@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500" role="img" aria-label="Hero">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#E9EEE4"/>
+      <stop offset="100%" stop-color="#24503C" stop-opacity="0.14"/>
+    </radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="bowl"><circle cx="643.3" cy="717.6" r="399.0"/></clipPath>
+  </defs>
+  <rect width="1200" height="1500" fill="#E9EEE4"/>
+  <rect width="1200" height="1500" fill="url(#g)"/>
+  <circle cx="643.3" cy="717.6" r="446.9" fill="#24503C" opacity="0.07"/>
+  <circle cx="643.3" cy="717.6" r="399.0" fill="#FFFFFF" opacity="0.55"/>
+  <g clip-path="url(#bowl)"><circle cx="747.9" cy="765.3" r="66.9" fill="#5FBB7E" opacity="0.72"/><circle cx="580.3" cy="571.0" r="47.0" fill="#F0C24A" opacity="0.61"/><circle cx="646.2" cy="903.6" r="39.9" fill="#F0C24A" opacity="0.78"/><circle cx="365.2" cy="795.6" r="45.4" fill="#5FBB7E" opacity="0.63"/><circle cx="465.0" cy="855.8" r="41.4" fill="#F0C24A" opacity="0.71"/><circle cx="867.3" cy="815.0" r="53.9" fill="#5FBB7E" opacity="0.77"/><circle cx="882.1" cy="713.9" r="67.1" fill="#5FBB7E" opacity="0.70"/><circle cx="710.8" cy="882.5" r="61.9" fill="#5FBB7E" opacity="0.41"/><circle cx="808.3" cy="618.2" r="63.3" fill="#5FBB7E" opacity="0.68"/><circle cx="535.7" cy="864.5" r="58.0" fill="#5FBB7E" opacity="0.44"/><circle cx="633.3" cy="803.6" r="47.1" fill="#5FBB7E" opacity="0.71"/><circle cx="554.9" cy="1003.8" r="57.7" fill="#5FBB7E" opacity="0.74"/><circle cx="521.9" cy="637.5" r="63.9" fill="#F0C24A" opacity="0.71"/><circle cx="668.0" cy="600.8" r="61.7" fill="#5FBB7E" opacity="0.61"/></g>
+  <circle cx="643.3" cy="717.6" r="399.0" fill="none" stroke="#24503C" stroke-opacity="0.16" stroke-width="7.2"/>
+  <rect width="1200" height="1500" filter="url(#grain)" opacity="0.05"/>
+  <text x="60" y="1433" font-family="Helvetica, Arial, sans-serif" font-size="38" letter-spacing="4.8" fill="#24503C" opacity="0.4">HERO · 1200×1500</text>
+</svg>

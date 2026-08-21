@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" role="img" aria-label="Marca">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#E9EEE4"/>
+      <stop offset="100%" stop-color="#24503C" stop-opacity="0.14"/>
+    </radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="bowl"><circle cx="858.4" cy="644.6" r="413.8"/></clipPath>
+  </defs>
+  <rect width="1600" height="1200" fill="#E9EEE4"/>
+  <rect width="1600" height="1200" fill="url(#g)"/>
+  <circle cx="858.4" cy="644.6" r="463.4" fill="#24503C" opacity="0.07"/>
+  <circle cx="858.4" cy="644.6" r="413.8" fill="#FFFFFF" opacity="0.55"/>
+  <g clip-path="url(#bowl)"><circle cx="920.7" cy="667.5" r="35.7" fill="#5FBB7E" opacity="0.73"/><circle cx="656.3" cy="427.4" r="45.8" fill="#5FBB7E" opacity="0.50"/><circle cx="1128.3" cy="496.3" r="49.6" fill="#5FBB7E" opacity="0.53"/><circle cx="623.3" cy="860.2" r="47.4" fill="#5FBB7E" opacity="0.57"/><circle cx="933.0" cy="584.6" r="53.5" fill="#5FBB7E" opacity="0.47"/><circle cx="1041.5" cy="648.1" r="39.7" fill="#5FBB7E" opacity="0.48"/><circle cx="557.7" cy="545.6" r="30.0" fill="#5FBB7E" opacity="0.46"/><circle cx="1055.8" cy="594.3" r="67.1" fill="#5FBB7E" opacity="0.41"/><circle cx="931.3" cy="735.6" r="37.7" fill="#5FBB7E" opacity="0.77"/><circle cx="1005.3" cy="781.2" r="49.4" fill="#5FBB7E" opacity="0.68"/><circle cx="804.7" cy="609.9" r="45.8" fill="#5FBB7E" opacity="0.53"/><circle cx="943.0" cy="513.1" r="31.2" fill="#5FBB7E" opacity="0.64"/><circle cx="972.4" cy="892.5" r="53.6" fill="#5FBB7E" opacity="0.66"/><circle cx="852.4" cy="867.1" r="51.4" fill="#5FBB7E" opacity="0.48"/><circle cx="653.9" cy="683.4" r="57.4" fill="#5FBB7E" opacity="0.76"/><circle cx="1041.4" cy="532.8" r="52.4" fill="#5FBB7E" opacity="0.72"/><circle cx="740.2" cy="806.6" r="32.7" fill="#F0C24A" opacity="0.52"/><circle cx="1110.3" cy="674.3" r="50.4" fill="#5FBB7E" opacity="0.72"/><circle cx="960.8" cy="650.7" r="48.4" fill="#5FBB7E" opacity="0.58"/><circle cx="877.8" cy="461.3" r="51.4" fill="#5FBB7E" opacity="0.78"/></g>
+  <circle cx="858.4" cy="644.6" r="413.8" fill="none" stroke="#24503C" stroke-opacity="0.16" stroke-width="7.2"/>
+  <rect width="1600" height="1200" filter="url(#grain)" opacity="0.05"/>
+  <text x="80" y="1146" font-family="Helvetica, Arial, sans-serif" font-size="38" letter-spacing="4.8" fill="#24503C" opacity="0.4">MARCA · 1600×1200</text>
+</svg>

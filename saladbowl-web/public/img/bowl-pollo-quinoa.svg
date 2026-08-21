@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000" role="img" aria-label="Pollo y quinoa">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#E9EEE4"/>
+      <stop offset="100%" stop-color="#24503C" stop-opacity="0.14"/>
+    </radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="bowl"><circle cx="486.3" cy="546.7" r="322.2"/></clipPath>
+  </defs>
+  <rect width="1000" height="1000" fill="#E9EEE4"/>
+  <rect width="1000" height="1000" fill="url(#g)"/>
+  <circle cx="486.3" cy="546.7" r="360.9" fill="#24503C" opacity="0.07"/>
+  <circle cx="486.3" cy="546.7" r="322.2" fill="#FFFFFF" opacity="0.55"/>
+  <g clip-path="url(#bowl)"><circle cx="650.4" cy="627.6" r="39.5" fill="#5FBB7E" opacity="0.39"/><circle cx="689.2" cy="537.9" r="23.9" fill="#5FBB7E" opacity="0.71"/><circle cx="669.1" cy="655.7" r="35.3" fill="#5FBB7E" opacity="0.70"/><circle cx="321.9" cy="477.9" r="37.7" fill="#5FBB7E" opacity="0.44"/><circle cx="428.1" cy="362.7" r="35.4" fill="#5FBB7E" opacity="0.67"/><circle cx="703.2" cy="542.2" r="35.4" fill="#F0C24A" opacity="0.63"/><circle cx="419.7" cy="448.9" r="36.0" fill="#5FBB7E" opacity="0.67"/><circle cx="487.1" cy="779.4" r="28.9" fill="#5FBB7E" opacity="0.73"/><circle cx="368.9" cy="632.0" r="50.4" fill="#5FBB7E" opacity="0.54"/><circle cx="498.2" cy="647.1" r="23.0" fill="#5FBB7E" opacity="0.74"/><circle cx="401.0" cy="568.0" r="39.2" fill="#5FBB7E" opacity="0.72"/><circle cx="625.6" cy="753.1" r="29.2" fill="#5FBB7E" opacity="0.63"/><circle cx="612.8" cy="381.5" r="46.2" fill="#F0C24A" opacity="0.80"/><circle cx="469.4" cy="777.6" r="32.3" fill="#5FBB7E" opacity="0.36"/><circle cx="295.0" cy="580.2" r="47.7" fill="#5FBB7E" opacity="0.62"/><circle cx="346.3" cy="637.7" r="39.3" fill="#5FBB7E" opacity="0.39"/><circle cx="682.6" cy="568.6" r="40.5" fill="#5FBB7E" opacity="0.56"/></g>
+  <circle cx="486.3" cy="546.7" r="322.2" fill="none" stroke="#24503C" stroke-opacity="0.16" stroke-width="6.0"/>
+  <rect width="1000" height="1000" filter="url(#grain)" opacity="0.05"/>
+  <text x="50" y="955" font-family="Helvetica, Arial, sans-serif" font-size="32" letter-spacing="4.0" fill="#24503C" opacity="0.4">POLLO Y QUINOA · 1000×1000</text>
+</svg>

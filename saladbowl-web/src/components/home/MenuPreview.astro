@@ -1,0 +1,66 @@
+---
+import { bowls, formatPrice } from '../../data/menu.js';
+---
+
+<section id="menu" class="py-24 lg:py-36">
+  <div class="container-x">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 data-reveal class="max-w-[14ch] text-[2.6rem] sm:text-[3.4rem] lg:text-[4.2rem]">
+        Lo que sale hoy
+      </h2>
+      <a data-reveal data-delay="0.1" href="/menu" class="link-arrow pb-2 font-medium">
+        Ver el menú completo
+      </a>
+    </div>
+
+    <div data-stagger class="mt-12 grid grid-cols-2 gap-x-4 gap-y-9 sm:gap-x-6 sm:gap-y-12 lg:mt-20 lg:grid-cols-3">
+      {
+        bowls.map((bowl) => (
+          <a data-reveal href="/menu" class="bowl group block">
+            <div
+              data-media
+              class="aspect-square overflow-hidden rounded-[1.25rem] bg-cream-deep"
+            >
+              <img
+                src={bowl.image}
+                alt={`Bowl ${bowl.name}`}
+                width="1000"
+                height="1000"
+                loading="lazy"
+                class="h-full w-full object-cover"
+              />
+            </div>
+
+            <div class="mt-4 flex flex-wrap items-baseline justify-between gap-x-4 sm:mt-5">
+              <h3 class="text-[1.1rem] tracking-[-0.03em] sm:text-[1.35rem]">{bowl.name}</h3>
+              <span class="font-display text-[0.95rem] font-medium text-forest-soft sm:text-[1.05rem]">
+                {formatPrice(bowl.price)}
+              </span>
+            </div>
+            <p class="mt-2 hidden max-w-[34ch] text-[0.95rem] leading-relaxed text-forest-soft sm:block">
+              {bowl.description}
+            </p>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .bowl img {
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  @media (hover: hover) {
+    .bowl:hover img {
+      transform: scale(1.03);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bowl img {
+      transition: none;
+    }
+  }
+</style>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000" role="img" aria-label="Salmon">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#E9EEE4"/>
+      <stop offset="100%" stop-color="#24503C" stop-opacity="0.14"/>
+    </radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="bowl"><circle cx="430.1" cy="502.6" r="308.3"/></clipPath>
+  </defs>
+  <rect width="1000" height="1000" fill="#E9EEE4"/>
+  <rect width="1000" height="1000" fill="url(#g)"/>
+  <circle cx="430.1" cy="502.6" r="345.3" fill="#24503C" opacity="0.07"/>
+  <circle cx="430.1" cy="502.6" r="308.3" fill="#FFFFFF" opacity="0.55"/>
+  <g clip-path="url(#bowl)"><circle cx="435.4" cy="511.4" r="42.3" fill="#5FBB7E" opacity="0.42"/><circle cx="291.9" cy="334.4" r="24.3" fill="#5FBB7E" opacity="0.73"/><circle cx="465.6" cy="399.2" r="25.9" fill="#5FBB7E" opacity="0.64"/><circle cx="658.1" cy="500.7" r="47.5" fill="#5FBB7E" opacity="0.66"/><circle cx="603.9" cy="634.5" r="28.3" fill="#F0C24A" opacity="0.55"/><circle cx="446.5" cy="576.0" r="33.9" fill="#5FBB7E" opacity="0.70"/><circle cx="454.3" cy="608.5" r="32.7" fill="#5FBB7E" opacity="0.56"/><circle cx="283.9" cy="454.5" r="32.6" fill="#5FBB7E" opacity="0.74"/><circle cx="606.4" cy="374.6" r="43.8" fill="#5FBB7E" opacity="0.49"/><circle cx="546.4" cy="666.9" r="51.2" fill="#5FBB7E" opacity="0.59"/><circle cx="401.6" cy="560.2" r="38.5" fill="#5FBB7E" opacity="0.45"/><circle cx="446.3" cy="586.8" r="46.3" fill="#5FBB7E" opacity="0.76"/><circle cx="459.1" cy="665.8" r="47.5" fill="#5FBB7E" opacity="0.53"/><circle cx="352.0" cy="359.9" r="25.9" fill="#5FBB7E" opacity="0.50"/><circle cx="464.2" cy="326.3" r="43.3" fill="#F0C24A" opacity="0.52"/></g>
+  <circle cx="430.1" cy="502.6" r="308.3" fill="none" stroke="#24503C" stroke-opacity="0.16" stroke-width="6.0"/>
+  <rect width="1000" height="1000" filter="url(#grain)" opacity="0.05"/>
+  <text x="50" y="955" font-family="Helvetica, Arial, sans-serif" font-size="32" letter-spacing="4.0" fill="#24503C" opacity="0.4">SALMON · 1000×1000</text>
+</svg>

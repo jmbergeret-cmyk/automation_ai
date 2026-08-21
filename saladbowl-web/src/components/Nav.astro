@@ -1,0 +1,225 @@
+---
+import { navLinks, site } from '../data/site.js';
+---
+
+<header data-nav class="nav fixed inset-x-0 top-0 z-50">
+  <div class="container-x flex items-center justify-between gap-4">
+    <a href="/" class="nav-logo flex items-center gap-2.5" aria-label={`${site.name} — inicio`}>
+      <svg class="nav-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M4 17h24a12 12 0 0 1-24 0Z" fill="#4CAF6D"></path>
+        <circle cx="12" cy="10" r="3.4" fill="#1E3D2F"></circle>
+        <circle cx="20.5" cy="11.8" r="2.4" fill="#F5C542"></circle>
+      </svg>
+      <span class="nav-word font-display font-bold tracking-[-0.04em]">Saladbowl</span>
+    </a>
+
+    <nav class="hidden items-center gap-9 md:flex" aria-label="Principal">
+      {
+        navLinks.map((link) => (
+          <a href={link.href} class="nav-link text-[0.95rem] font-medium">
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a
+        href={site.orderUrl}
+        target="_blank"
+        rel="noopener"
+        class="rounded-full bg-leaf px-4 py-2.5 text-[0.82rem] font-semibold whitespace-nowrap text-white transition-colors duration-200 hover:bg-leaf-dark md:px-6 md:py-3 md:text-[0.9rem]"
+      >
+        Hacé tu pedido
+      </a>
+
+      <button
+        type="button"
+        data-menu-toggle
+        aria-expanded="false"
+        aria-controls="menu-movil"
+        class="flex h-11 w-11 items-center justify-center rounded-full border border-forest/15 md:hidden"
+      >
+        <span class="sr-only">Abrir menú</span>
+        <span class="burger" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div
+  id="menu-movil"
+  data-menu-panel
+  aria-hidden="true"
+  class="menu-panel fixed inset-0 z-40 flex flex-col justify-center bg-cream px-6 md:hidden"
+>
+  <nav class="flex flex-col gap-6" aria-label="Principal (móvil)">
+    {
+      navLinks.map((link) => (
+        <a href={link.href} class="font-display text-[3rem] leading-none font-semibold tracking-[-0.04em]">
+          {link.label}
+        </a>
+      ))
+    }
+  </nav>
+  <a
+    href={site.orderUrl}
+    target="_blank"
+    rel="noopener"
+    class="mt-12 inline-flex w-fit rounded-full bg-leaf px-7 py-4 font-semibold text-white"
+  >
+    Hacé tu pedido
+  </a>
+</div>
+
+<style>
+  .nav {
+    padding-block: 1.5rem;
+    transition:
+      padding-block 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 0.35s ease,
+      box-shadow 0.35s ease;
+  }
+
+  .nav.is-compact {
+    padding-block: 0.7rem;
+    background-color: color-mix(in srgb, var(--color-cream) 88%, transparent);
+    backdrop-filter: saturate(140%) blur(12px);
+    box-shadow: 0 1px 0 color-mix(in srgb, var(--color-forest) 10%, transparent);
+  }
+
+  .nav-word {
+    font-size: 1.2rem;
+    transition: font-size 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .nav-mark {
+    width: 1.7rem;
+    height: 1.7rem;
+    transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1), height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  @media (width >= 48rem) {
+    .nav-word {
+      font-size: 1.4rem;
+    }
+
+    .nav-mark {
+      width: 1.9rem;
+      height: 1.9rem;
+    }
+  }
+
+  .nav.is-compact .nav-word {
+    font-size: 1.1rem;
+  }
+
+  @media (width >= 48rem) {
+    .nav.is-compact .nav-word {
+      font-size: 1.2rem;
+    }
+  }
+
+  .nav.is-compact .nav-mark {
+    width: 1.45rem;
+    height: 1.45rem;
+  }
+
+  @media (width >= 48rem) {
+    .nav.is-compact .nav-mark {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+  }
+
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.35rem;
+    height: 1px;
+    width: 100%;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  .menu-panel {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition:
+      opacity 0.35s ease,
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 0.35s;
+  }
+
+  .menu-panel.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .burger {
+    display: block;
+    width: 1.1rem;
+  }
+
+  .burger i {
+    display: block;
+    height: 1.5px;
+    background-color: var(--color-forest);
+    transition: transform 0.3s ease;
+  }
+
+  .burger i + i {
+    margin-top: 0.35rem;
+  }
+
+  [aria-expanded='true'] .burger i:first-child {
+    transform: translateY(2.6px) rotate(45deg);
+  }
+
+  [aria-expanded='true'] .burger i:last-child {
+    transform: translateY(-2.6px) rotate(-45deg);
+  }
+</style>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+  const panel = document.querySelector<HTMLElement>('[data-menu-panel]');
+
+  if (toggle && panel) {
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.querySelector('.sr-only')!.textContent = open ? 'Cerrar menú' : 'Abrir menú';
+      panel.setAttribute('aria-hidden', String(!open));
+      panel.classList.toggle('is-open', open);
+      document.documentElement.style.overflow = open ? 'hidden' : '';
+    };
+
+    toggle.addEventListener('click', () => {
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+
+    panel.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setOpen(false);
+    });
+
+    // Al pasar a desktop el panel no debe quedar bloqueando el scroll.
+    window.matchMedia('(min-width: 48rem)').addEventListener('change', (event) => {
+      if (event.matches) setOpen(false);
+    });
+  }
+</script>
