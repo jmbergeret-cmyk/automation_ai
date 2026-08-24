@@ -7,7 +7,7 @@ import { navLinks, site } from '../data/site.js';
     <a href="/" class="nav-logo flex items-center gap-2.5" aria-label={`${site.name} — inicio`}>
       <svg class="nav-mark" viewBox="0 0 32 32" aria-hidden="true">
         <path d="M4 17h24a12 12 0 0 1-24 0Z" fill="#4CAF6D"></path>
-        <circle cx="12" cy="10" r="3.4" fill="#1E3D2F"></circle>
+        <circle cx="12" cy="10" r="3.4" fill="#FAF9F6"></circle>
         <circle cx="20.5" cy="11.8" r="2.4" fill="#F5C542"></circle>
       </svg>
       <span class="nav-word font-display font-bold tracking-[-0.04em]">Saladbowl</span>
@@ -38,7 +38,7 @@ import { navLinks, site } from '../data/site.js';
         data-menu-toggle
         aria-expanded="false"
         aria-controls="menu-movil"
-        class="flex h-11 w-11 items-center justify-center rounded-full border border-forest/15 md:hidden"
+        class="flex h-11 w-11 items-center justify-center rounded-full border border-cream/25 md:hidden"
       >
         <span class="sr-only">Abrir menú</span>
         <span class="burger" aria-hidden="true"><i></i><i></i></span>
@@ -51,7 +51,7 @@ import { navLinks, site } from '../data/site.js';
   id="menu-movil"
   data-menu-panel
   aria-hidden="true"
-  class="menu-panel fixed inset-0 z-40 flex flex-col justify-center bg-cream px-6 md:hidden"
+  class="menu-panel fixed inset-0 z-40 flex flex-col justify-center bg-forest px-6 md:hidden"
 >
   <nav class="flex flex-col gap-6" aria-label="Principal (móvil)">
     {
@@ -83,9 +83,9 @@ import { navLinks, site } from '../data/site.js';
 
   .nav.is-compact {
     padding-block: 0.7rem;
-    background-color: color-mix(in srgb, var(--color-cream) 88%, transparent);
+    background-color: color-mix(in srgb, var(--color-forest) 90%, transparent);
     backdrop-filter: saturate(140%) blur(12px);
-    box-shadow: 0 1px 0 color-mix(in srgb, var(--color-forest) 10%, transparent);
+    box-shadow: 0 1px 0 color-mix(in srgb, var(--color-cream) 12%, transparent);
   }
 
   .nav-word {
@@ -177,7 +177,7 @@ import { navLinks, site } from '../data/site.js';
   .burger i {
     display: block;
     height: 1.5px;
-    background-color: var(--color-forest);
+    background-color: var(--color-cream);
     transition: transform 0.3s ease;
   }
 

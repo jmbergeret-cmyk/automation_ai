@@ -8,6 +8,8 @@
   --color-cream: #faf9f6;
   --color-cream-deep: #f2f0e9;
   --color-forest: #1e3d2f;
+  --color-forest-deep: #16301f;
+  --color-forest-mid: #2c5541;
   --color-forest-soft: #3d5c4d;
   --color-leaf: #4caf6d;
   --color-leaf-dark: #3d9459;
@@ -30,9 +32,10 @@
     -webkit-text-size-adjust: 100%;
   }
 
+  /* El fondo de la marca es el verde: las secciones claras se apoyan encima. */
   body {
-    background-color: var(--color-cream);
-    color: var(--color-forest);
+    background-color: var(--color-forest);
+    color: var(--color-cream);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -44,7 +47,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-leaf);
+    outline: 2px solid var(--color-citrus);
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -82,9 +85,9 @@
   }
 }
 
-/* Línea fina de la marca, usada como separador de secciones */
+/* Línea fina de la marca, usada como separador de secciones sobre verde */
 @utility rule {
-  border-top: 1px solid color-mix(in srgb, var(--color-forest) 12%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--color-cream) 14%, transparent);
 }
 
 /* ---------------------------------------------------------------
