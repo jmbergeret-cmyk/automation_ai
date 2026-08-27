@@ -1,46 +1,151 @@
-export const bowls = [
+export const categories = [
+  { slug: 'bowls', label: 'Bowls' },
+  { slug: 'wraps', label: 'Wraps' },
+  { slug: 'bebidas', label: 'Bebidas' },
+  { slug: 'postres', label: 'Postres' },
+];
+
+/**
+ * Carta completa. `featured: true` marca lo que sale en la preview de la home.
+ */
+export const items = [
   {
     slug: 'verde-bravo',
     name: 'Verde Bravo',
     description: 'Rúcula, palta, pepino, edamame y aderezo de limón con jengibre.',
     price: 420,
+    category: 'bowls',
     image: '/img/bowl-verde-bravo.svg',
+    featured: true,
   },
   {
     slug: 'pollo-quinoa',
     name: 'Pollo & Quinoa',
     description: 'Pollo grillado, quinoa, zanahoria asada y yogur con ciboulette.',
     price: 480,
+    category: 'bowls',
     image: '/img/bowl-pollo-quinoa.svg',
+    featured: true,
   },
   {
     slug: 'cesar-del-barrio',
     name: 'César del Barrio',
     description: 'Cogollo, parmesano, croutons de masa madre y césar hecha acá.',
     price: 450,
+    category: 'bowls',
     image: '/img/bowl-cesar.svg',
+    featured: true,
   },
   {
     slug: 'falafel-de-casa',
     name: 'Falafel de Casa',
     description: 'Falafel horneado, hummus, tomate cherry, menta y tahini.',
     price: 440,
+    category: 'bowls',
     image: '/img/bowl-falafel.svg',
+    featured: true,
   },
   {
     slug: 'salmon-sesamo',
     name: 'Salmón & Sésamo',
     description: 'Salmón, arroz yamaní, palta, alga nori y sésamo tostado.',
     price: 590,
+    category: 'bowls',
     image: '/img/bowl-salmon.svg',
+    featured: true,
   },
   {
     slug: 'mediterraneo',
     name: 'Mediterráneo',
     description: 'Garbanzos, feta, aceitunas, pepino y oliva con orégano fresco.',
     price: 460,
+    category: 'bowls',
     image: '/img/bowl-mediterraneo.svg',
+    featured: true,
+  },
+  {
+    slug: 'wrap-cesar',
+    name: 'Wrap César',
+    description: 'Pollo, cogollo, parmesano y césar, en tortilla de trigo integral.',
+    price: 390,
+    category: 'wraps',
+    image: '/img/wrap-cesar.svg',
+  },
+  {
+    slug: 'wrap-falafel',
+    name: 'Wrap de Falafel',
+    description: 'Falafel, hummus, repollo colorado y tahini con limón.',
+    price: 380,
+    category: 'wraps',
+    image: '/img/wrap-falafel.svg',
+  },
+  {
+    slug: 'wrap-picante',
+    name: 'Wrap Picante',
+    description: 'Pollo marinado en ají, palta, choclo y salsa de yogur.',
+    price: 410,
+    category: 'wraps',
+    image: '/img/wrap-picante.svg',
+  },
+  {
+    slug: 'limonada',
+    name: 'Limonada de menta',
+    description: 'Exprimida en el día, con menta y jengibre.',
+    price: 160,
+    category: 'bebidas',
+    image: '/img/bebida-limonada.svg',
+  },
+  {
+    slug: 'jugo-verde',
+    name: 'Jugo verde del día',
+    description: 'Lo que haya bueno esa mañana. Preguntá en la barra.',
+    price: 190,
+    category: 'bebidas',
+    image: '/img/bebida-jugo-verde.svg',
+  },
+  {
+    slug: 'kombucha',
+    name: 'Kombucha de casa',
+    description: 'Fermentada acá, con pomelo y romero.',
+    price: 210,
+    category: 'bebidas',
+    image: '/img/bebida-kombucha.svg',
+  },
+  {
+    slug: 'agua-con-gas',
+    name: 'Agua con gas',
+    description: 'Fría, 500 ml.',
+    price: 90,
+    category: 'bebidas',
+    image: '/img/bebida-agua.svg',
+  },
+  {
+    slug: 'yogur-granola',
+    name: 'Yogur con granola',
+    description: 'Yogur natural, granola tostada y fruta de estación.',
+    price: 190,
+    category: 'postres',
+    image: '/img/postre-yogur.svg',
+  },
+  {
+    slug: 'budin-banana',
+    name: 'Budín de banana',
+    description: 'Con avena y nueces, sin azúcar agregada.',
+    price: 170,
+    category: 'postres',
+    image: '/img/postre-budin.svg',
+  },
+  {
+    slug: 'trufa-cacao',
+    name: 'Trufa de cacao',
+    description: 'Dátiles, cacao y almendras. Dos por porción.',
+    price: 120,
+    category: 'postres',
+    image: '/img/postre-trufa.svg',
   },
 ];
+
+/** Lo que se muestra en la home. */
+export const featured = items.filter((item) => item.featured);
 
 export const formatPrice = (value) => `$ ${value}`;

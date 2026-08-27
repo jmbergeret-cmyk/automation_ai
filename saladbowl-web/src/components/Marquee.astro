@@ -1,0 +1,74 @@
+---
+const phrases = ['fresco todos los días', 'hecho en el momento', 'ingredientes reales'];
+// Duplicamos la tira: la animación corre media vuelta y vuelve a empezar sin salto.
+const strip = [...phrases, ...phrases, ...phrases, ...phrases];
+---
+
+<div class="marquee border-y border-cream/12 bg-forest-deep py-5" aria-hidden="true">
+  <div class="marquee__track">
+    {
+      [0, 1].map(() => (
+        <ul class="marquee__group">
+          {strip.map((phrase) => (
+            <li>
+              {phrase}
+              <span class="marquee__dot">·</span>
+            </li>
+          ))}
+        </ul>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .marquee {
+    overflow: hidden;
+  }
+
+  .marquee__track {
+    display: flex;
+    width: max-content;
+    animation: marquee 60s linear infinite;
+  }
+
+  .marquee__group {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+    padding-right: 1.75rem;
+    list-style: none;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--color-cream) 55%, transparent);
+    white-space: nowrap;
+  }
+
+  .marquee__group li {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+  }
+
+  .marquee__dot {
+    color: var(--color-citrus);
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee__track {
+      animation-play-state: paused;
+    }
+  }
+</style>

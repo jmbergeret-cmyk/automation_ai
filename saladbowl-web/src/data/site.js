@@ -8,6 +8,17 @@ export const site = {
   whatsapp: 'https://wa.me/59899123456',
 };
 
+/**
+ * Video del hero. Mientras `video` sea null se muestra la foto (poster) sola.
+ * Para el video final: mp4 (H.264) para Safari + webm (VP9) para el resto,
+ * menos de 3 MB, sin audio, loop de 8 a 12 segundos.
+ */
+export const hero = {
+  video: { webm: '/video/hero.webm', mp4: null },
+  poster: '/img/hero.svg',
+  alt: 'Armado de un bowl en la barra: hojas, palta y aderezo',
+};
+
 export const navLinks = [
   { label: 'Menú', href: '/menu' },
   { label: 'Locales', href: '/locales' },

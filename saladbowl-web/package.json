@@ -9,7 +9,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "placeholders": "node scripts/generate-placeholders.mjs"
+    "placeholders": "node scripts/generate-placeholders.mjs",
+    "test": "node test/hours.test.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

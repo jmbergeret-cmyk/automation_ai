@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import LocationCard from '../components/LocationCard.astro';
+import { locations } from '../data/locations.js';
+import { site } from '../data/site.js';
+---
+
+<BaseLayout
+  title="Locales — Saladbowl"
+  description="Pocitos, Ciudad Vieja y Carrasco. Direcciones, horarios y estado en vivo de cada local."
+>
+  <PageHeader
+    eyebrow="Dónde estamos"
+    title="Tres locales en Montevideo"
+    lead="Todos con barra a la vista. El estado de cada uno se calcula con la hora de tu dispositivo."
+  />
+
+  <section class="bg-cream py-20 text-forest lg:py-28">
+    <div class="container-x">
+      <div data-stagger class="grid gap-x-6 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+        {locations.map((place) => <LocationCard place={place} />)}
+      </div>
+
+      <div class="mt-20 flex flex-wrap items-center gap-x-8 gap-y-4">
+        <a
+          href={site.orderUrl}
+          target="_blank"
+          rel="noopener"
+          class="rounded-full bg-leaf px-8 py-4 font-semibold text-white transition-colors duration-200 hover:bg-leaf-dark"
+        >
+          Hacé tu pedido
+        </a>
+        <p class="text-[0.95rem] text-forest-soft">
+          También llevamos a domicilio en un radio de 3 km de cada local.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

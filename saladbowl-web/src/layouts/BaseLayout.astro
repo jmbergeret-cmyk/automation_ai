@@ -1,6 +1,7 @@
 ---
 import '../styles/fonts.css';
 import '../styles/global.css';
+import { ClientRouter, fade } from 'astro:transitions';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import { site } from '../data/site.js';
@@ -38,6 +39,8 @@ const {
     />
     <link rel="preload" href="/fonts/inter-400-latin.woff2" as="font" type="font/woff2" crossorigin />
 
+    <ClientRouter />
+
     <script is:inline>
       // Los estados iniciales del movimiento sólo aplican si hay JS.
       document.documentElement.classList.add('js');
@@ -54,7 +57,7 @@ const {
 
     <Nav />
 
-    <main id="contenido">
+    <main id="contenido" transition:animate={fade({ duration: '0.25s' })}>
       <slot />
     </main>
 
@@ -62,6 +65,8 @@ const {
 
     <script>
       import '../scripts/motion.js';
+      import '../scripts/status.js';
+      import '../scripts/menu-filters.js';
     </script>
   </body>
 </html>

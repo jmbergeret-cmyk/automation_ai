@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000" role="img" aria-label="Wrap picante">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#E9EEE4"/>
+      <stop offset="100%" stop-color="#24503C" stop-opacity="0.14"/>
+    </radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="bowl"><circle cx="456.3" cy="502.9" r="328.0"/></clipPath>
+  </defs>
+  <rect width="1000" height="1000" fill="#E9EEE4"/>
+  <rect width="1000" height="1000" fill="url(#g)"/>
+  <circle cx="456.3" cy="502.9" r="367.4" fill="#24503C" opacity="0.07"/>
+  <circle cx="456.3" cy="502.9" r="328.0" fill="#FFFFFF" opacity="0.55"/>
+  <g clip-path="url(#bowl)"><circle cx="613.5" cy="332.8" r="45.7" fill="#F0C24A" opacity="0.46"/><circle cx="380.0" cy="577.6" r="50.3" fill="#5FBB7E" opacity="0.48"/><circle cx="449.9" cy="590.3" r="35.5" fill="#F0C24A" opacity="0.53"/><circle cx="463.6" cy="624.5" r="54.4" fill="#5FBB7E" opacity="0.58"/><circle cx="480.7" cy="626.1" r="48.2" fill="#F0C24A" opacity="0.44"/><circle cx="566.3" cy="299.4" r="53.3" fill="#5FBB7E" opacity="0.66"/><circle cx="320.6" cy="502.8" r="34.5" fill="#5FBB7E" opacity="0.61"/><circle cx="352.6" cy="349.7" r="52.5" fill="#5FBB7E" opacity="0.44"/><circle cx="398.1" cy="333.0" r="44.1" fill="#5FBB7E" opacity="0.38"/><circle cx="606.2" cy="584.5" r="48.3" fill="#5FBB7E" opacity="0.74"/><circle cx="549.6" cy="722.5" r="49.6" fill="#5FBB7E" opacity="0.79"/><circle cx="430.3" cy="330.7" r="34.4" fill="#5FBB7E" opacity="0.35"/><circle cx="363.4" cy="637.5" r="40.3" fill="#5FBB7E" opacity="0.55"/><circle cx="518.8" cy="456.2" r="41.7" fill="#5FBB7E" opacity="0.51"/><circle cx="467.4" cy="662.4" r="44.1" fill="#5FBB7E" opacity="0.41"/><circle cx="416.3" cy="553.9" r="54.4" fill="#5FBB7E" opacity="0.53"/><circle cx="237.6" cy="629.2" r="25.7" fill="#5FBB7E" opacity="0.47"/><circle cx="565.8" cy="567.3" r="55.7" fill="#5FBB7E" opacity="0.38"/></g>
+  <circle cx="456.3" cy="502.9" r="328.0" fill="none" stroke="#24503C" stroke-opacity="0.16" stroke-width="6.0"/>
+  <rect width="1000" height="1000" filter="url(#grain)" opacity="0.05"/>
+  <text x="50" y="955" font-family="Helvetica, Arial, sans-serif" font-size="32" letter-spacing="4.0" fill="#24503C" opacity="0.4">WRAP PICANTE · 1000×1000</text>
+</svg>

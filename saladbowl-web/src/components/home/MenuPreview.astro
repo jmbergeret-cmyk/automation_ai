@@ -1,5 +1,5 @@
 ---
-import { bowls, formatPrice } from '../../data/menu.js';
+import { featured, formatPrice } from '../../data/menu.js';
 ---
 
 <section id="menu" class="bg-cream py-24 text-forest lg:py-36">
@@ -15,7 +15,7 @@ import { bowls, formatPrice } from '../../data/menu.js';
 
     <div data-stagger class="mt-12 grid grid-cols-2 gap-x-4 gap-y-9 sm:gap-x-6 sm:gap-y-12 lg:mt-20 lg:grid-cols-3">
       {
-        bowls.map((bowl) => (
+        featured.map((bowl) => (
           <a data-reveal href="/menu" class="bowl group block">
             <div
               data-media

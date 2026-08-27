@@ -2,7 +2,7 @@
 import { navLinks, site } from '../data/site.js';
 ---
 
-<header data-nav class="nav fixed inset-x-0 top-0 z-50">
+<header data-nav transition:persist="nav" class="nav fixed inset-x-0 top-0 z-50">
   <div class="container-x flex items-center justify-between gap-4">
     <a href="/" class="nav-logo flex items-center gap-2.5" aria-label={`${site.name} — inicio`}>
       <svg class="nav-mark" viewBox="0 0 32 32" aria-hidden="true">
@@ -50,6 +50,7 @@ import { navLinks, site } from '../data/site.js';
 <div
   id="menu-movil"
   data-menu-panel
+  transition:persist="menu-panel"
   aria-hidden="true"
   class="menu-panel fixed inset-0 z-40 flex flex-col justify-center bg-forest px-6 md:hidden"
 >

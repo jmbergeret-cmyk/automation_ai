@@ -1,0 +1,45 @@
+---
+interface Props {
+  hours: Record<string, [string, string][]>;
+  class?: string;
+}
+const { hours, class: className = '' } = Astro.props;
+---
+
+<!-- Arranca oculto: lo pinta el cliente con la hora del dispositivo. -->
+<span class:list={['status', className]} data-status={JSON.stringify(hours)} hidden>
+  <span class="status__dot" aria-hidden="true"></span>
+  <span data-status-label></span>
+</span>
+
+<style>
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.3rem 0.7rem 0.3rem 0.55rem;
+    border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .status__dot {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 999px;
+    background-color: currentColor;
+    opacity: 0.4;
+  }
+
+  .status[data-state='open'] .status__dot {
+    background-color: var(--color-leaf);
+    opacity: 1;
+  }
+
+  .status[data-state='closing-soon'] .status__dot {
+    background-color: var(--color-citrus);
+    opacity: 1;
+  }
+</style>

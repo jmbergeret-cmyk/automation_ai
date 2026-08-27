@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000" role="img" aria-label="Kombucha">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#E9EEE4"/>
+      <stop offset="100%" stop-color="#24503C" stop-opacity="0.14"/>
+    </radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="bowl"><circle cx="541.4" cy="499.7" r="312.8"/></clipPath>
+  </defs>
+  <rect width="1000" height="1000" fill="#E9EEE4"/>
+  <rect width="1000" height="1000" fill="url(#g)"/>
+  <circle cx="541.4" cy="499.7" r="350.3" fill="#24503C" opacity="0.07"/>
+  <circle cx="541.4" cy="499.7" r="312.8" fill="#FFFFFF" opacity="0.55"/>
+  <g clip-path="url(#bowl)"><circle cx="672.0" cy="407.1" r="49.7" fill="#5FBB7E" opacity="0.68"/><circle cx="494.8" cy="572.6" r="42.5" fill="#5FBB7E" opacity="0.79"/><circle cx="643.0" cy="548.4" r="25.8" fill="#5FBB7E" opacity="0.69"/><circle cx="454.1" cy="688.1" r="51.8" fill="#5FBB7E" opacity="0.67"/><circle cx="318.0" cy="498.9" r="44.1" fill="#5FBB7E" opacity="0.74"/><circle cx="340.5" cy="602.0" r="32.1" fill="#5FBB7E" opacity="0.68"/><circle cx="360.3" cy="498.3" r="35.5" fill="#5FBB7E" opacity="0.65"/><circle cx="530.6" cy="436.9" r="27.1" fill="#5FBB7E" opacity="0.75"/><circle cx="615.9" cy="645.3" r="43.9" fill="#5FBB7E" opacity="0.80"/><circle cx="639.0" cy="496.2" r="44.0" fill="#5FBB7E" opacity="0.63"/><circle cx="367.6" cy="428.4" r="42.5" fill="#5FBB7E" opacity="0.74"/><circle cx="563.0" cy="726.7" r="23.7" fill="#5FBB7E" opacity="0.44"/><circle cx="718.3" cy="624.5" r="35.5" fill="#5FBB7E" opacity="0.75"/><circle cx="668.1" cy="321.8" r="30.5" fill="#5FBB7E" opacity="0.43"/><circle cx="622.2" cy="598.9" r="47.2" fill="#F0C24A" opacity="0.39"/></g>
+  <circle cx="541.4" cy="499.7" r="312.8" fill="none" stroke="#24503C" stroke-opacity="0.16" stroke-width="6.0"/>
+  <rect width="1000" height="1000" filter="url(#grain)" opacity="0.05"/>
+  <text x="50" y="955" font-family="Helvetica, Arial, sans-serif" font-size="32" letter-spacing="4.0" fill="#24503C" opacity="0.4">KOMBUCHA · 1000×1000</text>
+</svg>

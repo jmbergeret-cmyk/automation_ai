@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000" role="img" aria-label="Budin">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#E7EDE7"/>
+      <stop offset="100%" stop-color="#2A5641" stop-opacity="0.14"/>
+    </radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="bowl"><circle cx="430.8" cy="479.6" r="340.2"/></clipPath>
+  </defs>
+  <rect width="1000" height="1000" fill="#E7EDE7"/>
+  <rect width="1000" height="1000" fill="url(#g)"/>
+  <circle cx="430.8" cy="479.6" r="381.0" fill="#2A5641" opacity="0.07"/>
+  <circle cx="430.8" cy="479.6" r="340.2" fill="#FFFFFF" opacity="0.55"/>
+  <g clip-path="url(#bowl)"><circle cx="477.8" cy="289.5" r="39.9" fill="#4CAF6D" opacity="0.44"/><circle cx="209.5" cy="473.6" r="51.7" fill="#4CAF6D" opacity="0.68"/><circle cx="445.2" cy="615.2" r="46.7" fill="#4CAF6D" opacity="0.60"/><circle cx="508.7" cy="590.0" r="39.3" fill="#4CAF6D" opacity="0.69"/><circle cx="371.6" cy="289.2" r="25.1" fill="#F5C542" opacity="0.67"/><circle cx="340.9" cy="348.3" r="45.7" fill="#4CAF6D" opacity="0.47"/><circle cx="680.9" cy="487.2" r="37.2" fill="#4CAF6D" opacity="0.79"/><circle cx="679.2" cy="399.0" r="40.7" fill="#F5C542" opacity="0.51"/><circle cx="402.1" cy="264.3" r="51.4" fill="#4CAF6D" opacity="0.42"/><circle cx="480.6" cy="271.9" r="40.1" fill="#4CAF6D" opacity="0.51"/><circle cx="390.1" cy="240.7" r="45.9" fill="#4CAF6D" opacity="0.71"/><circle cx="392.5" cy="483.8" r="27.0" fill="#4CAF6D" opacity="0.50"/><circle cx="421.0" cy="296.1" r="50.0" fill="#4CAF6D" opacity="0.40"/><circle cx="425.8" cy="510.7" r="36.5" fill="#4CAF6D" opacity="0.77"/><circle cx="422.3" cy="494.6" r="34.3" fill="#4CAF6D" opacity="0.75"/><circle cx="232.4" cy="434.0" r="38.8" fill="#4CAF6D" opacity="0.46"/><circle cx="463.4" cy="374.6" r="25.8" fill="#4CAF6D" opacity="0.74"/></g>
+  <circle cx="430.8" cy="479.6" r="340.2" fill="none" stroke="#2A5641" stroke-opacity="0.16" stroke-width="6.0"/>
+  <rect width="1000" height="1000" filter="url(#grain)" opacity="0.05"/>
+  <text x="50" y="955" font-family="Helvetica, Arial, sans-serif" font-size="32" letter-spacing="4.0" fill="#2A5641" opacity="0.4">BUDIN · 1000×1000</text>
+</svg>

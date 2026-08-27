@@ -1,0 +1,24 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  lead?: string;
+}
+const { eyebrow, title, lead } = Astro.props;
+---
+
+<section class="pt-40 pb-16 lg:pt-52 lg:pb-24">
+  <div class="container-x" data-stagger>
+    <p data-reveal class="mb-6 text-[0.78rem] font-medium tracking-[0.18em] text-citrus uppercase">
+      {eyebrow}
+    </p>
+    <h1 data-reveal class="max-w-[16ch] text-[3rem] sm:text-[4rem] lg:text-[5rem]">{title}</h1>
+    {
+      lead && (
+        <p data-reveal class="mt-7 max-w-[52ch] text-[1.05rem] leading-relaxed text-cream/75">
+          {lead}
+        </p>
+      )
+    }
+  </div>
+</section>

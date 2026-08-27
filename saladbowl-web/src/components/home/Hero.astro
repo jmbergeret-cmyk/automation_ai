@@ -1,5 +1,5 @@
 ---
-import { site } from '../../data/site.js';
+import { hero, site } from '../../data/site.js';
 ---
 
 <section data-hero class="relative flex min-h-svh items-center pt-28 pb-16 lg:pt-32 lg:pb-24">
@@ -43,14 +43,38 @@ import { site } from '../../data/site.js';
         data-parallax-frame
         class="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-forest-mid sm:aspect-[3/4] lg:aspect-auto lg:h-[76vh]"
       >
-        <img
-          data-parallax
-          src="/img/hero.svg"
-          alt="Bowl de hojas verdes, palta y semillas recién armado sobre la barra"
-          width="1200"
-          height="1500"
-          class="absolute top-[-9%] left-0 h-[118%] w-full object-cover"
-        />
+        <div data-parallax class="absolute top-[-9%] left-0 h-[118%] w-full">
+          {
+            hero.video ? (
+              /*
+               * El video arranca sin src: lo engancha el JS sólo si la conexión
+               * da y no hay prefers-reduced-motion. Si no, queda el poster.
+               */
+              <video
+                data-hero-video
+                class="h-full w-full object-cover"
+                poster={hero.poster}
+                aria-label={hero.alt}
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              >
+                {hero.video.webm && <source data-src={hero.video.webm} type="video/webm" />}
+                {hero.video.mp4 && <source data-src={hero.video.mp4} type="video/mp4" />}
+              </video>
+            ) : (
+              <img
+                src={hero.poster}
+                alt={hero.alt}
+                width="1200"
+                height="1500"
+                class="h-full w-full object-cover"
+              />
+            )
+          }
+        </div>
       </div>
     </div>
   </div>

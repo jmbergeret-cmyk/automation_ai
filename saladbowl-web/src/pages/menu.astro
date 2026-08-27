@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { categories, items, formatPrice } from '../data/menu.js';
+import { site } from '../data/site.js';
+
+const filters = [{ slug: 'todo', label: 'Todo' }, ...categories];
+---
+
+<BaseLayout
+  title="Menú — Saladbowl"
+  description="Bowls, wraps, bebidas y postres. Todo se arma en el momento con verdura del día."
+>
+  <PageHeader
+    eyebrow="Carta"
+    title="Todo lo que sale de la barra"
+    lead="Cambiamos cosas según lo que consigamos en la mañana. Si algo no está, te lo decimos antes de que pidas."
+  />
+
+  <section class="bg-cream pb-24 text-forest lg:pb-36" data-menu>
+    <div class="container-x">
+      <!-- Filtros: quedan pegados arriba para poder filtrar mientras scrolleás. -->
+      <div class="filters sticky top-16 z-30 -mx-6 bg-cream px-6 py-4 md:-mx-10 md:px-10 xl:-mx-16 xl:px-16">
+        <div class="flex items-center justify-between gap-4">
+          <div class="filters__scroll flex gap-2 overflow-x-auto">
+            {
+              filters.map((filter, index) => (
+                <button
+                  type="button"
+                  data-filter={filter.slug}
+                  aria-pressed={index === 0 ? 'true' : 'false'}
+                  class:list={['chip', index === 0 && 'is-active']}
+                >
+                  {filter.label}
+                </button>
+              ))
+            }
+          </div>
+          <span
+            data-menu-count
+            class="hidden shrink-0 text-[0.85rem] text-forest-soft tabular-nums sm:block"
+          ></span>
+        </div>
+      </div>
+
+      <div class="mt-10 grid grid-cols-2 gap-x-4 gap-y-9 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-3">
+        {
+          items.map((item) => (
+            <article data-item data-category={item.category} class="bowl">
+              <div data-media class="aspect-square overflow-hidden rounded-[1.25rem] bg-cream-deep">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  width="1000"
+                  height="1000"
+                  loading="lazy"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+
+              <div class="mt-4 flex flex-wrap items-baseline justify-between gap-x-4 sm:mt-5">
+                <h2 class="text-[1.1rem] tracking-[-0.03em] sm:text-[1.35rem]">{item.name}</h2>
+                <span class="font-display text-[0.95rem] font-medium text-forest-soft tabular-nums sm:text-[1.05rem]">
+                  {formatPrice(item.price)}
+                </span>
+              </div>
+              <p class="mt-2 max-w-[34ch] text-[0.9rem] leading-relaxed text-forest-soft sm:text-[0.95rem]">
+                {item.description}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+
+      <div class="mt-20 flex flex-wrap items-center gap-x-8 gap-y-4">
+        <a
+          href={site.orderUrl}
+          target="_blank"
+          rel="noopener"
+          class="rounded-full bg-leaf px-8 py-4 font-semibold text-white transition-colors duration-200 hover:bg-leaf-dark"
+        >
+          Hacé tu pedido
+        </a>
+        <p class="text-[0.95rem] text-forest-soft">
+          ¿Alguna restricción? Preguntá en la barra: casi todo se puede adaptar.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .filters {
+    border-bottom: 1px solid color-mix(in srgb, var(--color-forest) 10%, transparent);
+  }
+
+  .filters__scroll {
+    scrollbar-width: none;
+  }
+
+  .filters__scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .chip {
+    flex-shrink: 0;
+    padding: 0.55rem 1.1rem;
+    border: 1px solid color-mix(in srgb, var(--color-forest) 15%, transparent);
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-forest);
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease,
+      border-color 0.25s ease;
+  }
+
+  .chip:hover {
+    border-color: color-mix(in srgb, var(--color-forest) 35%, transparent);
+  }
+
+  .chip.is-active {
+    background-color: var(--color-forest);
+    border-color: var(--color-forest);
+    color: var(--color-cream);
+  }
+
+  .is-hidden {
+    display: none;
+  }
+
+  .bowl img {
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  @media (hover: hover) {
+    .bowl:hover img {
+      transform: scale(1.03);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bowl img {
+      transition: none;
+    }
+  }
+</style>

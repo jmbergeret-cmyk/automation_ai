@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000" role="img" aria-label="Trufa">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#EDEFE6"/>
+      <stop offset="100%" stop-color="#1E3D2F" stop-opacity="0.14"/>
+    </radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/><feColorMatrix type="saturate" values="0"/></filter>
+    <clipPath id="bowl"><circle cx="545.9" cy="539.4" r="319.7"/></clipPath>
+  </defs>
+  <rect width="1000" height="1000" fill="#EDEFE6"/>
+  <rect width="1000" height="1000" fill="url(#g)"/>
+  <circle cx="545.9" cy="539.4" r="358.1" fill="#1E3D2F" opacity="0.07"/>
+  <circle cx="545.9" cy="539.4" r="319.7" fill="#FFFFFF" opacity="0.55"/>
+  <g clip-path="url(#bowl)"><circle cx="625.4" cy="596.1" r="28.8" fill="#F5C542" opacity="0.49"/><circle cx="741.0" cy="621.9" r="49.4" fill="#4CAF6D" opacity="0.43"/><circle cx="614.8" cy="723.6" r="35.7" fill="#4CAF6D" opacity="0.74"/><circle cx="625.5" cy="417.0" r="44.2" fill="#4CAF6D" opacity="0.69"/><circle cx="333.7" cy="598.6" r="30.6" fill="#4CAF6D" opacity="0.48"/><circle cx="465.1" cy="461.9" r="39.7" fill="#4CAF6D" opacity="0.53"/><circle cx="354.8" cy="548.1" r="46.0" fill="#4CAF6D" opacity="0.40"/><circle cx="702.2" cy="497.7" r="44.5" fill="#4CAF6D" opacity="0.51"/><circle cx="408.0" cy="660.3" r="36.4" fill="#4CAF6D" opacity="0.72"/><circle cx="521.3" cy="736.5" r="49.2" fill="#4CAF6D" opacity="0.73"/><circle cx="605.8" cy="338.8" r="52.4" fill="#4CAF6D" opacity="0.76"/><circle cx="653.1" cy="465.6" r="30.4" fill="#4CAF6D" opacity="0.42"/><circle cx="588.4" cy="689.1" r="42.0" fill="#4CAF6D" opacity="0.51"/><circle cx="618.6" cy="744.9" r="36.0" fill="#F5C542" opacity="0.46"/><circle cx="755.2" cy="451.2" r="34.3" fill="#4CAF6D" opacity="0.58"/></g>
+  <circle cx="545.9" cy="539.4" r="319.7" fill="none" stroke="#1E3D2F" stroke-opacity="0.16" stroke-width="6.0"/>
+  <rect width="1000" height="1000" filter="url(#grain)" opacity="0.05"/>
+  <text x="50" y="955" font-family="Helvetica, Arial, sans-serif" font-size="32" letter-spacing="4.0" fill="#1E3D2F" opacity="0.4">TRUFA · 1000×1000</text>
+</svg>
