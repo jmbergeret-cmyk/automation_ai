@@ -14,9 +14,14 @@ npm run preview
 
 ## Estado
 
-- **Home**: completa, con todo el sistema de movimiento.
-- `/menu`, `/locales`, `/nosotros`: todavía no existen (los links del nav y de las
-  secciones ya apuntan ahí).
+- **Home**: completa, con todo el sistema de movimiento, video en el hero y marquee.
+- **/menu**: carta completa con filtros por categoría (FLIP) y barra sticky.
+- **/locales**: cards con estado "abierto ahora" en vivo.
+- **/nosotros**: sólo estructura, falta el texto largo y las fotos.
+
+```bash
+npm test   # tests de la lógica de horarios (bordes de apertura y cierre)
+```
 
 ## Estructura
 
@@ -27,9 +32,13 @@ src/
   data/               site.js, menu.js, locations.js  ← el contenido editable
   layouts/            BaseLayout.astro
   pages/              index.astro
+  lib/hours.js        estado de los locales (puro, testeado en test/)
   scripts/motion.js   GSAP + Lenis: todo el movimiento vive acá
+  scripts/status.js   pinta el estado "abierto ahora"
+  scripts/menu-filters.js  filtros de /menu con FLIP
   styles/             global.css (tokens + base), fonts.css (@font-face)
 public/img/           placeholders de fotos
+public/video/         loop del hero (placeholder)
 public/fonts/         Archivo + Inter (subsets latin y latin-ext)
 ```
 
@@ -67,6 +76,24 @@ Con `prefers-reduced-motion: reduce` no se inicializa Lenis ni ninguna animació
 todo queda en su estado final. Sin JS también se ve el sitio completo (los
 estados iniciales cuelgan de `.js`).
 
+## Video del hero
+
+`src/data/site.js` → `hero.video`. Mientras haya un video, se muestra el video;
+si se pone `video: null`, se muestra la foto (`hero.poster`) y no cambia nada más.
+
+El `src` no está en el HTML: lo engancha `motion.js` sólo si la conexión da y no
+hay `prefers-reduced-motion`. En cualquier otro caso queda el poster. Para el
+video final: mp4 (H.264) **y** webm (VP9), sin audio, 8–12 s, menos de 3 MB.
+El que está ahora es un placeholder generado con la foto placeholder.
+
+## Horarios y estado de los locales
+
+Se editan en un solo lugar: `src/data/locations.js`, por día de la semana
+(0 = domingo). De ahí salen tanto el texto ("Lun a Vie 11:30–22:00") como el
+estado en vivo. Un rango que cierra antes de abrir se entiende como cruce de
+medianoche (20:00–01:00). El aviso de "cierra pronto" son los últimos 45
+minutos: se cambia en `CLOSING_SOON_MINUTES` (`src/lib/hours.js`).
+
 ## Fotos
 
 Los archivos de `public/img` son placeholders SVG con las proporciones finales:
@@ -85,5 +112,6 @@ generar.
 ## Pendientes
 
 - Link real del ecommerce en `src/data/site.js` (`orderUrl`).
+- Logo y fotos reales; video final del hero.
 - Direcciones, horarios, precios y redes: hoy son datos de ejemplo.
-- Páginas `/menu`, `/locales`, `/nosotros`.
+- Texto y fotos de `/nosotros`.
