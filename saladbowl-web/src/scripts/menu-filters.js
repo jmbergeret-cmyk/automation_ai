@@ -50,7 +50,15 @@ function init() {
         return;
       }
 
-      const state = Flip.getState(cards);
+      // Sólo medimos las cards que cambian de estado o que quedan visibles:
+      // medir las 16 en un celular de gama media cuesta un frame largo.
+      const targets = cards.filter((card) => {
+        const visible = !card.classList.contains('is-hidden');
+        const quedará = category === 'todo' || card.dataset.category === category;
+        return visible || quedará;
+      });
+
+      const state = Flip.getState(targets, { simple: true });
       apply(cards, category);
       updateCount();
 

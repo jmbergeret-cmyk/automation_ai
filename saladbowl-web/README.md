@@ -86,6 +86,12 @@ hay `prefers-reduced-motion`. En cualquier otro caso queda el poster. Para el
 video final: mp4 (H.264) **y** webm (VP9), sin audio, 8–12 s, menos de 3 MB.
 El que está ahora es un placeholder generado con la foto placeholder.
 
+El hero va a sangre con el claim encima, así que el video se recorta según la
+pantalla: conviene filmar **apaisado (16:9)** dejando aire a la izquierda —ahí
+va el texto— y con la acción hacia el centro-derecha. Si más adelante quieren
+un plano vertical para mobile, `initHeroVideo()` en `motion.js` es el lugar
+donde elegir la fuente según el viewport.
+
 ## Horarios y estado de los locales
 
 Se editan en un solo lugar: `src/data/locations.js`, por día de la semana
