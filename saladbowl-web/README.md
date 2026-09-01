@@ -3,6 +3,9 @@
 Sitio de Saladbowl (fast-casual saludable, Montevideo). Astro + Tailwind + GSAP
 ScrollTrigger + Lenis.
 
+> **¿Tenés material para pasarme?** Está todo explicado en
+> [MATERIAL.md](./MATERIAL.md): va en `material/`, con el nombre que sea.
+
 ## Correr el proyecto
 
 ```bash
