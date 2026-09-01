@@ -4,7 +4,7 @@ const phrases = ['fresco todos los días', 'hecho en el momento', 'ingredientes 
 const strip = [...phrases, ...phrases, ...phrases, ...phrases];
 ---
 
-<div class="marquee border-y border-cream/12 bg-forest-deep py-5" aria-hidden="true">
+<div class="marquee border-y border-crema/12 bg-verde-2 py-5" aria-hidden="true">
   <div class="marquee__track">
     {
       [0, 1].map(() => (
@@ -43,7 +43,7 @@ const strip = [...phrases, ...phrases, ...phrases, ...phrases];
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: color-mix(in srgb, var(--color-cream) 55%, transparent);
+    color: color-mix(in srgb, var(--color-crema) 55%, transparent);
     white-space: nowrap;
   }
 
@@ -54,7 +54,7 @@ const strip = [...phrases, ...phrases, ...phrases, ...phrases];
   }
 
   .marquee__dot {
-    color: var(--color-citrus);
+    color: var(--color-rosado);
   }
 
   @keyframes marquee {

@@ -4,16 +4,21 @@
    Design tokens
    --------------------------------------------------------------- */
 @theme {
-  /* Paleta */
-  --color-cream: #faf9f6;
-  --color-cream-deep: #f2f0e9;
-  --color-forest: #1e3d2f;
-  --color-forest-deep: #16301f;
-  --color-forest-mid: #2c5541;
-  --color-forest-soft: #3d5c4d;
-  --color-leaf: #4caf6d;
-  --color-leaf-dark: #3d9459;
-  --color-citrus: #f5c542;
+  /*
+   * Paleta del manual de marca (manualmarca-saladbowl - DEFINITIVO.pdf, pág. 3).
+   * El crema no está en el manual: lo agregamos como neutro claro para las
+   * secciones donde manda la foto.
+   */
+  --color-verde: #143316;
+  --color-verde-2: #1d4620;
+  --color-verde-3: #2e6930;
+  --color-negro: #222222;
+  --color-azul: #30638e;
+  --color-rosado: #ffbcc8;
+  --color-rojo: #ef6048;
+  --color-rojo-oscuro: #d94e37;
+  --color-crema: #faf9f6;
+  --color-crema-2: #f2f0e9;
 
   /* Tipografía */
   --font-display: 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -34,20 +39,20 @@
 
   /* El fondo de la marca es el verde: las secciones claras se apoyan encima. */
   body {
-    background-color: var(--color-forest);
-    color: var(--color-cream);
+    background-color: var(--color-verde);
+    color: var(--color-crema);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
   ::selection {
-    background-color: var(--color-citrus);
-    color: var(--color-forest);
+    background-color: var(--color-rosado);
+    color: var(--color-verde);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-citrus);
+    outline: 2px solid var(--color-rosado);
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -87,7 +92,7 @@
 
 /* Línea fina de la marca, usada como separador de secciones sobre verde */
 @utility rule {
-  border-top: 1px solid color-mix(in srgb, var(--color-cream) 14%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--color-crema) 14%, transparent);
 }
 
 /* ---------------------------------------------------------------

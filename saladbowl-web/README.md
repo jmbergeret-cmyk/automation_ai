@@ -43,21 +43,30 @@ src/
 public/img/           placeholders de fotos
 public/video/         loop del hero (placeholder)
 public/fonts/         Archivo + Inter (subsets latin y latin-ext)
+public/logo/          logo e isotipo recortados (scripts/prepare-logo.mjs)
+material/             material original de la marca (ver MATERIAL.md)
 ```
 
 ## Sistema visual
 
-| Token             | Valor     | Uso                              |
-| ----------------- | --------- | -------------------------------- |
-| `cream`           | `#FAF9F6` | fondo                            |
-| `cream-deep`      | `#F2F0E9` | franjas y marcos de foto         |
-| `forest`          | `#1E3D2F` | textos, nav, secciones oscuras   |
-| `forest-soft`     | `#3D5C4D` | texto secundario                 |
-| `leaf`            | `#4CAF6D` | sólo CTAs                        |
-| `citrus`          | `#F5C542` | acento, con cuentagotas          |
+| Token | Hex | Uso |
+| --- | --- | --- |
+| `verde` | `#143316` | fondo del sitio (verde primario del manual) |
+| `verde-2` | `#1D4620` | bandas y marcos de foto (verde secundario) |
+| `verde-3` | `#2E6930` | texto secundario sobre claro (verde terciario) |
+| `crema` | `#FAF9F6` | secciones donde manda la foto |
+| `crema-2` | `#F2F0E9` | marcos de foto sobre crema |
+| `rojo` | `#EF6048` | CTAs |
+| `rosado` | `#FFBCC8` | acentos (volanta, links) |
+| `negro` / `azul` | `#222222` / `#30638E` | del manual, todavía sin uso |
+
+La paleta sale del manual de marca (`material/marca`, pág. 3). El crema es el
+único color que no está en el manual: lo agregamos como neutro claro. El texto
+de los CTAs va en `verde` sobre el coral, que da mejor contraste que el blanco.
 
 Tipografía: **Archivo** para títulos (600–700, tracking `-0.035em`), **Inter**
-para cuerpo. Están servidas desde `/public/fonts` para no depender del CDN; en
+para cuerpo. El manual no define tipografía de texto; el logotipo es una serif
+de alto contraste, así que queda abierto si los títulos la acompañan. Están servidas desde `/public/fonts` para no depender del CDN; en
 `src/styles/fonts.css` está el comentario con el `<link>` de Google Fonts por si
 se prefiere volver a esa vía.
 

@@ -14,10 +14,10 @@ import Marquee from '../components/Marquee.astro';
     lead="Esta página está en obra. Va la estructura; el texto largo y las fotos entran cuando estén."
   />
 
-  <section class="bg-cream py-24 text-forest lg:py-32">
+  <section class="bg-crema py-24 text-verde lg:py-32">
     <div class="container-x grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
       <div class="lg:col-span-6">
-        <div data-media class="aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-cream-deep">
+        <div data-media class="aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-crema-2">
           <img
             src="/img/marca.svg"
             alt="Barra de Saladbowl durante el servicio del mediodía"
@@ -31,11 +31,11 @@ import Marquee from '../components/Marquee.astro';
 
       <div data-stagger class="lg:col-span-6">
         <h2 data-reveal class="text-[2.2rem] sm:text-[2.8rem]">Empezamos con un local chico</h2>
-        <p data-reveal class="mt-6 max-w-[52ch] leading-relaxed text-forest-soft">
+        <p data-reveal class="mt-6 max-w-[52ch] leading-relaxed text-verde-3">
           En 2019 abrimos en Pocitos con una barra de cuatro metros. La idea era simple: si la
           materia prima es buena, no hace falta esconderla atrás de una salsa.
         </p>
-        <p data-reveal class="mt-4 max-w-[52ch] leading-relaxed text-forest-soft">
+        <p data-reveal class="mt-4 max-w-[52ch] leading-relaxed text-verde-3">
           [Pendiente: historia completa, fotos del equipo y el detalle de cada proveedor.]
         </p>
       </div>
@@ -59,7 +59,7 @@ import Marquee from '../components/Marquee.astro';
           ].map(([title, text]) => (
             <div data-reveal class="max-w-[38ch]">
               <h3 class="text-[1.4rem]">{title}</h3>
-              <p class="mt-3 leading-relaxed text-cream/70">{text}</p>
+              <p class="mt-3 leading-relaxed text-crema/70">{text}</p>
             </div>
           ))
         }

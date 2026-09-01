@@ -5,12 +5,13 @@ import { navLinks, site } from '../data/site.js';
 <header data-nav transition:persist="nav" class="nav fixed inset-x-0 top-0 z-50">
   <div class="container-x flex items-center justify-between gap-4">
     <a href="/" class="nav-logo flex items-center gap-2.5" aria-label={`${site.name} — inicio`}>
-      <svg class="nav-mark" viewBox="0 0 32 32" aria-hidden="true">
-        <path d="M4 17h24a12 12 0 0 1-24 0Z" fill="#4CAF6D"></path>
-        <circle cx="12" cy="10" r="3.4" fill="#FAF9F6"></circle>
-        <circle cx="20.5" cy="11.8" r="2.4" fill="#F5C542"></circle>
-      </svg>
-      <span class="nav-word font-display font-bold tracking-[-0.04em]">Saladbowl</span>
+      <img
+        src="/logo/wordmark.png"
+        alt="Saladbowl"
+        width="898"
+        height="177"
+        class="nav-logo__img"
+      />
     </a>
 
     <nav class="hidden items-center gap-9 md:flex" aria-label="Principal">
@@ -28,7 +29,7 @@ import { navLinks, site } from '../data/site.js';
         href={site.orderUrl}
         target="_blank"
         rel="noopener"
-        class="rounded-full bg-leaf px-4 py-2.5 text-[0.82rem] font-semibold whitespace-nowrap text-white transition-colors duration-200 hover:bg-leaf-dark md:px-6 md:py-3 md:text-[0.9rem]"
+        class="rounded-full bg-rojo px-4 py-2.5 text-[0.82rem] font-semibold whitespace-nowrap text-verde transition-colors duration-200 hover:bg-rojo-oscuro md:px-6 md:py-3 md:text-[0.9rem]"
       >
         Hacé tu pedido
       </a>
@@ -38,7 +39,7 @@ import { navLinks, site } from '../data/site.js';
         data-menu-toggle
         aria-expanded="false"
         aria-controls="menu-movil"
-        class="flex h-11 w-11 items-center justify-center rounded-full border border-cream/25 md:hidden"
+        class="flex h-11 w-11 items-center justify-center rounded-full border border-crema/25 md:hidden"
       >
         <span class="sr-only">Abrir menú</span>
         <span class="burger" aria-hidden="true"><i></i><i></i></span>
@@ -52,7 +53,7 @@ import { navLinks, site } from '../data/site.js';
   data-menu-panel
   transition:persist="menu-panel"
   aria-hidden="true"
-  class="menu-panel fixed inset-0 z-40 flex flex-col justify-center bg-forest px-6 md:hidden"
+  class="menu-panel fixed inset-0 z-40 flex flex-col justify-center bg-verde px-6 md:hidden"
 >
   <nav class="flex flex-col gap-6" aria-label="Principal (móvil)">
     {
@@ -67,7 +68,7 @@ import { navLinks, site } from '../data/site.js';
     href={site.orderUrl}
     target="_blank"
     rel="noopener"
-    class="mt-12 inline-flex w-fit rounded-full bg-leaf px-7 py-4 font-semibold text-white"
+    class="mt-12 inline-flex w-fit rounded-full bg-rojo px-7 py-4 font-semibold text-verde"
   >
     Hacé tu pedido
   </a>
@@ -84,52 +85,30 @@ import { navLinks, site } from '../data/site.js';
 
   .nav.is-compact {
     padding-block: 0.7rem;
-    background-color: color-mix(in srgb, var(--color-forest) 90%, transparent);
+    background-color: color-mix(in srgb, var(--color-verde) 90%, transparent);
     backdrop-filter: saturate(140%) blur(12px);
-    box-shadow: 0 1px 0 color-mix(in srgb, var(--color-cream) 12%, transparent);
+    box-shadow: 0 1px 0 color-mix(in srgb, var(--color-crema) 12%, transparent);
   }
 
-  .nav-word {
-    font-size: 1.2rem;
-    transition: font-size 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  .nav-mark {
-    width: 1.7rem;
-    height: 1.7rem;
-    transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1), height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  .nav-logo__img {
+    width: auto;
+    height: 1.5rem;
+    transition: height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   @media (width >= 48rem) {
-    .nav-word {
-      font-size: 1.4rem;
-    }
-
-    .nav-mark {
-      width: 1.9rem;
-      height: 1.9rem;
+    .nav-logo__img {
+      height: 1.75rem;
     }
   }
 
-  .nav.is-compact .nav-word {
-    font-size: 1.1rem;
+  .nav.is-compact .nav-logo__img {
+    height: 1.25rem;
   }
 
   @media (width >= 48rem) {
-    .nav.is-compact .nav-word {
-      font-size: 1.2rem;
-    }
-  }
-
-  .nav.is-compact .nav-mark {
-    width: 1.45rem;
-    height: 1.45rem;
-  }
-
-  @media (width >= 48rem) {
-    .nav.is-compact .nav-mark {
-      width: 1.6rem;
-      height: 1.6rem;
+    .nav.is-compact .nav-logo__img {
+      height: 1.4rem;
     }
   }
 
@@ -178,7 +157,7 @@ import { navLinks, site } from '../data/site.js';
   .burger i {
     display: block;
     height: 1.5px;
-    background-color: var(--color-cream);
+    background-color: var(--color-crema);
     transition: transform 0.3s ease;
   }
 

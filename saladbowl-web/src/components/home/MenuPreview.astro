@@ -2,7 +2,7 @@
 import { featured, formatPrice } from '../../data/menu.js';
 ---
 
-<section id="menu" class="bg-cream py-24 text-forest lg:py-36">
+<section id="menu" class="bg-crema py-24 text-verde lg:py-36">
   <div class="container-x">
     <div class="flex flex-wrap items-end justify-between gap-6">
       <h2 data-reveal class="max-w-[14ch] text-[2.6rem] sm:text-[3.4rem] lg:text-[4.2rem]">
@@ -19,7 +19,7 @@ import { featured, formatPrice } from '../../data/menu.js';
           <a data-reveal href="/menu" class="bowl group block">
             <div
               data-media
-              class="aspect-square overflow-hidden rounded-[1.25rem] bg-cream-deep"
+              class="aspect-square overflow-hidden rounded-[1.25rem] bg-crema-2"
             >
               <img
                 src={bowl.image}
@@ -33,11 +33,11 @@ import { featured, formatPrice } from '../../data/menu.js';
 
             <div class="mt-4 flex flex-wrap items-baseline justify-between gap-x-4 sm:mt-5">
               <h3 class="text-[1.1rem] tracking-[-0.03em] sm:text-[1.35rem]">{bowl.name}</h3>
-              <span class="font-display text-[0.95rem] font-medium text-forest-soft sm:text-[1.05rem]">
+              <span class="font-display text-[0.95rem] font-medium text-verde-3 sm:text-[1.05rem]">
                 {formatPrice(bowl.price)}
               </span>
             </div>
-            <p class="mt-2 hidden max-w-[34ch] text-[0.95rem] leading-relaxed text-forest-soft sm:block">
+            <p class="mt-2 hidden max-w-[34ch] text-[0.95rem] leading-relaxed text-verde-3 sm:block">
               {bowl.description}
             </p>
           </a>

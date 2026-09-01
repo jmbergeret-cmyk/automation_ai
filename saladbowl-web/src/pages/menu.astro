@@ -17,10 +17,10 @@ const filters = [{ slug: 'todo', label: 'Todo' }, ...categories];
     lead="Cambiamos cosas según lo que consigamos en la mañana. Si algo no está, te lo decimos antes de que pidas."
   />
 
-  <section class="bg-cream pb-24 text-forest lg:pb-36" data-menu>
+  <section class="bg-crema pb-24 text-verde lg:pb-36" data-menu>
     <div class="container-x">
       <!-- Filtros: quedan pegados arriba para poder filtrar mientras scrolleás. -->
-      <div class="filters sticky top-16 z-30 -mx-6 bg-cream px-6 py-4 md:-mx-10 md:px-10 xl:-mx-16 xl:px-16">
+      <div class="filters sticky top-16 z-30 -mx-6 bg-crema px-6 py-4 md:-mx-10 md:px-10 xl:-mx-16 xl:px-16">
         <div class="flex items-center justify-between gap-4">
           <div class="filters__scroll flex gap-2 overflow-x-auto">
             {
@@ -38,7 +38,7 @@ const filters = [{ slug: 'todo', label: 'Todo' }, ...categories];
           </div>
           <span
             data-menu-count
-            class="hidden shrink-0 text-[0.85rem] text-forest-soft tabular-nums sm:block"
+            class="hidden shrink-0 text-[0.85rem] text-verde-3 tabular-nums sm:block"
           ></span>
         </div>
       </div>
@@ -47,7 +47,7 @@ const filters = [{ slug: 'todo', label: 'Todo' }, ...categories];
         {
           items.map((item) => (
             <article data-item data-category={item.category} class="bowl">
-              <div data-media class="aspect-square overflow-hidden rounded-[1.25rem] bg-cream-deep">
+              <div data-media class="aspect-square overflow-hidden rounded-[1.25rem] bg-crema-2">
                 <img
                   src={item.image}
                   alt={item.name}
@@ -60,11 +60,11 @@ const filters = [{ slug: 'todo', label: 'Todo' }, ...categories];
 
               <div class="mt-4 flex flex-wrap items-baseline justify-between gap-x-4 sm:mt-5">
                 <h2 class="text-[1.1rem] tracking-[-0.03em] sm:text-[1.35rem]">{item.name}</h2>
-                <span class="font-display text-[0.95rem] font-medium text-forest-soft tabular-nums sm:text-[1.05rem]">
+                <span class="font-display text-[0.95rem] font-medium text-verde-3 tabular-nums sm:text-[1.05rem]">
                   {formatPrice(item.price)}
                 </span>
               </div>
-              <p class="mt-2 max-w-[34ch] text-[0.9rem] leading-relaxed text-forest-soft sm:text-[0.95rem]">
+              <p class="mt-2 max-w-[34ch] text-[0.9rem] leading-relaxed text-verde-3 sm:text-[0.95rem]">
                 {item.description}
               </p>
             </article>
@@ -77,11 +77,11 @@ const filters = [{ slug: 'todo', label: 'Todo' }, ...categories];
           href={site.orderUrl}
           target="_blank"
           rel="noopener"
-          class="rounded-full bg-leaf px-8 py-4 font-semibold text-white transition-colors duration-200 hover:bg-leaf-dark"
+          class="rounded-full bg-rojo px-8 py-4 font-semibold text-verde transition-colors duration-200 hover:bg-rojo-oscuro"
         >
           Hacé tu pedido
         </a>
-        <p class="text-[0.95rem] text-forest-soft">
+        <p class="text-[0.95rem] text-verde-3">
           ¿Alguna restricción? Preguntá en la barra: casi todo se puede adaptar.
         </p>
       </div>
@@ -91,7 +91,7 @@ const filters = [{ slug: 'todo', label: 'Todo' }, ...categories];
 
 <style>
   .filters {
-    border-bottom: 1px solid color-mix(in srgb, var(--color-forest) 10%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--color-verde) 10%, transparent);
   }
 
   .filters__scroll {
@@ -105,11 +105,11 @@ const filters = [{ slug: 'todo', label: 'Todo' }, ...categories];
   .chip {
     flex-shrink: 0;
     padding: 0.55rem 1.1rem;
-    border: 1px solid color-mix(in srgb, var(--color-forest) 15%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-verde) 15%, transparent);
     border-radius: 999px;
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--color-forest);
+    color: var(--color-verde);
     transition:
       background-color 0.25s ease,
       color 0.25s ease,
@@ -117,13 +117,13 @@ const filters = [{ slug: 'todo', label: 'Todo' }, ...categories];
   }
 
   .chip:hover {
-    border-color: color-mix(in srgb, var(--color-forest) 35%, transparent);
+    border-color: color-mix(in srgb, var(--color-verde) 35%, transparent);
   }
 
   .chip.is-active {
-    background-color: var(--color-forest);
-    border-color: var(--color-forest);
-    color: var(--color-cream);
+    background-color: var(--color-verde);
+    border-color: var(--color-verde);
+    color: var(--color-crema);
   }
 
   .is-hidden {

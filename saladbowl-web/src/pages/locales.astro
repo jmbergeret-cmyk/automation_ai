@@ -16,7 +16,7 @@ import { site } from '../data/site.js';
     lead="Todos con barra a la vista. El estado de cada uno se calcula con la hora de tu dispositivo."
   />
 
-  <section class="bg-cream py-20 text-forest lg:py-28">
+  <section class="bg-crema py-20 text-verde lg:py-28">
     <div class="container-x">
       <div data-stagger class="grid gap-x-6 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
         {locations.map((place) => <LocationCard place={place} />)}
@@ -27,11 +27,11 @@ import { site } from '../data/site.js';
           href={site.orderUrl}
           target="_blank"
           rel="noopener"
-          class="rounded-full bg-leaf px-8 py-4 font-semibold text-white transition-colors duration-200 hover:bg-leaf-dark"
+          class="rounded-full bg-rojo px-8 py-4 font-semibold text-verde transition-colors duration-200 hover:bg-rojo-oscuro"
         >
           Hacé tu pedido
         </a>
-        <p class="text-[0.95rem] text-forest-soft">
+        <p class="text-[0.95rem] text-verde-3">
           También llevamos a domicilio en un radio de 3 km de cada local.
         </p>
       </div>
