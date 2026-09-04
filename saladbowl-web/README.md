@@ -64,9 +64,10 @@ La paleta sale del manual de marca (`material/marca`, pág. 3). El crema es el
 único color que no está en el manual: lo agregamos como neutro claro. El texto
 de los CTAs va en `verde` sobre el coral, que da mejor contraste que el blanco.
 
-Tipografía: **Archivo** para títulos (600–700, tracking `-0.035em`), **Inter**
-para cuerpo. El manual no define tipografía de texto; el logotipo es una serif
-de alto contraste, así que queda abierto si los títulos la acompañan. Están servidas desde `/public/fonts` para no depender del CDN; en
+Tipografía: **Lato** en todo el sitio, la que acompaña al logotipo. Títulos en
+900 con tracking `-0.02em` (Lato es humanista: aguanta menos tracking negativo
+que una grotesca, y el peso contundente lo da el Black), cuerpo en 400. Se
+sirven los pesos 400, 700 y 900 desde `/public/fonts`. Están servidas desde `/public/fonts` para no depender del CDN; en
 `src/styles/fonts.css` está el comentario con el `<link>` de Google Fonts por si
 se prefiere volver a esa vía.
 

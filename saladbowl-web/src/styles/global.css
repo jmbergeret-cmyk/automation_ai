@@ -21,8 +21,8 @@
   --color-crema-2: #f2f0e9;
 
   /* Tipografía */
-  --font-display: 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-sans: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-display: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-sans: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   /* Ritmo vertical de las secciones */
   --spacing-section: 6rem;
@@ -61,9 +61,9 @@
   h2,
   h3 {
     font-family: var(--font-display);
-    font-weight: 700;
-    letter-spacing: -0.035em;
-    line-height: 0.98;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.02;
     text-wrap: balance;
   }
 
