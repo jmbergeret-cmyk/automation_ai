@@ -30,10 +30,11 @@ export const items = [
   {
     slug: 'cesar-del-barrio',
     name: 'César del Barrio',
-    description: 'Cogollo, parmesano, croutons de masa madre y césar hecha acá.',
+    description: 'Cogollo, pollo grillado, parmesano, croutons y cherry.',
     price: 450,
     category: 'bowls',
-    image: '/img/bowl-cesar.svg',
+    image: '/img/bowl-cesar.jpg', // foto real
+
     featured: true,
   },
   {
@@ -55,12 +56,13 @@ export const items = [
     featured: true,
   },
   {
-    slug: 'mediterraneo',
-    name: 'Mediterráneo',
-    description: 'Garbanzos, feta, aceitunas, pepino y oliva con orégano fresco.',
+    slug: 'california',
+    name: 'California',
+    description: 'Pollo, halloumi, palta, choclo, aceitunas y almendras.',
     price: 460,
     category: 'bowls',
-    image: '/img/bowl-mediterraneo.svg',
+    image: '/img/bowl-california.jpg', // foto real
+
     featured: true,
   },
   {

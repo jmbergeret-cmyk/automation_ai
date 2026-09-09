@@ -12,29 +12,41 @@ import { hero, site } from '../../data/site.js';
       {
         hero.video ? (
           /*
-           * El video arranca sin src: lo engancha el JS sólo si la conexión
-           * da y no hay prefers-reduced-motion. Si no, queda el poster.
+           * En desktop va el video; en mobile, la foto vertical. Una foto 16:9
+           * en una pantalla de celular obliga a un recorte que se come el bowl,
+           * y de paso el celular se ahorra la descarga del video.
+           * El src del video lo engancha el JS sólo si la conexión da y no hay
+           * prefers-reduced-motion; si no, queda el poster.
            */
-          <video
-            data-hero-video
-            class="h-full w-full object-cover"
-            poster={hero.poster}
-            aria-label={hero.alt}
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-          >
-            {hero.video.webm && <source data-src={hero.video.webm} type="video/webm" />}
-            {hero.video.mp4 && <source data-src={hero.video.mp4} type="video/mp4" />}
-          </video>
+          <Fragment>
+            <video
+              data-hero-video
+              class="hidden h-full w-full object-cover lg:block"
+              poster={hero.poster}
+              aria-label={hero.alt}
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            >
+              {hero.video.webm && <source data-src={hero.video.webm} type="video/webm" />}
+              {hero.video.mp4 && <source data-src={hero.video.mp4} type="video/mp4" />}
+            </video>
+            <img
+              src={hero.posterMobile}
+              alt={hero.alt}
+              width="1200"
+              height="2000"
+              class="h-full w-full object-cover lg:hidden"
+            />
+          </Fragment>
         ) : (
           <img
             src={hero.poster}
             alt={hero.alt}
-            width="1200"
-            height="1500"
+            width="2400"
+            height="1350"
             class="h-full w-full object-cover"
           />
         )

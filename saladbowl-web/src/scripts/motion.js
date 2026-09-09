@@ -143,6 +143,7 @@ function initHero() {
 function initHeroVideo() {
   const video = document.querySelector('[data-hero-video]');
   if (!video || video.dataset.ready) return;
+  if (getComputedStyle(video).display === 'none') return; // en mobile va la foto
 
   const conn = navigator.connection;
   const slow = conn && (conn.saveData || ['slow-2g', '2g', '3g'].includes(conn.effectiveType));

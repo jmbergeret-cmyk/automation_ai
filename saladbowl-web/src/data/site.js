@@ -15,8 +15,9 @@ export const site = {
  */
 export const hero = {
   video: { webm: '/video/hero.webm', mp4: null },
-  poster: '/img/hero.svg',
-  alt: 'Armado de un bowl en la barra: hojas, palta y aderezo',
+  poster: '/img/hero.jpg',
+  posterMobile: '/img/hero-mobile.jpg',
+  alt: 'Bowl California de Saladbowl: pollo, halloumi, palta, choclo y aceitunas',
 };
 
 export const navLinks = [

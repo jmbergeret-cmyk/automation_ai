@@ -115,7 +115,18 @@ minutos: se cambia en `CLOSING_SOON_MINUTES` (`src/lib/hours.js`).
 
 ## Fotos
 
-Los archivos de `public/img` son placeholders SVG con las proporciones finales:
+`scripts/prepare-photos.mjs` toma los originales de `material/fotos` y genera las
+versiones del sitio: recorta a la proporción de cada lugar, redimensiona y
+comprime a JPEG. Los originales no se tocan.
+
+Para el hero hace algo más: como las fotos son cenitales con el bowl centrado,
+recortarlas sin más lo agranda hasta perder su silueta. Entonces recompone el
+cuadro —el fondo del original es liso, así que lo extiende— y apoya el bowl
+sobre el tercio derecho en desktop y arriba en mobile, dejando aire para el
+claim. Los bordes se funden con un degradado para que no se vea la costura.
+
+El resto sigue con placeholders SVG (`npm run placeholders`), con estas
+proporciones:
 
 | Archivo             | Proporción | Dónde                        |
 | ------------------- | ---------- | ---------------------------- |
