@@ -79,7 +79,6 @@ const IMAGES = [
   { name: 'postre-trufa', w: 1000, h: 1000, label: 'Trufa' },
   { name: 'local-pocitos', w: 1200, h: 800, label: 'Pocitos' },
   { name: 'local-ciudad-vieja', w: 1200, h: 800, label: 'Ciudad Vieja' },
-  { name: 'local-carrasco', w: 1200, h: 800, label: 'Carrasco' },
 ];
 
 mkdirSync(OUT, { recursive: true });

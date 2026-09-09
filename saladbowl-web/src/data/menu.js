@@ -16,7 +16,6 @@ export const items = [
     price: 420,
     category: 'bowls',
     image: '/img/bowl-verde-bravo.svg',
-    featured: true,
   },
   {
     slug: 'pollo-quinoa',
@@ -25,7 +24,6 @@ export const items = [
     price: 480,
     category: 'bowls',
     image: '/img/bowl-pollo-quinoa.svg',
-    featured: true,
   },
   {
     slug: 'cesar-del-barrio',
@@ -54,7 +52,6 @@ export const items = [
     price: 590,
     category: 'bowls',
     image: '/img/bowl-salmon.svg',
-    featured: true,
   },
   {
     slug: 'california',
@@ -73,6 +70,7 @@ export const items = [
     price: 390,
     category: 'wraps',
     image: '/img/wrap-cesar.svg',
+    featured: true,
   },
   {
     slug: 'wrap-falafel',
@@ -90,6 +88,16 @@ export const items = [
     category: 'wraps',
     image: '/img/wrap-pollo.jpg', // foto real
 
+    featured: true,
+  },
+  {
+    slug: 'sanguche-pollo-palta',
+    name: 'Sánguche de Pollo y Palta',
+    description: 'Pollo, palta, cebolla caramelizada y queso crema, en pan de masa madre.',
+    price: 430,
+    category: 'wraps',
+    image: '/img/sanguche-pollo.jpg', // foto real
+    featured: true,
   },
   {
     slug: 'limonada',

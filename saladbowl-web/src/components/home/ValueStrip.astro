@@ -6,9 +6,9 @@ const items = [
     icon: 'hoja',
   },
   {
-    title: 'Rápido',
-    text: 'De la barra a tu mano en menos de cinco minutos, sin que se note el apuro.',
-    icon: 'bolt',
+    title: 'Calidad',
+    text: 'Materia prima elegida a mano, con proveedores que conocemos por nombre.',
+    icon: 'estrella',
   },
   {
     title: 'Real',
@@ -41,7 +41,9 @@ const items = [
                     <path d="M4.6 20c1.6-4.2 4.6-7 9.4-8.6" />
                   </>
                 )}
-                {item.icon === 'bolt' && <path d="M13.4 2 4 13.6h6.2L10.6 22 20 10.4h-6.2L13.4 2Z" />}
+                {item.icon === 'estrella' && (
+                  <path d="M12 3.2l2.5 5.4 5.9.7-4.4 4 1.2 5.8L12 16.2 6.8 19.1 8 13.3l-4.4-4 5.9-.7L12 3.2Z" />
+                )}
                 {item.icon === 'bowl' && (
                   <>
                     <path d="M3 11h18a9 9 0 0 1-18 0Z" />

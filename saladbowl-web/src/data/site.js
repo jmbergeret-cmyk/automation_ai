@@ -1,6 +1,6 @@
 export const site = {
   name: 'Saladbowl',
-  tagline: 'Bowls frescos, hechos al momento. Montevideo.',
+  tagline: 'Unite a la revolución saludable. Montevideo.',
   // TODO: reemplazar por el link real del ecommerce.
   orderUrl: 'https://pedidos.saladbowl.uy',
   email: 'hola@saladbowl.uy',

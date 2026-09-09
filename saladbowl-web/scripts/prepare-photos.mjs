@@ -46,6 +46,13 @@ const FOTOS = [
     focusY: 0.45,
   },
   {
+    origen: 'material/fotos/Chicken Avocado Sandwich.jpg',
+    destino: 'sanguche-pollo.jpg',
+    ancho: 1200,
+    alto: 1200,
+    focusY: 0.55,
+  },
+  {
     origen: 'material/fotos/image00017 - copia.jpeg',
     destino: 'bebida-jugo.jpg',
     ancho: 1200,

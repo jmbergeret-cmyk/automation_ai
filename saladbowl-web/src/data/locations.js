@@ -9,10 +9,9 @@ const raw = [
   {
     slug: 'pocitos',
     name: 'Pocitos',
-    address: 'Av. Brasil 2650, esq. Bulevar España',
-    note: 'Salón para 30 y barra sobre la vereda.',
+    // Sin dirección exacta todavía: por ahora se muestra sólo el barrio.
+    note: 'Delivery y takeaway.',
     image: '/img/local-pocitos.svg',
-    mapUrl: 'https://maps.google.com/?q=Av.+Brasil+2650,+Montevideo',
     hours: {
       0: [['12:00', '22:00']],
       1: [['11:30', '22:00']],
@@ -26,10 +25,8 @@ const raw = [
   {
     slug: 'ciudad-vieja',
     name: 'Ciudad Vieja',
-    address: 'Sarandí 480, entre Treinta y Tres y Misiones',
-    note: 'El del mediodía: pedís, esperás cinco minutos y seguís.',
+    note: 'Delivery y takeaway.',
     image: '/img/local-ciudad-vieja.svg',
-    mapUrl: 'https://maps.google.com/?q=Sarand%C3%AD+480,+Montevideo',
     hours: {
       1: [['11:00', '17:00']],
       2: [['11:00', '17:00']],
@@ -37,23 +34,6 @@ const raw = [
       4: [['11:00', '17:00']],
       5: [['11:00', '17:00']],
       6: [['11:00', '16:00']],
-    },
-  },
-  {
-    slug: 'carrasco',
-    name: 'Carrasco',
-    address: 'Av. Arocena 1580, esq. Costa Rica',
-    note: 'Con patio y estacionamiento sobre Costa Rica.',
-    image: '/img/local-carrasco.svg',
-    mapUrl: 'https://maps.google.com/?q=Av.+Arocena+1580,+Montevideo',
-    hours: {
-      0: [['11:30', '22:30']],
-      1: [['11:30', '22:30']],
-      2: [['11:30', '22:30']],
-      3: [['11:30', '22:30']],
-      4: [['11:30', '22:30']],
-      5: [['11:30', '23:30']],
-      6: [['11:30', '23:30']],
     },
   },
 ];

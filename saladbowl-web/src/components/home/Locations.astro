@@ -7,14 +7,14 @@ import { locations } from '../../data/locations.js';
   <div class="container-x">
     <div class="flex flex-wrap items-end justify-between gap-6">
       <h2 data-reveal class="max-w-[16ch] text-[2.6rem] sm:text-[3.4rem] lg:text-[4.2rem]">
-        Tres locales en Montevideo
+        Dos locales en Montevideo
       </h2>
       <a data-reveal data-delay="0.1" href="/locales" class="link-arrow pb-2 font-medium">
-        Ver todos los locales
+        Ver los locales
       </a>
     </div>
 
-    <div data-stagger class="mt-14 grid gap-x-6 gap-y-12 md:grid-cols-3 lg:mt-20">
+    <div data-stagger class="mt-14 grid gap-x-8 gap-y-12 md:grid-cols-2 lg:mt-20">
       {locations.map((place) => <LocationCard place={place} />)}
     </div>
   </div>
