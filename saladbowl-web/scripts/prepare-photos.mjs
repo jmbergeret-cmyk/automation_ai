@@ -39,6 +39,34 @@ const FOTOS = [
     alto: 1200,
   },
   {
+    origen: 'material/fotos/Sweet Chicken.jpg',
+    destino: 'bowl-sweet-chicken.jpg',
+    ancho: 1200,
+    alto: 1200,
+  },
+  {
+    origen: 'material/fotos/Hot veggie wrap.jpg',
+    destino: 'wrap-veggie.jpg',
+    ancho: 1200,
+    alto: 1200,
+    focusY: 0.55,
+  },
+  {
+    // Locales: fotos del local, en 3:2.
+    origen: 'material/fotos/image00016.jpeg',
+    destino: 'local-pocitos.jpg',
+    ancho: 1400,
+    alto: 933,
+    focusY: 0.55,
+  },
+  {
+    origen: 'material/fotos/image00045 - copia.jpeg',
+    destino: 'local-ciudad-vieja.jpg',
+    ancho: 1400,
+    alto: 933,
+    focusY: 0.42,
+  },
+  {
     origen: 'material/fotos/image00010 - copia.jpeg',
     destino: 'wrap-pollo.jpg',
     ancho: 1200,

@@ -1,9 +1,9 @@
 export const site = {
   name: 'Saladbowl',
   tagline: 'Unite a la revolución saludable. Montevideo.',
-  // TODO: todavía sin confirmar — link del ecommerce, casilla de mail
-  // (sería @saladbowl.com.uy) y el WhatsApp del local.
-  orderUrl: 'https://pedidos.saladbowl.uy',
+  orderUrl: 'https://saladbowl.pidedirecto.uy/',
+  // TODO: sin confirmar — casilla de mail (sería @saladbowl.com.uy) y el
+  // WhatsApp del local.
   email: 'hola@saladbowl.com.uy',
   phone: null,
   whatsapp: null,

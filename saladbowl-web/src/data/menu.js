@@ -40,6 +40,14 @@ export const items = [
     featured: true,
   },
   {
+    slug: 'sweet-chicken',
+    name: 'Sweet Chicken',
+    description: 'Pollo, boniato asado, hummus, quinoa roja, cherry y castañas.',
+    price: null,
+    category: 'bowls',
+    image: '/img/bowl-sweet-chicken.jpg',
+  },
+  {
     slug: 'chicken-wrap',
     name: 'Chicken Wrap',
     description: 'Pollo, quinoa roja, palta, morrón y queso, en tortilla tostada.',
@@ -49,12 +57,12 @@ export const items = [
     featured: true,
   },
   {
-    slug: 'veggie-wrap',
-    name: 'Veggie Wrap',
-    description: '', // pendiente: ingredientes y foto
+    slug: 'hot-veggie-wrap',
+    name: 'Hot Veggie Wrap',
+    description: 'Vegetales salteados, quinoa, choclo, morrón y queso, tostado a la plancha.',
     price: null,
     category: 'wraps',
-    image: '/img/wrap-veggie.svg',
+    image: '/img/wrap-veggie.jpg',
     featured: true,
   },
   {

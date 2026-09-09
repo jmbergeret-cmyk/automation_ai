@@ -65,11 +65,10 @@ function placeholder({ name, w, h, label }) {
 
 // Ojo: acá sólo van los que todavía no tienen foto real. Los que ya la tienen
 // (hero, césar, california, garbanzo, wrap, jugo, marca) se generan con scripts/prepare-photos.mjs.
-const IMAGES = [
-  { name: 'wrap-veggie', w: 1000, h: 1000, label: 'Veggie wrap' },
-  { name: 'local-pocitos', w: 1200, h: 800, label: 'Pocitos' },
-  { name: 'local-ciudad-vieja', w: 1200, h: 800, label: 'Ciudad Vieja' },
-];
+// Hoy todos los lugares tienen foto real. Si entra un plato nuevo sin foto,
+// agregalo acá con su proporción y corré `npm run placeholders`.
+// Ej: { name: 'bowl-nuevo', w: 1000, h: 1000, label: 'Bowl nuevo' }
+const IMAGES = [];
 
 mkdirSync(OUT, { recursive: true });
 for (const img of IMAGES) {

@@ -11,7 +11,7 @@ const raw = [
     name: 'Pocitos',
     // Sin dirección exacta todavía: por ahora se muestra sólo el barrio.
     note: 'Delivery y takeaway.',
-    image: '/img/local-pocitos.svg',
+    image: '/img/local-pocitos.jpg',
     // Lunes a viernes, mediodía y noche.
     hours: {
       1: [['11:30', '14:30'], ['20:30', '22:30']],
@@ -25,7 +25,7 @@ const raw = [
     slug: 'ciudad-vieja',
     name: 'Ciudad Vieja',
     note: 'Delivery y takeaway.',
-    image: '/img/local-ciudad-vieja.svg',
+    image: '/img/local-ciudad-vieja.jpg',
     // Lunes a viernes, sólo mediodía.
     hours: {
       1: [['11:30', '15:00']],
