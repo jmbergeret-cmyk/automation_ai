@@ -60,13 +60,17 @@ const filters = [{ slug: 'todo', label: 'Todo' }, ...categories];
 
               <div class="mt-4 flex flex-wrap items-baseline justify-between gap-x-4 sm:mt-5">
                 <h2 class="text-[1.1rem] tracking-[-0.015em] sm:text-[1.3rem]">{item.name}</h2>
-                <span class="font-display text-[0.95rem] font-medium text-verde-3 tabular-nums sm:text-[1.05rem]">
-                  {formatPrice(item.price)}
-                </span>
+                {item.price && (
+
+                  <span class="font-display text-[0.95rem] font-medium text-verde-3 tabular-nums sm:text-[1.05rem]">{formatPrice(item.price)}</span>
+
+                )}
               </div>
-              <p class="mt-2 max-w-[34ch] text-[0.9rem] leading-relaxed text-verde-3 sm:text-[0.95rem]">
-                {item.description}
-              </p>
+              {item.description && (
+                <p class="mt-2 max-w-[34ch] text-[0.9rem] leading-relaxed text-verde-3 sm:text-[0.95rem]">
+                  {item.description}
+                </p>
+              )}
             </article>
           ))
         }

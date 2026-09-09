@@ -72,12 +72,21 @@ const year = new Date().getFullYear();
               {site.email}
             </a>
           </li>
-          <li>
-            <a href={site.whatsapp} target="_blank" rel="noopener" class="text-crema/85 transition-colors hover:text-rosado">
-              WhatsApp
-            </a>
-          </li>
-          <li class="text-crema/60">{site.phone}</li>
+          {
+            site.whatsapp && (
+              <li>
+                <a
+                  href={site.whatsapp}
+                  target="_blank"
+                  rel="noopener"
+                  class="text-crema/85 transition-colors hover:text-rosado"
+                >
+                  WhatsApp
+                </a>
+              </li>
+            )
+          }
+          {site.phone && <li class="text-crema/60">{site.phone}</li>}
         </ul>
       </div>
     </div>

@@ -1,11 +1,12 @@
 export const site = {
   name: 'Saladbowl',
   tagline: 'Unite a la revolución saludable. Montevideo.',
-  // TODO: reemplazar por el link real del ecommerce.
+  // TODO: todavía sin confirmar — link del ecommerce, casilla de mail
+  // (sería @saladbowl.com.uy) y el WhatsApp del local.
   orderUrl: 'https://pedidos.saladbowl.uy',
-  email: 'hola@saladbowl.uy',
-  phone: '+598 99 123 456',
-  whatsapp: 'https://wa.me/59899123456',
+  email: 'hola@saladbowl.com.uy',
+  phone: null,
+  whatsapp: null,
 };
 
 /**
@@ -26,10 +27,10 @@ export const navLinks = [
   { label: 'Nosotros', href: '/nosotros' },
 ];
 
+// TODO: confirmar los usuarios reales de cada red.
 export const social = [
   { label: 'Instagram', href: 'https://instagram.com/saladbowl.uy' },
-  { label: 'TikTok', href: 'https://tiktok.com/@saladbowl.uy' },
-  { label: 'LinkedIn', href: 'https://linkedin.com/company/saladbowl' },
+  { label: 'Facebook', href: 'https://facebook.com/saladbowl.uy' },
 ];
 
 export const legal = [

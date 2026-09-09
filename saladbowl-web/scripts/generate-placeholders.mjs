@@ -66,17 +66,7 @@ function placeholder({ name, w, h, label }) {
 // Ojo: acá sólo van los que todavía no tienen foto real. Los que ya la tienen
 // (hero, césar, california, garbanzo, wrap, jugo, marca) se generan con scripts/prepare-photos.mjs.
 const IMAGES = [
-  { name: 'bowl-verde-bravo', w: 1000, h: 1000, label: 'Verde bravo' },
-  { name: 'bowl-pollo-quinoa', w: 1000, h: 1000, label: 'Pollo y quinoa' },
-  { name: 'bowl-salmon', w: 1000, h: 1000, label: 'Salmon' },
-  { name: 'wrap-cesar', w: 1000, h: 1000, label: 'Wrap cesar' },
-  { name: 'wrap-falafel', w: 1000, h: 1000, label: 'Wrap falafel' },
-  { name: 'bebida-limonada', w: 1000, h: 1000, label: 'Limonada' },
-  { name: 'bebida-kombucha', w: 1000, h: 1000, label: 'Kombucha' },
-  { name: 'bebida-agua', w: 1000, h: 1000, label: 'Agua' },
-  { name: 'postre-yogur', w: 1000, h: 1000, label: 'Yogur' },
-  { name: 'postre-budin', w: 1000, h: 1000, label: 'Budin' },
-  { name: 'postre-trufa', w: 1000, h: 1000, label: 'Trufa' },
+  { name: 'wrap-veggie', w: 1000, h: 1000, label: 'Veggie wrap' },
   { name: 'local-pocitos', w: 1200, h: 800, label: 'Pocitos' },
   { name: 'local-ciudad-vieja', w: 1200, h: 800, label: 'Ciudad Vieja' },
 ];
