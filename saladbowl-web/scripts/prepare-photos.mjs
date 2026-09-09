@@ -33,6 +33,33 @@ const FOTOS = [
     alto: 1200,
   },
   {
+    origen: 'material/fotos/Garbanzo chips salad.jpg',
+    destino: 'bowl-garbanzo.jpg',
+    ancho: 1200,
+    alto: 1200,
+  },
+  {
+    origen: 'material/fotos/image00010 - copia.jpeg',
+    destino: 'wrap-pollo.jpg',
+    ancho: 1200,
+    alto: 1200,
+    focusY: 0.45,
+  },
+  {
+    origen: 'material/fotos/image00017 - copia.jpeg',
+    destino: 'bebida-jugo.jpg',
+    ancho: 1200,
+    alto: 1200,
+    focusY: 0.45,
+  },
+  {
+    // Sección de marca: la foto del jugo con el packaging y alguien atendiendo.
+    origen: 'material/fotos/image00017 - copia.jpeg',
+    destino: 'marca.jpg',
+    ancho: 1200,
+    alto: 1500,
+  },
+  {
     /*
      * Hero a sangre. Recortar la foto sin más agranda tanto el bowl que se
      * pierde su silueta, así que recomponemos: como el fondo del original es
@@ -50,12 +77,12 @@ const FOTOS = [
      * Hero de mobile: vertical, con el bowl arriba y aire abajo, que es donde
      * cae el claim. Mismo criterio de recomposición sobre el fondo liso.
      */
-    origen: 'material/fotos/Caesar Salad.jpg',
+    // El sándwich es vertical y de fondo ambiente: acá alcanza con recortar.
+    origen: 'material/fotos/Chicken Avocado Sandwich.jpg',
     destino: 'hero-mobile.jpg',
-    // Bien alto: el hero de mobile ocupa toda la pantalla, que es casi 1:2.
     ancho: 1200,
     alto: 2000,
-    componer: { escalaAlto: 0.36, centroX: 0.5, centroY: 0.33, difuminado: 140 },
+    focusY: 0.46,
   },
 ];
 

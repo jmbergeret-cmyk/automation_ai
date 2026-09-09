@@ -1,6 +1,6 @@
 export const categories = [
   { slug: 'bowls', label: 'Bowls' },
-  { slug: 'wraps', label: 'Wraps' },
+  { slug: 'wraps', label: 'Wraps y sánguches' },
   { slug: 'bebidas', label: 'Bebidas' },
   { slug: 'postres', label: 'Postres' },
 ];
@@ -38,12 +38,13 @@ export const items = [
     featured: true,
   },
   {
-    slug: 'falafel-de-casa',
-    name: 'Falafel de Casa',
-    description: 'Falafel horneado, hummus, tomate cherry, menta y tahini.',
+    slug: 'garbanzo-boniato',
+    name: 'Garbanzo & Boniato',
+    description: 'Garbanzos crocantes, boniato asado, quinoa roja, palta y castañas.',
     price: 440,
     category: 'bowls',
-    image: '/img/bowl-falafel.svg',
+    image: '/img/bowl-garbanzo.jpg', // foto real
+
     featured: true,
   },
   {
@@ -82,12 +83,13 @@ export const items = [
     image: '/img/wrap-falafel.svg',
   },
   {
-    slug: 'wrap-picante',
-    name: 'Wrap Picante',
-    description: 'Pollo marinado en ají, palta, choclo y salsa de yogur.',
+    slug: 'wrap-pollo',
+    name: 'Wrap de Pollo',
+    description: 'Pollo, quinoa roja, palta, morrón y queso, en tortilla tostada.',
     price: 410,
     category: 'wraps',
-    image: '/img/wrap-picante.svg',
+    image: '/img/wrap-pollo.jpg', // foto real
+
   },
   {
     slug: 'limonada',
@@ -98,12 +100,13 @@ export const items = [
     image: '/img/bebida-limonada.svg',
   },
   {
-    slug: 'jugo-verde',
-    name: 'Jugo verde del día',
-    description: 'Lo que haya bueno esa mañana. Preguntá en la barra.',
+    slug: 'jugo-natural',
+    name: 'Jugo natural',
+    description: 'Exprimido en el día, sin azúcar agregada. Botella de 500 ml.',
     price: 190,
     category: 'bebidas',
-    image: '/img/bebida-jugo-verde.svg',
+    image: '/img/bebida-jugo.jpg', // foto real
+
   },
   {
     slug: 'kombucha',
