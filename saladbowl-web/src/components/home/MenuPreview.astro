@@ -1,5 +1,5 @@
 ---
-import { featured, formatPrice } from '../../data/menu.js';
+import { featured } from '../../data/menu.js';
 ---
 
 <section id="menu" class="bg-crema py-24 text-verde lg:py-36">
@@ -31,14 +31,10 @@ import { featured, formatPrice } from '../../data/menu.js';
               />
             </div>
 
-            <div class="mt-4 flex flex-wrap items-baseline justify-between gap-x-4 sm:mt-5">
-              <h3 class="text-[1.1rem] tracking-[-0.015em] sm:text-[1.3rem]">{bowl.name}</h3>
-              {bowl.price && (
-
-                <span class="font-display text-[0.95rem] font-medium text-verde-3 sm:text-[1.05rem]">{formatPrice(bowl.price)}</span>
-
-              )}
-            </div>
+            <!-- Sin precios: la home presenta los productos y el precio vive en el ecommerce. -->
+            <h3 class="mt-4 text-[1.1rem] tracking-[-0.015em] sm:mt-5 sm:text-[1.3rem]">
+              {bowl.name}
+            </h3>
             {bowl.description && (
               <p class="mt-2 hidden max-w-[34ch] text-[0.95rem] leading-relaxed text-verde-3 sm:block">
                 {bowl.description}

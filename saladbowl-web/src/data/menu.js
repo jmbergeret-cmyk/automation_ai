@@ -48,13 +48,14 @@ export const items = [
     image: '/img/bowl-sweet-chicken.jpg',
   },
   {
+    // TODO: confirmar el nombre real de este wrap (el de la foto de las dos
+    // mitades). "Chicken Wrap" es tentativo.
     slug: 'chicken-wrap',
     name: 'Chicken Wrap',
     description: 'Pollo, quinoa roja, palta, morrón y queso, en tortilla tostada.',
     price: null,
     category: 'wraps',
     image: '/img/wrap-pollo.jpg',
-    featured: true,
   },
   {
     slug: 'hot-veggie-wrap',
@@ -75,12 +76,13 @@ export const items = [
     featured: true,
   },
   {
-    slug: 'jugo-natural',
-    name: 'Jugo natural',
-    description: 'Jugos e infusiones naturales, exprimidos en el día. Botella de 500 ml.',
+    slug: 'exprimido-naranja',
+    name: 'Exprimido de naranja',
+    description: 'Naranja exprimida en el día, sin azúcar agregada. Botella de 500 ml.',
     price: null,
     category: 'bebidas',
     image: '/img/bebida-jugo.jpg',
+    featured: true,
   },
 ];
 

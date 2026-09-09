@@ -60,11 +60,11 @@ const FOTOS = [
     focusY: 0.55,
   },
   {
-    origen: 'material/fotos/image00045 - copia.jpeg',
+    origen: 'material/fotos/image00017 - copia.jpeg',
     destino: 'local-ciudad-vieja.jpg',
     ancho: 1400,
     alto: 933,
-    focusY: 0.42,
+    focusY: 0.45,
   },
   {
     origen: 'material/fotos/image00010 - copia.jpeg',
@@ -88,8 +88,8 @@ const FOTOS = [
     focusY: 0.45,
   },
   {
-    // Sección de marca: la foto del jugo con el packaging y alguien atendiendo.
-    origen: 'material/fotos/image00017 - copia.jpeg',
+    // Sección de marca: el cartel de neón del local, que dice "eat real".
+    origen: 'material/fotos/image00045 - copia.jpeg',
     destino: 'marca.jpg',
     ancho: 1200,
     alto: 1500,
