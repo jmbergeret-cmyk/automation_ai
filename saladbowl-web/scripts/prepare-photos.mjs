@@ -60,7 +60,8 @@ const FOTOS = [
     focusY: 0.55,
   },
   {
-    origen: 'material/fotos/image00017 - copia.jpeg',
+    // Provisoria: falta una foto del local de Ciudad Vieja.
+    origen: 'material/fotos/Hot veggie wrap.jpg',
     destino: 'local-ciudad-vieja.jpg',
     ancho: 1400,
     alto: 933,

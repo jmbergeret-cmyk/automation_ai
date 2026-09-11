@@ -10,8 +10,8 @@ import Marquee from '../components/Marquee.astro';
 >
   <PageHeader
     eyebrow="Cómo laburamos"
-    title="Nos cansamos de elegir entre rápido y bien"
-    lead="Esta página está en obra. Va la estructura; el texto largo y las fotos entran cuando estén."
+    title="Creemos en la comida real"
+    lead="Nuestra misión es promover la alimentación real como elemento esencial para vivir saludablemente y en sintonía con el medio ambiente."
   />
 
   <section class="bg-crema py-24 text-verde lg:py-32">
@@ -30,13 +30,14 @@ import Marquee from '../components/Marquee.astro';
       </div>
 
       <div data-stagger class="lg:col-span-6">
-        <h2 data-reveal class="text-[2.2rem] sm:text-[2.8rem]">Empezamos con un local chico</h2>
+        <h2 data-reveal class="text-[2.2rem] sm:text-[2.8rem]">Una alimentación con propósito</h2>
         <p data-reveal class="mt-6 max-w-[52ch] leading-relaxed text-verde-3">
-          En 2020 abrimos en Pocitos con una barra de cuatro metros. La idea era simple: si la
-          materia prima es buena, no hace falta esconderla atrás de una salsa.
+          Creemos que la alimentación saludable es esencial para vivir con bienestar físico y
+          mental, y que una alimentación con propósito es la base de una vida activa, sana y feliz.
         </p>
         <p data-reveal class="mt-4 max-w-[52ch] leading-relaxed text-verde-3">
-          [Pendiente: historia completa, fotos del equipo y el detalle de cada proveedor.]
+          También creemos que consumiendo alimentos reales generamos bienestar en la sociedad y
+          cuidamos el medio ambiente.
         </p>
       </div>
     </div>
@@ -53,9 +54,9 @@ import Marquee from '../components/Marquee.astro';
       <div class="mt-14 grid gap-10 sm:grid-cols-3 sm:gap-8">
         {
           [
-            ['Compra diaria', 'Le compramos a productores de Canelones y Montevideo rural.'],
-            ['Cocina a la vista', 'Todo se corta y se arma adelante tuyo, sin cocina escondida.'],
-            ['Nada para mañana', 'Lo que sobra al cierre se dona el mismo día.'],
+            ['Alimentos reales', 'Sin ultraprocesados. Ingredientes que podés nombrar.'],
+            ['Materia prima de calidad', 'Fresca y natural, elegida a mano cada día.'],
+            ['Ricos, no sólo sanos', 'Que los disfrutes al comerlos y que tu cuerpo lo sienta después.'],
           ].map(([title, text]) => (
             <div data-reveal class="max-w-[38ch]">
               <h3 class="text-[1.4rem]">{title}</h3>
