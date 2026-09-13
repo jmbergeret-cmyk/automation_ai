@@ -15,6 +15,9 @@ const {
   title = `${site.name} — ${site.tagline}`,
   description = 'Alimentos reales, frescos y naturales en Montevideo. Ensaladas, wraps y sánguches elaborados todos los días. Pedí online: delivery y takeaway.',
 } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL('/og.jpg', Astro.site).href;
 ---
 
 <!doctype html>
@@ -26,9 +29,21 @@ const {
     <link rel="apple-touch-icon" href="/favicon.png" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="es_UY" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Saladbowl — alimentos reales en Montevideo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <meta name="theme-color" content="#143316" />
 
     <link
