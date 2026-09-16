@@ -3,18 +3,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/PageHeader.astro';
 import { categories, items, formatPrice } from '../data/menu.js';
 import { site } from '../data/site.js';
+import NuevoTag from '../components/NuevoTag.astro';
 
 const filters = [{ slug: 'todo', label: 'Todo' }, ...categories];
 ---
 
 <BaseLayout
   title="Menú — Saladbowl"
-  description="Bowls, wraps, bebidas y postres. Todo se arma en el momento con verdura del día."
+  description="Ensaladas, wraps, sánguches y bebidas, elaborados todos los días en Montevideo. Delivery y takeaway."
 >
   <PageHeader
     eyebrow="Carta"
-    title="Todo lo que sale de la barra"
-    lead="Cambiamos cosas según lo que consigamos en la mañana. Si algo no está, te lo decimos antes de que pidas."
+    title="Elaborado todos los días"
+    lead="Ensaladas, wraps, sánguches y bebidas. Los precios y el pedido están en la tienda online."
   />
 
   <section class="bg-crema pb-24 text-verde lg:pb-36" data-menu>
@@ -47,7 +48,7 @@ const filters = [{ slug: 'todo', label: 'Todo' }, ...categories];
         {
           items.map((item) => (
             <article data-item data-category={item.category} class="bowl">
-              <div data-media class="aspect-square overflow-hidden rounded-[1.25rem] bg-crema-2">
+              <div data-media class="relative aspect-square overflow-hidden rounded-[1.25rem] bg-crema-2">
                 <img
                   src={item.image}
                   alt={item.name}
@@ -56,6 +57,7 @@ const filters = [{ slug: 'todo', label: 'Todo' }, ...categories];
                   loading="lazy"
                   class="h-full w-full object-cover"
                 />
+                <NuevoTag slug={item.slug} />
               </div>
 
               <div class="mt-4 flex flex-wrap items-baseline justify-between gap-x-4 sm:mt-5">
@@ -85,9 +87,7 @@ const filters = [{ slug: 'todo', label: 'Todo' }, ...categories];
         >
           Hacé tu pedido
         </a>
-        <p class="text-[0.95rem] text-verde-3">
-          ¿Alguna restricción? Preguntá en la barra: casi todo se puede adaptar.
-        </p>
+        <p class="text-[0.95rem] text-verde-3">Delivery y takeaway en Pocitos y Ciudad Vieja.</p>
       </div>
     </div>
   </section>

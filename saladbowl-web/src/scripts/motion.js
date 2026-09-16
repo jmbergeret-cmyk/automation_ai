@@ -12,6 +12,7 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
+import { estaVigente } from '../lib/vigencia.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -185,12 +186,26 @@ function initNav() {
   );
 }
 
+/* ------------------------------------------------------------- vigencia */
+// El sitio es estático: la vigencia se calcula al hacer el build, pero si
+// nadie vuelve a publicar, lo vencido seguiría en la página. Acá se vuelve a
+// chequear con la hora del visitante y se saca lo que ya venció.
+function expirarVencidos() {
+  document.querySelectorAll('[data-hasta], [data-desde]').forEach((el) => {
+    if (!estaVigente({ desde: el.dataset.desde, hasta: el.dataset.hasta })) el.remove();
+  });
+  document.querySelectorAll('[data-novedades]').forEach((section) => {
+    if (!section.querySelector('[data-novedad]')) section.remove();
+  });
+}
+
 /* ----------------------------------------------------------------- init */
 initNav();
 if (!reduceMotion) initSmoothScroll();
 
 document.addEventListener('astro:page-load', () => {
   ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  expirarVencidos();
   initAnchors();
 
   if (reduceMotion) return;

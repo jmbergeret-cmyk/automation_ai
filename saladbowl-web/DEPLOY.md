@@ -60,6 +60,11 @@ Chequeos post-deploy:
 | Nombre, tagline, link del ecommerce, mail, redes | `src/data/site.js` |
 | Platos del menú | `src/data/menu.js` |
 | Locales y horarios | `src/data/locations.js` |
+| Novedades (bloque "Lo nuevo" y etiqueta "Nuevo") | `src/data/novedades.js` |
 
 Los horarios de `locations.js` alimentan el cartel de "abierto / cierra
 pronto / cerrado" sin tocar código: se cambian las horas y listo.
+
+Las novedades vencen solas por fecha (`hasta`). Sin novedades vigentes, el
+bloque no aparece. Cada push republica en ~40 s; el navegador además saca lo
+vencido aunque nadie haya vuelto a publicar.

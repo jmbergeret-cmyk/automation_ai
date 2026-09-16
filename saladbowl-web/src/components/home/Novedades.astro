@@ -1,0 +1,111 @@
+---
+/**
+ * "Lo nuevo": aparece entre el hero y la franja de valores sólo cuando hay
+ * novedades vigentes (ver src/data/novedades.js). Una sola va grande, con
+ * la foto de protagonista; dos o tres van en tarjetas.
+ */
+import { vigentes } from '../../data/novedades.js';
+
+const lista = vigentes.slice(0, 3);
+const unica = lista.length === 1 ? lista[0] : null;
+const externo = (href) => (href.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {});
+---
+
+{
+  lista.length > 0 && (
+    <section data-novedades class="bg-crema py-24 text-verde lg:py-36">
+      <div class="container-x">
+        {unica ? (
+          <article
+            data-novedad
+            data-hasta={unica.hasta}
+            data-desde={unica.desde}
+            class="grid items-center gap-10 lg:grid-cols-12 lg:gap-20"
+          >
+            <div class="lg:order-2 lg:col-span-7">
+              <div data-media class="aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-crema-2 sm:aspect-[5/4]">
+                <img
+                  src={unica.imagen}
+                  alt={unica.titulo}
+                  width="1200"
+                  height="960"
+                  loading="lazy"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+
+            <div data-stagger class="lg:order-1 lg:col-span-5">
+              <span data-reveal class="inline-block rounded-full bg-rosado px-3.5 py-1.5 text-[0.72rem] font-bold tracking-[0.16em] uppercase">
+                Nuevo
+              </span>
+              <h2 data-reveal class="mt-6 text-[2.4rem] sm:text-[3rem] lg:text-[3.6rem]">
+                {unica.titulo}
+              </h2>
+              {unica.texto && (
+                <p data-reveal class="mt-6 max-w-[42ch] text-[1.05rem] leading-relaxed text-verde-3">
+                  {unica.texto}
+                </p>
+              )}
+              {unica.link && (
+                <a data-reveal href={unica.link} {...externo(unica.link)} class="link-arrow mt-9 font-semibold">
+                  {unica.linkTexto || 'Ver más'}
+                </a>
+              )}
+            </div>
+          </article>
+        ) : (
+          <>
+            <h2 data-reveal class="text-[2.6rem] sm:text-[3.4rem] lg:text-[4.2rem]">
+              Lo nuevo
+            </h2>
+            <div data-stagger class="mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
+              {lista.map((n) => (
+                <article data-novedad data-reveal data-hasta={n.hasta} data-desde={n.desde} class="novedad">
+                  <div data-media class="relative aspect-[4/3] overflow-hidden rounded-[1.25rem] bg-crema-2">
+                    <img
+                      src={n.imagen}
+                      alt={n.titulo}
+                      width="1000"
+                      height="750"
+                      loading="lazy"
+                      class="h-full w-full object-cover"
+                    />
+                    <span class="absolute top-3 left-3 rounded-full bg-rosado px-3 py-1.5 text-[0.7rem] font-bold tracking-[0.14em] uppercase">
+                      Nuevo
+                    </span>
+                  </div>
+                  <h3 class="mt-5 text-[1.4rem] tracking-[-0.015em]">{n.titulo}</h3>
+                  {n.texto && <p class="mt-2 max-w-[34ch] leading-relaxed text-verde-3">{n.texto}</p>}
+                  {n.link && (
+                    <a href={n.link} {...externo(n.link)} class="link-arrow mt-4 font-semibold">
+                      {n.linkTexto || 'Ver más'}
+                    </a>
+                  )}
+                </article>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .novedad img {
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  @media (hover: hover) {
+    .novedad:hover img {
+      transform: scale(1.03);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .novedad img {
+      transition: none;
+    }
+  }
+</style>

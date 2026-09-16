@@ -1,5 +1,6 @@
 ---
 import { featured } from '../../data/menu.js';
+import NuevoTag from '../NuevoTag.astro';
 ---
 
 <section id="menu" class="bg-crema py-24 text-verde lg:py-36">
@@ -19,7 +20,7 @@ import { featured } from '../../data/menu.js';
           <a data-reveal href="/menu" class="bowl group block">
             <div
               data-media
-              class="aspect-square overflow-hidden rounded-[1.25rem] bg-crema-2"
+              class="relative aspect-square overflow-hidden rounded-[1.25rem] bg-crema-2"
             >
               <img
                 src={bowl.image}
@@ -29,6 +30,7 @@ import { featured } from '../../data/menu.js';
                 loading="lazy"
                 class="h-full w-full object-cover"
               />
+              <NuevoTag slug={bowl.slug} />
             </div>
 
             <!-- Sin precios: la home presenta los productos y el precio vive en el ecommerce. -->
