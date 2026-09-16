@@ -26,3 +26,22 @@ if (failed) {
   console.error(`\n${failed} caso(s) fallaron`);
   process.exit(1);
 }
+
+// Vencimiento por mes
+import { rangoMes, nombreMes, conFechas } from '../src/lib/vigencia.js';
+const mesCases = [
+  ['rangoMes septiembre', JSON.stringify(rangoMes('2026-09')), '{"desde":"2026-09-01","hasta":"2026-09-30"}'],
+  ['rangoMes febrero bisiesto 2028', JSON.stringify(rangoMes('2028-02')), '{"desde":"2028-02-01","hasta":"2028-02-29"}'],
+  ['rangoMes diciembre', JSON.stringify(rangoMes('2026-12')), '{"desde":"2026-12-01","hasta":"2026-12-31"}'],
+  ['nombreMes', nombreMes('2026-12'), 'Diciembre'],
+  ['mes vigente el 30/09 a las 23:59', String(estaVigente(conFechas({ mes: '2026-09' }), new Date('2026-09-30T23:59:00-03:00'))), 'true'],
+  ['mes vencido el 01/10 a las 00:00', String(estaVigente(conFechas({ mes: '2026-09' }), new Date('2026-10-01T00:00:00-03:00'))), 'false'],
+  ['hasta explícito gana al mes', String(estaVigente(conFechas({ mes: '2026-09', hasta: '2026-10-15' }), new Date('2026-10-10T12:00:00-03:00'))), 'true'],
+];
+let failed2 = 0;
+for (const [label, got, expected] of mesCases) {
+  const ok = got === expected;
+  if (!ok) failed2++;
+  console.log(`${ok ? '✓' : '✗'} ${label} → ${got}`);
+}
+if (failed2) { console.error(`\n${failed2} caso(s) fallaron`); process.exit(1); }

@@ -20,3 +20,32 @@ export function estaVigente({ desde, hasta } = {}, now = new Date()) {
   if (hasta && now > finDelDia(hasta)) return false;
   return true;
 }
+
+const MESES = [
+  'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
+  'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre',
+];
+
+/** 'AAAA-MM' → { desde: primer día, hasta: último día } del mes. */
+export function rangoMes(mes) {
+  const [y, m] = mes.split('-').map(Number);
+  const ultimo = new Date(Date.UTC(y, m, 0)).getUTCDate();
+  const mm = String(m).padStart(2, '0');
+  return { desde: `${y}-${mm}-01`, hasta: `${y}-${mm}-${ultimo}` };
+}
+
+/** 'AAAA-MM' → 'Septiembre' */
+export function nombreMes(mes) {
+  const nombre = MESES[Number(mes.split('-')[1]) - 1];
+  return nombre.charAt(0).toUpperCase() + nombre.slice(1);
+}
+
+/**
+ * Normaliza una novedad: si tiene `mes`, de ahí salen desde/hasta
+ * (un `hasta` explícito gana, por si algo dura más que el mes).
+ */
+export function conFechas(n) {
+  if (!n.mes) return n;
+  const r = rangoMes(n.mes);
+  return { ...n, desde: n.desde ?? r.desde, hasta: n.hasta ?? r.hasta };
+}

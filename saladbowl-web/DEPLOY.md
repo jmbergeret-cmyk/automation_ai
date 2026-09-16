@@ -65,6 +65,6 @@ Chequeos post-deploy:
 Los horarios de `locations.js` alimentan el cartel de "abierto / cierra
 pronto / cerrado" sin tocar código: se cambian las horas y listo.
 
-Las novedades vencen solas por fecha (`hasta`). Sin novedades vigentes, el
-bloque no aparece. Cada push republica en ~40 s; el navegador además saca lo
+Las novedades van por mes (`mes: 'AAAA-MM'`) y vencen solas el último día.
+Sin novedades vigentes, la banda no aparece. Cada push republica en ~40 s; el navegador además saca lo
 vencido aunque nadie haya vuelto a publicar.

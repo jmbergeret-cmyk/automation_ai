@@ -1,36 +1,41 @@
-import { estaVigente } from '../lib/vigencia.js';
+import { estaVigente, conFechas, nombreMes } from '../lib/vigencia.js';
 import { site } from './site.js';
 
 /**
- * Novedades de la home: un plato nuevo, un aderezo, un local, lo que sea.
+ * Novedades del mes. Se muestran en la home, en una banda rosada, con el
+ * mes como título ("Novedades · Septiembre").
  *
  * Reglas:
- *  - Cada una vence sola con `hasta` ('AAAA-MM-DD'). Vencida, no se muestra.
+ *  - Cada una lleva `mes: 'AAAA-MM'` y vence sola el último día de ese mes.
+ *    Si algo tiene que durar más, se le agrega `hasta: 'AAAA-MM-DD'`.
  *  - Si no hay ninguna vigente, la sección desaparece entera de la home.
- *  - Con una sola se muestra grande, con foto. Con dos o tres, en tarjetas.
+ *  - Con una sola va grande, con foto. Con dos o tres, en tarjetas.
  *  - `item` es el slug del plato en menu.js: le pone la etiqueta "Nuevo" a
  *    su tarjeta en la home y en /menu mientras la novedad esté vigente.
  *
- * Campos: titulo, texto, imagen, link, linkTexto, desde (opcional), hasta,
- * item (opcional).
+ * Campos: mes, titulo, texto, imagen, link, linkTexto, item (opcional),
+ * hasta (opcional).
  */
 export const novedades = [
   {
     // EJEMPLO para ver el diseño: Sweet Chicken es un plato real, pero no
     // es nuevo. Reemplazar por la primera novedad real o borrar antes de
     // salir a producción.
+    mes: '2026-09',
     titulo: 'Sweet Chicken',
     texto: 'Pollo, boniato asado, hummus, quinoa roja, cherry y castañas. Ya está en los dos locales.',
     imagen: '/img/bowl-sweet-chicken.jpg',
     link: site.orderUrl,
     linkTexto: 'Pedila',
-    hasta: '2026-10-15',
     item: 'sweet-chicken',
   },
 ];
 
 /** Las que se muestran hoy. Se calcula al hacer el build y se vuelve a chequear en el navegador. */
-export const vigentes = novedades.filter((n) => estaVigente(n));
+export const vigentes = novedades.map(conFechas).filter((n) => estaVigente(n));
+
+/** Título de la sección: el mes de las novedades vigentes. */
+export const mesVigente = vigentes.length ? nombreMes(vigentes[0].mes ?? vigentes[0].desde.slice(0, 7)) : null;
 
 /** Para la etiqueta "Nuevo" en las tarjetas del menú. Devuelve la novedad o undefined. */
 export const novedadDe = (slug) => vigentes.find((n) => n.item === slug);
