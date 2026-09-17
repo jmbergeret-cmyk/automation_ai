@@ -1,0 +1,24 @@
+---
+/**
+ * Etiqueta "Nuevo" sobre la foto de un plato. Se dibuja sólo si hay una
+ * novedad vigente para ese slug; el navegador la saca cuando vence.
+ */
+import { novedadDe } from '../data/novedades.js';
+
+interface Props {
+  slug: string;
+}
+const novedad = novedadDe(Astro.props.slug);
+---
+
+{
+  novedad && (
+    <span
+      data-hasta={novedad.hasta}
+      data-desde={novedad.desde}
+      class="absolute top-3 left-3 z-[1] rounded-full bg-rosado px-3 py-1.5 text-[0.7rem] font-bold tracking-[0.14em] text-verde uppercase shadow-sm sm:top-4 sm:left-4"
+    >
+      Nuevo
+    </span>
+  )
+}

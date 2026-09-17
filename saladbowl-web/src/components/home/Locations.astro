@@ -1,0 +1,21 @@
+---
+import LocationCard from '../LocationCard.astro';
+import { locations } from '../../data/locations.js';
+---
+
+<section id="locales" class="bg-crema py-24 text-verde lg:py-36">
+  <div class="container-x">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 data-reveal class="max-w-[16ch] text-[2.6rem] sm:text-[3.4rem] lg:text-[4.2rem]">
+        Locales
+      </h2>
+      <a data-reveal data-delay="0.1" href="/locales" class="link-arrow pb-2 font-medium">
+        Ver los locales
+      </a>
+    </div>
+
+    <div data-stagger class="mt-14 grid gap-x-8 gap-y-12 md:grid-cols-2 lg:mt-20">
+      {locations.map((place) => <LocationCard place={place} />)}
+    </div>
+  </div>
+</section>

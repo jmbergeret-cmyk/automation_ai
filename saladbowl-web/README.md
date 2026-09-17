@@ -1,0 +1,147 @@
+# Saladbowl — sitio web
+
+Sitio de Saladbowl (fast-casual saludable, Montevideo). Astro + Tailwind + GSAP
+ScrollTrigger + Lenis.
+
+> **¿Tenés material para pasarme?** Está todo explicado en
+> [MATERIAL.md](./MATERIAL.md): va en `material/`, con el nombre que sea.
+
+## Correr el proyecto
+
+```bash
+npm install
+npm run dev      # http://localhost:4321
+npm run build    # sale a dist/
+npm run preview
+```
+
+## Estado
+
+- **Home**: completa, con todo el sistema de movimiento, video en el hero y marquee.
+- **/menu**: carta completa con filtros por categoría (FLIP) y barra sticky.
+- **/locales**: cards con estado "abierto ahora" en vivo.
+- **/nosotros**: sólo estructura, falta el texto largo y las fotos.
+
+```bash
+npm test   # tests de la lógica de horarios (bordes de apertura y cierre)
+```
+
+## Estructura
+
+```
+src/
+  components/         Nav y Footer
+  components/home/    Hero, ValueStrip, MenuPreview, Brand, Locations
+  data/               site.js, menu.js, locations.js  ← el contenido editable
+  layouts/            BaseLayout.astro
+  pages/              index.astro
+  lib/hours.js        estado de los locales (puro, testeado en test/)
+  scripts/motion.js   GSAP + Lenis: todo el movimiento vive acá
+  scripts/status.js   pinta el estado "abierto ahora"
+  scripts/menu-filters.js  filtros de /menu con FLIP
+  styles/             global.css (tokens + base), fonts.css (@font-face)
+public/img/           placeholders de fotos
+public/video/         loop del hero (placeholder)
+public/fonts/         Archivo + Inter (subsets latin y latin-ext)
+public/logo/          logo e isotipo recortados (scripts/prepare-logo.mjs)
+material/             material original de la marca (ver MATERIAL.md)
+```
+
+## Sistema visual
+
+| Token | Hex | Uso |
+| --- | --- | --- |
+| `verde` | `#143316` | fondo del sitio (verde primario del manual) |
+| `verde-2` | `#1D4620` | bandas y marcos de foto (verde secundario) |
+| `verde-3` | `#2E6930` | texto secundario sobre claro (verde terciario) |
+| `crema` | `#FAF9F6` | secciones donde manda la foto |
+| `crema-2` | `#F2F0E9` | marcos de foto sobre crema |
+| `rojo` | `#EF6048` | CTAs |
+| `rosado` | `#FFBCC8` | acentos (volanta, links) |
+| `negro` / `azul` | `#222222` / `#30638E` | del manual, todavía sin uso |
+
+La paleta sale del manual de marca (`material/marca`, pág. 3). El crema es el
+único color que no está en el manual: lo agregamos como neutro claro. El texto
+de los CTAs va en `verde` sobre el coral, que da mejor contraste que el blanco.
+
+Tipografía: **Lato** en todo el sitio, la que acompaña al logotipo. Títulos en
+900 con tracking `-0.02em` (Lato es humanista: aguanta menos tracking negativo
+que una grotesca, y el peso contundente lo da el Black), cuerpo en 400. Se
+sirven los pesos 400, 700 y 900 desde `/public/fonts`. Están servidas desde `/public/fonts` para no depender del CDN; en
+`src/styles/fonts.css` está el comentario con el `<link>` de Google Fonts por si
+se prefiere volver a esa vía.
+
+## Sistema de movimiento
+
+Todo se maneja con atributos en el HTML, sin escribir JS por sección:
+
+| Atributo              | Qué hace                                                        |
+| --------------------- | --------------------------------------------------------------- |
+| `data-reveal`         | fade + 34px hacia arriba, 0.7s, `power2.out`                    |
+| `data-stagger`        | en un contenedor: sus `data-reveal` entran con 0.1s de diferencia |
+| `data-delay="0.2"`    | retraso extra para un `data-reveal` suelto                       |
+| `data-media`          | en el marco de una foto: la imagen entra de `scale(1.05)` a `1`  |
+| `data-parallax`       | capa que se mueve al 85% de la velocidad del scroll              |
+| `data-hero` / `data-hero-item` / `data-hero-media` | intro del hero al cargar     |
+| `data-nav`            | el header que se compacta al scrollear                          |
+
+Con `prefers-reduced-motion: reduce` no se inicializa Lenis ni ninguna animación:
+todo queda en su estado final. Sin JS también se ve el sitio completo (los
+estados iniciales cuelgan de `.js`).
+
+## Video del hero
+
+`src/data/site.js` → `hero.video`. Mientras haya un video, se muestra el video;
+si se pone `video: null`, se muestra la foto (`hero.poster`) y no cambia nada más.
+
+El `src` no está en el HTML: lo engancha `motion.js` sólo si la conexión da y no
+hay `prefers-reduced-motion`. En cualquier otro caso queda el poster. Para el
+video final: mp4 (H.264) **y** webm (VP9), sin audio, 8–12 s, menos de 3 MB.
+El que está ahora es un placeholder generado con la foto placeholder.
+
+El hero va a sangre con el claim encima, así que el video se recorta según la
+pantalla: conviene filmar **apaisado (16:9)** dejando aire a la izquierda —ahí
+va el texto— y con la acción hacia el centro-derecha. Si más adelante quieren
+un plano vertical para mobile, `initHeroVideo()` en `motion.js` es el lugar
+donde elegir la fuente según el viewport.
+
+## Horarios y estado de los locales
+
+Se editan en un solo lugar: `src/data/locations.js`, por día de la semana
+(0 = domingo). De ahí salen tanto el texto ("Lun a Vie 11:30–22:00") como el
+estado en vivo. Un rango que cierra antes de abrir se entiende como cruce de
+medianoche (20:00–01:00). El aviso de "cierra pronto" son los últimos 45
+minutos: se cambia en `CLOSING_SOON_MINUTES` (`src/lib/hours.js`).
+
+## Fotos
+
+`scripts/prepare-photos.mjs` toma los originales de `material/fotos` y genera las
+versiones del sitio: recorta a la proporción de cada lugar, redimensiona y
+comprime a JPEG. Los originales no se tocan.
+
+Para el hero hace algo más: como las fotos son cenitales con el bowl centrado,
+recortarlas sin más lo agranda hasta perder su silueta. Entonces recompone el
+cuadro —el fondo del original es liso, así que lo extiende— y apoya el bowl
+sobre el tercio derecho en desktop y arriba en mobile, dejando aire para el
+claim. Los bordes se funden con un degradado para que no se vea la costura.
+
+El resto sigue con placeholders SVG (`npm run placeholders`), con estas
+proporciones:
+
+| Archivo             | Proporción | Dónde                        |
+| ------------------- | ---------- | ---------------------------- |
+| `hero.svg`          | 4:5        | hero                         |
+| `bowl-*.svg`        | 1:1        | grilla del menú              |
+| `marca.svg`         | 4:3        | sección de marca             |
+| `local-*.svg`       | 3:2        | cards de locales             |
+
+Para reemplazarlos: pisá el archivo con la foto real (mismo nombre y proporción,
+o actualizá la ruta en `src/data/*.js`). `npm run placeholders` los vuelve a
+generar.
+
+## Pendientes
+
+- Link real del ecommerce en `src/data/site.js` (`orderUrl`).
+- Logo y fotos reales; video final del hero.
+- Direcciones, horarios, precios y redes: hoy son datos de ejemplo.
+- Texto y fotos de `/nosotros`.

@@ -1,0 +1,134 @@
+---
+import { hero, site } from '../../data/site.js';
+---
+
+<!--
+  Hero a sangre: el video ocupa toda la pantalla y el claim va encima.
+  El degradado verde es el que sostiene la legibilidad del texto sobre la imagen.
+-->
+<section data-hero data-parallax-frame class="relative flex min-h-svh items-end overflow-hidden pt-32 pb-16 lg:items-center lg:pb-24">
+  <div data-hero-media class="absolute inset-0">
+    <div data-parallax class="absolute top-[-9%] left-0 h-[118%] w-full">
+      {
+        hero.video ? (
+          /*
+           * En desktop va el video; en mobile, la foto vertical. Una foto 16:9
+           * en una pantalla de celular obliga a un recorte que se come el bowl,
+           * y de paso el celular se ahorra la descarga del video.
+           * El src del video lo engancha el JS sólo si la conexión da y no hay
+           * prefers-reduced-motion; si no, queda el poster.
+           */
+          <Fragment>
+            <video
+              data-hero-video
+              class="hidden h-full w-full object-cover lg:block"
+              poster={hero.poster}
+              aria-label={hero.alt}
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            >
+              {hero.video.webm && <source data-src={hero.video.webm} type="video/webm" />}
+              {hero.video.mp4 && <source data-src={hero.video.mp4} type="video/mp4" />}
+            </video>
+            <img
+              src={hero.posterMobile}
+              alt={hero.alt}
+              width="1200"
+              height="2000"
+              class="h-full w-full object-cover lg:hidden"
+            />
+          </Fragment>
+        ) : (
+          <img
+            src={hero.poster}
+            alt={hero.alt}
+            width="2400"
+            height="1350"
+            class="h-full w-full object-cover"
+          />
+        )
+      }
+    </div>
+
+    <div class="hero-scrim absolute inset-0"></div>
+  </div>
+
+  <div class="container-x relative w-full">
+    <div class="max-w-[38rem]">
+      <p
+        data-hero-item
+        class="mb-6 text-[0.78rem] font-medium tracking-[0.18em] text-rosado uppercase"
+      >
+        Montevideo · desde 2020
+      </p>
+
+      <!-- Alternativa guardada: "Comida real, sin vueltas." -->
+      <h1 data-hero-item class="text-[2.9rem] sm:text-[3.9rem] lg:text-[4.6rem]">
+        Unite a la<br />revolución<br />saludable.
+      </h1>
+
+      <p
+        data-hero-item
+        class="mt-7 max-w-[42ch] text-[1.05rem] leading-relaxed text-crema/80 lg:text-[1.15rem]"
+      >
+        Alimentos reales, frescos y naturales. Porque comer bien es la base de una vida activa,
+        sana y feliz.
+      </p>
+
+      <div data-hero-item class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+        <a
+          href={site.orderUrl}
+          target="_blank"
+          rel="noopener"
+          class="rounded-full bg-rojo px-8 py-4 font-semibold text-verde transition-colors duration-200 hover:bg-rojo-oscuro"
+        >
+          Hacé tu pedido
+        </a>
+        <a href="/menu" class="link-arrow font-medium">Ver el menú</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /*
+   * Dos capas: una vertical que apoya el texto abajo en mobile y otra
+   * horizontal que despeja la columna izquierda en desktop.
+   */
+  .hero-scrim {
+    background:
+      /* apoya al nav cuando el video es claro */
+      linear-gradient(
+          to bottom,
+          color-mix(in srgb, var(--color-verde) 65%, transparent) 0%,
+          transparent 20%
+        ),
+      linear-gradient(
+        to top,
+        var(--color-verde) 8%,
+        color-mix(in srgb, var(--color-verde) 82%, transparent) 45%,
+        color-mix(in srgb, var(--color-verde) 35%, transparent) 100%
+      );
+  }
+
+  @media (width >= 64rem) {
+    .hero-scrim {
+      background:
+        linear-gradient(
+            to bottom,
+            color-mix(in srgb, var(--color-verde) 55%, transparent) 0%,
+            transparent 16%
+          ),
+        linear-gradient(
+          to right,
+          var(--color-verde) 12%,
+          color-mix(in srgb, var(--color-verde) 78%, transparent) 48%,
+          color-mix(in srgb, var(--color-verde) 20%, transparent) 100%
+        ),
+        linear-gradient(to top, var(--color-verde) 0%, transparent 35%);
+    }
+  }
+</style>

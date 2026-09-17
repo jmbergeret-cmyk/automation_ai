@@ -1,0 +1,88 @@
+---
+import '../styles/fonts.css';
+import '../styles/global.css';
+import { ClientRouter, fade } from 'astro:transitions';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../data/site.js';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = `${site.name} — ${site.tagline}`,
+  description = 'Alimentos reales, frescos y naturales en Montevideo. Ensaladas, wraps y sánguches elaborados todos los días. Pedí online: delivery y takeaway.',
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL('/og.jpg', Astro.site).href;
+---
+
+<!doctype html>
+<html lang="es-UY">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="es_UY" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Saladbowl — alimentos reales en Montevideo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="theme-color" content="#143316" />
+
+    <link
+      rel="preload"
+      href="/fonts/lato-900-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" href="/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+    <ClientRouter />
+
+    <script is:inline>
+      // Los estados iniciales del movimiento sólo aplican si hay JS.
+      document.documentElement.classList.add('js');
+    </script>
+  </head>
+
+  <body>
+    <a
+      href="#contenido"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-full focus:bg-rosado focus:px-5 focus:py-3 focus:text-sm focus:text-verde"
+    >
+      Saltar al contenido
+    </a>
+
+    <Nav />
+
+    <main id="contenido" transition:animate={fade({ duration: '0.25s' })}>
+      <slot />
+    </main>
+
+    <Footer />
+
+    <script>
+      import '../scripts/motion.js';
+      import '../scripts/status.js';
+      import '../scripts/menu-filters.js';
+    </script>
+  </body>
+</html>

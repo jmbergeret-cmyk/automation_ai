@@ -1,0 +1,120 @@
+---
+/**
+ * "Novedades · <Mes>": banda rosada entre el hero y la franja de valores.
+ * Aparece sólo cuando hay novedades vigentes (ver src/data/novedades.js).
+ * Una sola va grande, con la foto de protagonista; dos o tres, en tarjetas.
+ */
+import { vigentes, mesVigente } from '../../data/novedades.js';
+
+const lista = vigentes.slice(0, 3);
+const unica = lista.length === 1 ? lista[0] : null;
+const externo = (href) => (href.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {});
+---
+
+{
+  lista.length > 0 && (
+    <section data-novedades class="bg-rosado py-20 text-verde lg:py-28">
+      <div class="container-x">
+        <div data-stagger class="flex flex-wrap items-end justify-between gap-x-8 gap-y-3">
+          <h2 data-reveal class="text-[2.6rem] sm:text-[3.4rem] lg:text-[4.2rem]">
+            <span class="block text-[0.78rem] font-bold tracking-[0.18em] uppercase opacity-70 sm:text-[0.82rem]">
+              Novedades del mes
+            </span>
+            {mesVigente}
+          </h2>
+        </div>
+
+        {unica ? (
+          <article
+            data-novedad
+            data-hasta={unica.hasta}
+            data-desde={unica.desde}
+            class="mt-12 grid items-center gap-10 lg:mt-16 lg:grid-cols-12 lg:gap-20"
+          >
+            <div class="lg:col-span-7">
+              <div data-media class="aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-verde/10 sm:aspect-[16/10]">
+                <img
+                  src={unica.imagen}
+                  alt={unica.titulo}
+                  width="1200"
+                  height="750"
+                  loading="lazy"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+
+            <div data-stagger class="lg:col-span-5">
+              <span data-reveal class="inline-block rounded-full bg-verde px-3.5 py-1.5 text-[0.72rem] font-bold tracking-[0.16em] text-rosado uppercase">
+                Nuevo
+              </span>
+              <h3 data-reveal class="mt-5 text-[2rem] sm:text-[2.4rem] lg:text-[2.8rem]">
+                {unica.titulo}
+              </h3>
+              {unica.texto && (
+                <p data-reveal class="mt-5 max-w-[40ch] text-[1.05rem] leading-relaxed text-verde/80">
+                  {unica.texto}
+                </p>
+              )}
+              {unica.link && (
+                <a
+                  data-reveal
+                  href={unica.link}
+                  {...externo(unica.link)}
+                  class="mt-8 inline-block rounded-full bg-verde px-8 py-4 font-semibold text-crema transition-colors duration-200 hover:bg-verde-2"
+                >
+                  {unica.linkTexto || 'Ver más'}
+                </a>
+              )}
+            </div>
+          </article>
+        ) : (
+          <div data-stagger class="mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
+            {lista.map((n) => (
+              <article data-novedad data-reveal data-hasta={n.hasta} data-desde={n.desde} class="novedad">
+                <div data-media class="relative aspect-[4/3] overflow-hidden rounded-[1.25rem] bg-verde/10">
+                  <img
+                    src={n.imagen}
+                    alt={n.titulo}
+                    width="1000"
+                    height="750"
+                    loading="lazy"
+                    class="h-full w-full object-cover"
+                  />
+                  <span class="absolute top-3 left-3 rounded-full bg-verde px-3 py-1.5 text-[0.7rem] font-bold tracking-[0.14em] text-rosado uppercase">
+                    Nuevo
+                  </span>
+                </div>
+                <h3 class="mt-5 text-[1.4rem] tracking-[-0.015em]">{n.titulo}</h3>
+                {n.texto && <p class="mt-2 max-w-[34ch] leading-relaxed text-verde/80">{n.texto}</p>}
+                {n.link && (
+                  <a href={n.link} {...externo(n.link)} class="link-arrow mt-4 font-semibold">
+                    {n.linkTexto || 'Ver más'}
+                  </a>
+                )}
+              </article>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .novedad img {
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  @media (hover: hover) {
+    .novedad:hover img {
+      transform: scale(1.03);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .novedad img {
+      transition: none;
+    }
+  }
+</style>

@@ -1,0 +1,111 @@
+---
+import { legal, navLinks, site, social } from '../data/site.js';
+const year = new Date().getFullYear();
+---
+
+<footer transition:persist="footer" class="bg-verde-2 text-crema">
+  <div class="container-x py-20 lg:py-24">
+    <div class="grid gap-14 lg:grid-cols-12 lg:gap-8">
+      <div class="lg:col-span-5">
+        <img
+          src="/logo/wordmark.png"
+          alt="Saladbowl"
+          width="898"
+          height="177"
+          class="h-9 w-auto lg:h-11"
+        />
+        <p class="mt-5 max-w-[32ch] leading-relaxed text-crema/70">
+          Bowls frescos, hechos al momento. Pocitos y Ciudad Vieja.
+        </p>
+        <a
+          href={site.orderUrl}
+          target="_blank"
+          rel="noopener"
+          class="mt-8 inline-flex rounded-full bg-rojo px-7 py-3.5 font-semibold text-verde transition-colors duration-200 hover:bg-rojo-oscuro"
+        >
+          Hacé tu pedido
+        </a>
+      </div>
+
+      <nav class="lg:col-span-3" aria-label="Secciones">
+        <h2 class="text-[0.75rem] font-medium tracking-[0.18em] text-crema/45 uppercase">Sitio</h2>
+        <ul class="mt-5 space-y-3">
+          {
+            navLinks.map((link) => (
+              <li>
+                <a href={link.href} class="text-crema/85 transition-colors hover:text-rosado">
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <div class="lg:col-span-2">
+        <h2 class="text-[0.75rem] font-medium tracking-[0.18em] text-crema/45 uppercase">Redes</h2>
+        <ul class="mt-5 space-y-3">
+          {
+            social.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener"
+                  class="text-crema/85 transition-colors hover:text-rosado"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="lg:col-span-2">
+        <h2 class="text-[0.75rem] font-medium tracking-[0.18em] text-crema/45 uppercase">
+          Contacto
+        </h2>
+        <ul class="mt-5 space-y-3">
+          <li>
+            <a href={`mailto:${site.email}`} class="text-crema/85 transition-colors hover:text-rosado">
+              {site.email}
+            </a>
+          </li>
+          {
+            site.whatsapp && (
+              <li>
+                <a
+                  href={site.whatsapp}
+                  target="_blank"
+                  rel="noopener"
+                  class="text-crema/85 transition-colors hover:text-rosado"
+                >
+                  WhatsApp
+                </a>
+              </li>
+            )
+          }
+          {site.phone && <li class="text-crema/60">{site.phone}</li>}
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="mt-16 flex flex-col gap-4 border-t border-crema/15 pt-8 text-[0.85rem] text-crema/55 sm:flex-row sm:items-center sm:justify-between"
+    >
+      <p>© {year} Saladbowl. Montevideo, Uruguay.</p>
+      <ul class="flex gap-6">
+        {
+          legal.map((item) => (
+            <li>
+              <a href={item.href} class="transition-colors hover:text-rosado">
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</footer>

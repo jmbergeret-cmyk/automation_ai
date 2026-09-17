@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Marquee from '../components/Marquee.astro';
+---
+
+<BaseLayout
+  title="Nosotros — Saladbowl"
+  description="Cómo trabajamos en Saladbowl: proveedores, cocina a la vista y qué hacemos con lo que sobra."
+>
+  <PageHeader
+    eyebrow="Cómo laburamos"
+    title="Creemos en la comida real"
+    lead="Nuestra misión es promover la alimentación real como elemento esencial para vivir saludablemente y en sintonía con el medio ambiente."
+  />
+
+  <section class="bg-crema py-24 text-verde lg:py-32">
+    <div class="container-x grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+      <div class="lg:col-span-6">
+        <div data-media class="aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-crema-2">
+          <img
+            src="/img/marca.jpg"
+            alt="Cartel de neón "eat real" en el local de Saladbowl"
+            width="1200"
+            height="1500"
+            loading="lazy"
+            class="h-full w-full object-cover"
+          />
+        </div>
+      </div>
+
+      <div data-stagger class="lg:col-span-6">
+        <h2 data-reveal class="text-[2.2rem] sm:text-[2.8rem]">Una alimentación con propósito</h2>
+        <p data-reveal class="mt-6 max-w-[52ch] leading-relaxed text-verde-3">
+          Creemos que la alimentación saludable es esencial para vivir con bienestar físico y
+          mental, y que una alimentación con propósito es la base de una vida activa, sana y feliz.
+        </p>
+        <p data-reveal class="mt-4 max-w-[52ch] leading-relaxed text-verde-3">
+          También creemos que consumiendo alimentos reales generamos bienestar en la sociedad y
+          cuidamos el medio ambiente.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Marquee />
+
+  <section class="py-24 lg:py-32">
+    <div class="container-x" data-stagger>
+      <h2 data-reveal class="max-w-[18ch] text-[2.2rem] sm:text-[2.8rem]">
+        Tres cosas que no negociamos
+      </h2>
+
+      <div class="mt-14 grid gap-10 sm:grid-cols-3 sm:gap-8">
+        {
+          [
+            ['Alimentos reales', 'Elaborados cada día, con ingredientes que podés nombrar.'],
+            ['Materia prima de calidad', 'Fresca y natural, elegida a mano cada día.'],
+            ['Ricos, no sólo sanos', 'Que los disfrutes al comerlos y que tu cuerpo lo sienta después.'],
+          ].map(([title, text]) => (
+            <div data-reveal class="max-w-[38ch]">
+              <h3 class="text-[1.4rem]">{title}</h3>
+              <p class="mt-3 leading-relaxed text-crema/70">{text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
