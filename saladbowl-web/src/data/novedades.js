@@ -17,18 +17,19 @@ import { site } from './site.js';
  * hasta (opcional).
  */
 export const novedades = [
-  {
-    // EJEMPLO para ver el diseño: Sweet Chicken es un plato real, pero no
-    // es nuevo. Reemplazar por la primera novedad real o borrar antes de
-    // salir a producción.
-    mes: '2026-09',
-    titulo: 'Sweet Chicken',
-    texto: 'Pollo, boniato asado, hummus, quinoa roja, cherry y castañas. Ya está en los dos locales.',
-    imagen: '/img/bowl-sweet-chicken.jpg',
-    link: site.orderUrl,
-    linkTexto: 'Pedila',
-    item: 'sweet-chicken',
-  },
+  // Sin novedades por ahora: la banda no se muestra. Para cargar una, se
+  // descomenta este bloque y se completa. Con `mes` alcanza para que venza
+  // sola el último día.
+  //
+  // {
+  //   mes: '2026-10',
+  //   titulo: 'Nombre del plato',
+  //   texto: 'Una línea con qué tiene.',
+  //   imagen: '/img/nombre-de-la-foto.jpg',
+  //   link: site.orderUrl,
+  //   linkTexto: 'Pedila',
+  //   item: 'slug-del-plato-en-menu.js', // opcional: etiqueta "Nuevo" en el menú
+  // },
 ];
 
 /** Las que se muestran hoy. Se calcula al hacer el build y se vuelve a chequear en el navegador. */
