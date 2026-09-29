@@ -113,12 +113,12 @@ const FOTOS = [
      * Hero de mobile: vertical, con el bowl arriba y aire abajo, que es donde
      * cae el claim. Mismo criterio de recomposición sobre el fondo liso.
      */
-    // El sándwich es vertical y de fondo ambiente: acá alcanza con recortar.
-    origen: 'material/fotos/Chicken Avocado Sandwich.jpg',
+    // Misma foto que el hero de desktop, para que el sitio sea uno solo.
+    origen: 'material/fotos/California Salad.jpg',
     destino: 'hero-mobile.jpg',
     ancho: 1200,
     alto: 2000,
-    focusY: 0.46,
+    componer: { escalaAlto: 0.5, centroX: 0.5, centroY: 0.36, difuminado: 220 },
   },
 ];
 
