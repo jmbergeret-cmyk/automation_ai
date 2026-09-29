@@ -3,10 +3,10 @@ export const site = {
   tagline: 'Unite a la revolución saludable. Montevideo.',
   orderUrl: 'https://saladbowl.pidedirecto.uy/',
   // hola@ es un alias de gestion@ en Google Workspace (confirmado 29/09/2026).
-  // TODO: WhatsApp del local (mientras sea null, el link no se muestra).
   email: 'hola@saladbowl.com.uy',
   phone: null,
-  whatsapp: null,
+  // Por ahora el celular de Juan; cuando activen el WhatsApp del local, se cambia acá.
+  whatsapp: 'https://wa.me/59898991637',
 };
 
 /**
@@ -27,11 +27,8 @@ export const navLinks = [
   { label: 'Nosotros', href: '/nosotros' },
 ];
 
-export const social = [
-  { label: 'Instagram', href: 'https://instagram.com/saladbowluy' },
-  // TODO: Facebook — falta el usuario real de la página; se agrega cuando Juan lo pase.
-  // { label: 'Facebook', href: 'https://facebook.com/…' },
-];
+// Sólo Instagram: Facebook no lo usan.
+export const social = [{ label: 'Instagram', href: 'https://instagram.com/saladbowluy' }];
 
 export const legal = [
   { label: 'Términos', href: '/terminos' },
