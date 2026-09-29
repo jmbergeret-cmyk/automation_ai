@@ -118,7 +118,8 @@ const FOTOS = [
     destino: 'hero-mobile.jpg',
     ancho: 1200,
     alto: 2000,
-    componer: { escalaAlto: 0.5, centroX: 0.5, centroY: 0.36, difuminado: 220 },
+    // Bowl grande, cortado por los bordes del cuadro, como en desktop.
+    componer: { escalaAlto: 0.78, centroX: 0.5, centroY: 0.33, difuminado: 220 },
   },
 ];
 
