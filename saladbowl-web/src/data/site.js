@@ -2,8 +2,8 @@ export const site = {
   name: 'Saladbowl',
   tagline: 'Unite a la revolución saludable. Montevideo.',
   orderUrl: 'https://saladbowl.pidedirecto.uy/',
-  // TODO: sin confirmar — casilla de mail (sería @saladbowl.com.uy) y el
-  // WhatsApp del local.
+  // hola@ es un alias de gestion@ en Google Workspace (confirmado 29/09/2026).
+  // TODO: WhatsApp del local (mientras sea null, el link no se muestra).
   email: 'hola@saladbowl.com.uy',
   phone: null,
   whatsapp: null,
