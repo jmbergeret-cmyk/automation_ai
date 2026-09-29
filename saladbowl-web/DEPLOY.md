@@ -39,6 +39,18 @@ esos por si cambian.
 
 El certificado HTTPS lo emite Vercel solo, gratis, una vez que el DNS resuelve.
 
+## Cómo quedó el DNS (29/09/2026)
+
+- Registrador: ANTEL (dominios.uy). Nameservers delegados a Vercel:
+  `ns1.vercel-dns.com` / `ns2.vercel-dns.com`.
+- La zona vive en Vercel → cuenta → Domains → `saladbowl.com.uy` → DNS Records.
+  Los registros de la web (`A`, `www`, `gestion`) los maneja Vercel solo.
+- Correo: Google Workspace. Registros cargados a mano:
+  `MX @ smtp.google.com (prioridad 1)` y `TXT @ v=spf1 include:_spf.google.com ~all`.
+  `hola@saladbowl.com.uy` es un alias de `gestion@` (Admin de Workspace).
+- Cualquier registro nuevo (otro subdominio, DKIM, verificación de un servicio)
+  se carga en esa misma pantalla de Vercel. En ANTEL no hay que tocar nada más.
+
 ## Después del deploy
 
 Cada push a la rama de producción republica el sitio automáticamente.
