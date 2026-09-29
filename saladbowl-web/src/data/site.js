@@ -27,10 +27,10 @@ export const navLinks = [
   { label: 'Nosotros', href: '/nosotros' },
 ];
 
-// TODO: confirmar los usuarios reales de cada red.
 export const social = [
-  { label: 'Instagram', href: 'https://instagram.com/saladbowl.uy' },
-  { label: 'Facebook', href: 'https://facebook.com/saladbowl.uy' },
+  { label: 'Instagram', href: 'https://instagram.com/saladbowluy' },
+  // TODO: Facebook — falta el usuario real de la página; se agrega cuando Juan lo pase.
+  // { label: 'Facebook', href: 'https://facebook.com/…' },
 ];
 
 export const legal = [
