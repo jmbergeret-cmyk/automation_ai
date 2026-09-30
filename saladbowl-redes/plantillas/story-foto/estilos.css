@@ -1,0 +1,45 @@
+.lienzo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--verde);
+}
+
+.foto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--verde) 90%, transparent) 0%,
+    color-mix(in srgb, var(--verde) 55%, transparent) 24%,
+    transparent 48%
+  );
+}
+
+/* 250px arriba y 340px abajo son zona insegura de Instagram (UI encima). */
+.zona-segura {
+  position: absolute;
+  left: 64px;
+  right: 64px;
+  bottom: 380px;
+  color: var(--crema);
+}
+
+.zona-segura .texto {
+  margin: 0;
+  font-size: 64px;
+  max-width: 22ch;
+}
+
+.zona-segura .wordmark-chico,
+.zona-segura .logo-mask {
+  margin-top: 30px;
+}

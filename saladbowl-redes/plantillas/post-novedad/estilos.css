@@ -1,0 +1,58 @@
+.lienzo {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 64px;
+  background: var(--rosado);
+  color: var(--verde);
+  display: flex;
+  flex-direction: column;
+}
+
+.etiqueta {
+  font-size: 28px;
+  opacity: 0.7;
+}
+
+.cabecera .titulo {
+  margin: 10px 0 0;
+  font-size: 80px;
+}
+
+.panel {
+  position: relative;
+  flex: 1;
+  margin-top: 44px;
+  border-radius: 40px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--verde) 10%, transparent);
+}
+
+.panel .foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pill {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: var(--verde);
+  color: var(--rosado);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.nombre {
+  margin: 40px 0 0;
+  font-size: 64px;
+}
+
+.pie-wordmark {
+  margin-top: 28px;
+}

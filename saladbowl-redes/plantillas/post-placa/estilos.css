@@ -1,0 +1,30 @@
+.lienzo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 44px;
+  padding: 0 100px;
+  text-align: center;
+}
+
+.claim {
+  margin: 0;
+  font-size: 76px;
+  max-width: 18ch;
+}
+
+.firma {
+  margin: 0;
+  font-size: 30px;
+  opacity: 0.75;
+  letter-spacing: 0.02em;
+}
