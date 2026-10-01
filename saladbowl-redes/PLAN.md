@@ -227,6 +227,11 @@ Criterio de aceptación: Juan aprueba una quincena real de prueba en ≤ 40 min.
 `NN-<dia>-<formato>.txt` con caption + hashtags + alt + red + fecha/hora.
 Más un `CALENDARIO.md` con la tabla de la quincena.
 
+Además sube la misma carpeta a Google Drive, a `Content Social Studio →
+Publicadas/<quincena>/` (ahí ya vive el resto del material de redes: `Fotos
+productos`, `Identidad de marca`): es la carpeta de contenido real de Juan,
+no el repo. `salida/` en el repo queda como respaldo versionado.
+
 Juan sube en Meta Business Suite (programar posts, reels y stories es
 gratis ahí) — ~10 min por semana.
 

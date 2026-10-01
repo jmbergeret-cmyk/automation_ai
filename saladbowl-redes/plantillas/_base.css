@@ -109,3 +109,40 @@ img {
   -webkit-mask-position: center;
   mask-position: center;
 }
+
+/* Botón CTA de dos líneas (acción + dominio), ayudantes.mjs: ctaHTML(). */
+.cta {
+  display: inline-block;
+  padding: 26px 44px;
+  border-radius: 999px;
+  text-align: center;
+}
+
+.cta .cta-texto {
+  margin: 0;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.cta .cta-sub {
+  margin: 4px 0 0;
+  font-size: 20px;
+  opacity: 0.75;
+}
+
+/* Fila de pills cortas, ayudantes.mjs: pillsHTML(). */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+
+.pills .pill-tag {
+  padding: 11px 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}

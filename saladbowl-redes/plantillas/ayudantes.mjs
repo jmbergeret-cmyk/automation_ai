@@ -53,3 +53,23 @@ export const celdaMenu = ({ foto, nombre, foco_x = 50, foco_y = 50 }) => `
 /** Numerador de slide para un carrusel ("2/4"), post-foto. */
 export const carruselBadge = (indice, total) =>
   cruda(`<span class="carrusel-badge">${esc(indice)}/${esc(total)}</span>`);
+
+/**
+ * Botón CTA de dos líneas (acción + dominio), para post-placa/story-placa.
+ * El texto sale siempre de las reglas de PLAN.md §1 (pedir en
+ * saladbowl.pidedirecto.uy o "delivery y takeaway en Pocitos y Ciudad
+ * Vieja"): esto sólo arma el HTML, no inventa un texto de CTA nuevo.
+ */
+export const ctaHTML = (texto, sub, { fondo, color }) =>
+  cruda(`
+    <div class="cta" style="background:${fondo};color:${color}">
+      <p class="cta-texto">${esc(texto)}</p>
+      ${sub ? `<p class="cta-sub">${esc(sub)}</p>` : ''}
+    </div>`);
+
+/** Fila de pills cortas (máx. unas pocas palabras cada una), mismo `fondo`/`color` que un CTA. */
+export const pillsHTML = (tags, { fondo, color }) =>
+  cruda(`
+    <div class="pills">
+      ${tags.map((t) => `<span class="pill-tag" style="background:${fondo};color:${color}">${esc(t)}</span>`).join('\n      ')}
+    </div>`);

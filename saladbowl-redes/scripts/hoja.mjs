@@ -11,8 +11,18 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { abrirNavegador, renderPieza, rutaWeb, ISOTIPO_URL, WORDMARK_URL } from './render.mjs';
-import { wordmarkHTML, isotipoHTML, parrafo, fondoPlaca, celdaMenu, gridHTML, carruselBadge } from '../plantillas/ayudantes.mjs';
-import { menu, locations, claims } from '../fuentes.mjs';
+import {
+  wordmarkHTML,
+  isotipoHTML,
+  parrafo,
+  fondoPlaca,
+  celdaMenu,
+  gridHTML,
+  carruselBadge,
+  ctaHTML,
+  pillsHTML,
+} from '../plantillas/ayudantes.mjs';
+import { menu, categories, locations, claims, site } from '../fuentes.mjs';
 
 const ROOT = join(import.meta.dirname, '..');
 const OUT = join(ROOT, 'quincenas', '_hoja-contacto.png');
@@ -37,6 +47,9 @@ const pocitos = local('pocitos');
 
 const wordmarkCrema = () => wordmarkHTML(WORDMARK_URL, { color: 'var(--crema)', ancho: 200 });
 
+// Único CTA aprobado (PLAN.md §1): pedir en saladbowl.pidedirecto.uy.
+const dominioPedidos = site.orderUrl.replace(/^https?:\/\//, '').replace(/\/$/, '');
+
 const mesActual = new Intl.DateTimeFormat('es-UY', { month: 'long' }).format(new Date());
 const mesCapitalizado = mesActual.charAt(0).toUpperCase() + mesActual.slice(1);
 
@@ -60,7 +73,9 @@ const piezas = [
         fondo_color: fondo,
         color_texto: texto,
         claim: claims.madre,
+        pills_html: '',
         firma_html: parrafo('@saladbowluy', 'firma'),
+        cta_html: ctaHTML('Hacé tu pedido', dominioPedidos, { fondo: 'var(--rojo)', color: 'var(--verde)' }),
         isotipo_html: isotipoHTML(ISOTIPO_URL, { color: texto, ancho: 140 }),
       };
     })(),
@@ -112,6 +127,8 @@ const piezas = [
         fondo_color: fondo,
         color_texto: texto,
         texto: claims.sub[2], // "Creemos en la comida real."
+        pills_html: pillsHTML(categories.map((c) => c.label), { fondo: 'var(--verde)', color: 'var(--rosado)' }),
+        cta_html: ctaHTML('Hacé tu pedido', dominioPedidos, { fondo: 'var(--verde)', color: 'var(--rosado)' }),
         isotipo_html: isotipoHTML(ISOTIPO_URL, { color: texto, ancho: 160 }),
       };
     })(),
