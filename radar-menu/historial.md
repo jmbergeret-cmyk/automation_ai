@@ -8,3 +8,10 @@ Registro de ideas ya propuestas en digests anteriores, para no repetir. Una lín
 - **Fermentados / salud intestinal** (gut health +44% Tastewise 2026; kimchi mainstream en menús modernos) → topping opcional de kimchi ("Gut Boost") en ensaladas.
 - **LTO estacional con frutas/vegetales de estación** (Just Salad fall menu sep 2026 como referencia de mecánica, adaptado a primavera uruguaya) → "Ensalada de Primavera" con arándanos secos.
 - **Mediterráneo dulce-picante** (CAVA Harissa Honey Chicken Bowl ene 2026, Harissa BBQ Pita Chips jul 2026) → salsa "Harissa Honey" para wraps.
+
+## 2026-10-20 — Digest quincenal
+
+- **Aderezos de yogur-hierbas estilo "Greek Goddess"** (CAVA Greek Goddess dressing + Salmon Bowl, anunciado 14 oct 2026, NRN/QSR) → salsa "Yogur Verde" para Salmon salad / Sweet chicken.
+- **Bean boom / legumbres** (Whole Foods Trends 2027, 15 oct 2026) → "Bean Bowl" con porotos especiados sobre la base legumbres actual.
+- **Ensalada de pollo con pepinillos** (sweetgreen x Molly Baz, LTO 29 sep–9 nov 2026, NRN) → "Dill Chicken Wrap/Sándwich" LTO con queso crema y pepinillos.
+- **Sabores amargos** (Whole Foods Trends 2027, oct 2026) → LTO "Bitter & Sweet" con radicchio, cítrico y miel.
