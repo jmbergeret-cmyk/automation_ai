@@ -8,3 +8,11 @@ Registro de ideas ya propuestas en digests anteriores, para no repetir. Una lín
 - **Fermentados / salud intestinal** (gut health +44% Tastewise 2026; kimchi mainstream en menús modernos) → topping opcional de kimchi ("Gut Boost") en ensaladas.
 - **LTO estacional con frutas/vegetales de estación** (Just Salad fall menu sep 2026 como referencia de mecánica, adaptado a primavera uruguaya) → "Ensalada de Primavera" con arándanos secos.
 - **Mediterráneo dulce-picante** (CAVA Harissa Honey Chicken Bowl ene 2026, Harissa BBQ Pita Chips jul 2026) → salsa "Harissa Honey" para wraps.
+
+## 2026-11-02 — Digest quincenal
+
+- **Bean boom** (Whole Foods 2027 trends, 14 oct 2026) → "Bean Bowl": ensalada con garbanzos/lentejas como protagonista.
+- **Platos más chicos / GLP-1** (Bidfood 2027, The Grocer) → "Half & Half": formato de media porción combinada.
+- **Yoshoku + fermentados** (Whole Foods 2027; Datassential 2027 oct 2026) → Salmon salad con salsa miso-sésamo.
+- **Side glaseado de temporada** (sweetgreen Fall Harvest, sep 2026) → boniato glaseado como side/add-on.
+- **Sabores amargos** (Whole Foods 2027) → LTO "Amargo & Dulce" con rúcula y cítrico.
